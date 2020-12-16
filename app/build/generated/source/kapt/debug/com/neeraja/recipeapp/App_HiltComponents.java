@@ -2,6 +2,8 @@ package com.neeraja.recipeapp;
 
 import androidx.hilt.lifecycle.ViewModelFactoryModules;
 import com.neeraja.recipeapp.di.module.ApplicationModule;
+import com.neeraja.recipeapp.ui.view.CategoryActivity_GeneratedInjector;
+import com.neeraja.recipeapp.ui.viewmodel.CategoryViewModel_HiltModule;
 import dagger.Binds;
 import dagger.Component;
 import dagger.Module;
@@ -112,7 +114,8 @@ public final class App_HiltComponents {
       }
   )
   @ActivityScoped
-  public abstract static class ActivityC implements ActivityComponent,
+  public abstract static class ActivityC implements CategoryActivity_GeneratedInjector,
+      ActivityComponent,
       DefaultViewModelFactories.ActivityEntryPoint,
       FragmentComponentManager.FragmentComponentBuilderEntryPoint,
       ViewComponentManager.ViewComponentBuilderEntryPoint,
@@ -123,7 +126,10 @@ public final class App_HiltComponents {
   }
 
   @Subcomponent(
-      modules = ActivityCBuilderModule.class
+      modules = {
+          ActivityCBuilderModule.class,
+          CategoryViewModel_HiltModule.class
+      }
   )
   @ActivityRetainedScoped
   public abstract static class ActivityRetainedC implements ActivityRetainedComponent,

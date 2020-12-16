@@ -4,6 +4,25 @@
             "outputFile": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
             "map": [
                 {
+                    "source": "/Users/apple/.gradle/caches/transforms-2/files-2.1/57213c5897c47f3eebf520c2d1aabfa1/cardview-1.0.0/res/values-v23/values-v23.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "200"
+                    },
+                    "to": {
+                        "startLines": "50",
+                        "startColumns": "4",
+                        "startOffsets": "3524",
+                        "endLines": "52",
+                        "endColumns": "12",
+                        "endOffsets": "3669"
+                    }
+                },
+                {
                     "source": "/Users/apple/.gradle/caches/transforms-2/files-2.1/5d1a648bd8403c5c57438e188b7be1c0/appcompat-1.2.0/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",

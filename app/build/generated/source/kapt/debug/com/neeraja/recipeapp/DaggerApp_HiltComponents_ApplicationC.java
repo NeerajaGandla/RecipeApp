@@ -9,7 +9,20 @@ import androidx.hilt.lifecycle.ViewModelFactoryModules_ActivityModule_ProvideFac
 import androidx.hilt.lifecycle.ViewModelFactoryModules_FragmentModule_ProvideFactoryFactory;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
+import com.neeraja.recipeapp.data.api.ApiHelper;
+import com.neeraja.recipeapp.data.api.ApiHelperImpl;
+import com.neeraja.recipeapp.data.api.ApiService;
+import com.neeraja.recipeapp.data.repository.CategoryRepository;
 import com.neeraja.recipeapp.di.module.ApplicationModule;
+import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideApiHelperFactory;
+import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideApiServiceFactory;
+import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideBaseUrlFactory;
+import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideOkHttpClientFactory;
+import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideRetrofitFactory;
+import com.neeraja.recipeapp.ui.view.CategoryActivity;
+import com.neeraja.recipeapp.ui.viewmodel.CategoryViewModel_AssistedFactory;
+import com.neeraja.recipeapp.ui.viewmodel.CategoryViewModel_AssistedFactory_Factory;
+import com.neeraja.recipeapp.utils.NetworkHelper;
 import dagger.hilt.android.internal.builders.ActivityComponentBuilder;
 import dagger.hilt.android.internal.builders.ActivityRetainedComponentBuilder;
 import dagger.hilt.android.internal.builders.FragmentComponentBuilder;
@@ -18,11 +31,17 @@ import dagger.hilt.android.internal.builders.ViewComponentBuilder;
 import dagger.hilt.android.internal.builders.ViewWithFragmentComponentBuilder;
 import dagger.hilt.android.internal.modules.ApplicationContextModule;
 import dagger.hilt.android.internal.modules.ApplicationContextModule_ProvideApplicationFactory;
+import dagger.hilt.android.internal.modules.ApplicationContextModule_ProvideContextFactory;
+import dagger.internal.DoubleCheck;
+import dagger.internal.MemoizedSentinel;
 import dagger.internal.Preconditions;
 import java.util.Collections;
+import java.util.Map;
 import java.util.Set;
 import javax.annotation.Generated;
 import javax.inject.Provider;
+import okhttp3.OkHttpClient;
+import retrofit2.Retrofit;
 
 @Generated(
     value = "dagger.internal.codegen.ComponentProcessor",
@@ -35,13 +54,112 @@ import javax.inject.Provider;
 public final class DaggerApp_HiltComponents_ApplicationC extends App_HiltComponents.ApplicationC {
   private final ApplicationContextModule applicationContextModule;
 
+  private final ApplicationModule applicationModule;
+
+  private volatile Object okHttpClient = new MemoizedSentinel();
+
+  private volatile Object retrofit = new MemoizedSentinel();
+
+  private volatile Object apiService = new MemoizedSentinel();
+
+  private volatile Object apiHelper = new MemoizedSentinel();
+
+  private volatile Object networkHelper = new MemoizedSentinel();
+
+  private volatile Provider<NetworkHelper> networkHelperProvider;
+
   private DaggerApp_HiltComponents_ApplicationC(
-      ApplicationContextModule applicationContextModuleParam) {
+      ApplicationContextModule applicationContextModuleParam,
+      ApplicationModule applicationModuleParam) {
     this.applicationContextModule = applicationContextModuleParam;
+    this.applicationModule = applicationModuleParam;
   }
 
   public static Builder builder() {
     return new Builder();
+  }
+
+  private OkHttpClient getOkHttpClient() {
+    Object local = okHttpClient;
+    if (local instanceof MemoizedSentinel) {
+      synchronized (local) {
+        local = okHttpClient;
+        if (local instanceof MemoizedSentinel) {
+          local = ApplicationModule_ProvideOkHttpClientFactory.provideOkHttpClient(applicationModule);
+          okHttpClient = DoubleCheck.reentrantCheck(okHttpClient, local);
+        }
+      }
+    }
+    return (OkHttpClient) local;
+  }
+
+  private Retrofit getRetrofit() {
+    Object local = retrofit;
+    if (local instanceof MemoizedSentinel) {
+      synchronized (local) {
+        local = retrofit;
+        if (local instanceof MemoizedSentinel) {
+          local = ApplicationModule_ProvideRetrofitFactory.provideRetrofit(applicationModule, getOkHttpClient(), ApplicationModule_ProvideBaseUrlFactory.provideBaseUrl(applicationModule));
+          retrofit = DoubleCheck.reentrantCheck(retrofit, local);
+        }
+      }
+    }
+    return (Retrofit) local;
+  }
+
+  private ApiService getApiService() {
+    Object local = apiService;
+    if (local instanceof MemoizedSentinel) {
+      synchronized (local) {
+        local = apiService;
+        if (local instanceof MemoizedSentinel) {
+          local = ApplicationModule_ProvideApiServiceFactory.provideApiService(applicationModule, getRetrofit());
+          apiService = DoubleCheck.reentrantCheck(apiService, local);
+        }
+      }
+    }
+    return (ApiService) local;
+  }
+
+  private ApiHelperImpl getApiHelperImpl() {
+    return new ApiHelperImpl(getApiService());
+  }
+
+  private ApiHelper getApiHelper() {
+    Object local = apiHelper;
+    if (local instanceof MemoizedSentinel) {
+      synchronized (local) {
+        local = apiHelper;
+        if (local instanceof MemoizedSentinel) {
+          local = ApplicationModule_ProvideApiHelperFactory.provideApiHelper(applicationModule, getApiHelperImpl());
+          apiHelper = DoubleCheck.reentrantCheck(apiHelper, local);
+        }
+      }
+    }
+    return (ApiHelper) local;
+  }
+
+  private NetworkHelper getNetworkHelper() {
+    Object local = networkHelper;
+    if (local instanceof MemoizedSentinel) {
+      synchronized (local) {
+        local = networkHelper;
+        if (local instanceof MemoizedSentinel) {
+          local = new NetworkHelper(ApplicationContextModule_ProvideContextFactory.provideContext(applicationContextModule));
+          networkHelper = DoubleCheck.reentrantCheck(networkHelper, local);
+        }
+      }
+    }
+    return (NetworkHelper) local;
+  }
+
+  private Provider<NetworkHelper> getNetworkHelperProvider() {
+    Object local = networkHelperProvider;
+    if (local == null) {
+      local = new SwitchingProvider<>(0);
+      networkHelperProvider = (Provider<NetworkHelper>) local;
+    }
+    return (Provider<NetworkHelper>) local;
   }
 
   @Override
@@ -61,6 +179,8 @@ public final class DaggerApp_HiltComponents_ApplicationC extends App_HiltCompone
   public static final class Builder {
     private ApplicationContextModule applicationContextModule;
 
+    private ApplicationModule applicationModule;
+
     private Builder() {
     }
 
@@ -69,18 +189,17 @@ public final class DaggerApp_HiltComponents_ApplicationC extends App_HiltCompone
       return this;
     }
 
-    /**
-     * @deprecated This module is declared, but an instance is not used in the component. This method is a no-op. For more, see https://dagger.dev/unused-modules.
-     */
-    @Deprecated
     public Builder applicationModule(ApplicationModule applicationModule) {
-      Preconditions.checkNotNull(applicationModule);
+      this.applicationModule = Preconditions.checkNotNull(applicationModule);
       return this;
     }
 
     public App_HiltComponents.ApplicationC build() {
       Preconditions.checkBuilderRequirement(applicationContextModule, ApplicationContextModule.class);
-      return new DaggerApp_HiltComponents_ApplicationC(applicationContextModule);
+      if (applicationModule == null) {
+        this.applicationModule = new ApplicationModule();
+      }
+      return new DaggerApp_HiltComponents_ApplicationC(applicationContextModule, applicationModule);
     }
   }
 
@@ -120,12 +239,52 @@ public final class DaggerApp_HiltComponents_ApplicationC extends App_HiltCompone
     private final class ActivityCImpl extends App_HiltComponents.ActivityC {
       private final Activity activity;
 
+      private volatile Provider<CategoryRepository> categoryRepositoryProvider;
+
+      private volatile Provider<CategoryViewModel_AssistedFactory> categoryViewModel_AssistedFactoryProvider;
+
       private ActivityCImpl(Activity activityParam) {
         this.activity = activityParam;
       }
 
+      private CategoryRepository getCategoryRepository() {
+        return new CategoryRepository(DaggerApp_HiltComponents_ApplicationC.this.getApiHelper());
+      }
+
+      private Provider<CategoryRepository> getCategoryRepositoryProvider() {
+        Object local = categoryRepositoryProvider;
+        if (local == null) {
+          local = new SwitchingProvider<>(1);
+          categoryRepositoryProvider = (Provider<CategoryRepository>) local;
+        }
+        return (Provider<CategoryRepository>) local;
+      }
+
+      private CategoryViewModel_AssistedFactory getCategoryViewModel_AssistedFactory() {
+        return CategoryViewModel_AssistedFactory_Factory.newInstance(getCategoryRepositoryProvider(), DaggerApp_HiltComponents_ApplicationC.this.getNetworkHelperProvider());
+      }
+
+      private Provider<CategoryViewModel_AssistedFactory> getCategoryViewModel_AssistedFactoryProvider(
+          ) {
+        Object local = categoryViewModel_AssistedFactoryProvider;
+        if (local == null) {
+          local = new SwitchingProvider<>(0);
+          categoryViewModel_AssistedFactoryProvider = (Provider<CategoryViewModel_AssistedFactory>) local;
+        }
+        return (Provider<CategoryViewModel_AssistedFactory>) local;
+      }
+
+      private Map<String, Provider<ViewModelAssistedFactory<? extends ViewModel>>> getMapOfStringAndProviderOfViewModelAssistedFactoryOf(
+          ) {
+        return Collections.<String, Provider<ViewModelAssistedFactory<? extends ViewModel>>>singletonMap("com.neeraja.recipeapp.ui.viewmodel.CategoryViewModel", (Provider) getCategoryViewModel_AssistedFactoryProvider());
+      }
+
       private ViewModelProvider.Factory getProvideFactory() {
-        return ViewModelFactoryModules_ActivityModule_ProvideFactoryFactory.provideFactory(activity, ApplicationContextModule_ProvideApplicationFactory.provideApplication(DaggerApp_HiltComponents_ApplicationC.this.applicationContextModule), Collections.<String, Provider<ViewModelAssistedFactory<? extends ViewModel>>>emptyMap());
+        return ViewModelFactoryModules_ActivityModule_ProvideFactoryFactory.provideFactory(activity, ApplicationContextModule_ProvideApplicationFactory.provideApplication(DaggerApp_HiltComponents_ApplicationC.this.applicationContextModule), getMapOfStringAndProviderOfViewModelAssistedFactoryOf());
+      }
+
+      @Override
+      public void injectCategoryActivity(CategoryActivity categoryActivity) {
       }
 
       @Override
@@ -167,7 +326,7 @@ public final class DaggerApp_HiltComponents_ApplicationC extends App_HiltCompone
         }
 
         private ViewModelProvider.Factory getProvideFactory() {
-          return ViewModelFactoryModules_FragmentModule_ProvideFactoryFactory.provideFactory(fragment, ApplicationContextModule_ProvideApplicationFactory.provideApplication(DaggerApp_HiltComponents_ApplicationC.this.applicationContextModule), Collections.<String, Provider<ViewModelAssistedFactory<? extends ViewModel>>>emptyMap());
+          return ViewModelFactoryModules_FragmentModule_ProvideFactoryFactory.provideFactory(fragment, ApplicationContextModule_ProvideApplicationFactory.provideApplication(DaggerApp_HiltComponents_ApplicationC.this.applicationContextModule), ActivityCImpl.this.getMapOfStringAndProviderOfViewModelAssistedFactoryOf());
         }
 
         @Override
@@ -224,6 +383,28 @@ public final class DaggerApp_HiltComponents_ApplicationC extends App_HiltCompone
 
         }
       }
+
+      private final class SwitchingProvider<T> implements Provider<T> {
+        private final int id;
+
+        SwitchingProvider(int id) {
+          this.id = id;
+        }
+
+        @SuppressWarnings("unchecked")
+        @Override
+        public T get() {
+          switch (id) {
+            case 0: // com.neeraja.recipeapp.ui.viewmodel.CategoryViewModel_AssistedFactory 
+            return (T) ActivityCImpl.this.getCategoryViewModel_AssistedFactory();
+
+            case 1: // com.neeraja.recipeapp.data.repository.CategoryRepository 
+            return (T) ActivityCImpl.this.getCategoryRepository();
+
+            default: throw new AssertionError(id);
+          }
+        }
+      }
     }
   }
 
@@ -246,6 +427,25 @@ public final class DaggerApp_HiltComponents_ApplicationC extends App_HiltCompone
   private final class ServiceCImpl extends App_HiltComponents.ServiceC {
     private ServiceCImpl(Service service) {
 
+    }
+  }
+
+  private final class SwitchingProvider<T> implements Provider<T> {
+    private final int id;
+
+    SwitchingProvider(int id) {
+      this.id = id;
+    }
+
+    @SuppressWarnings("unchecked")
+    @Override
+    public T get() {
+      switch (id) {
+        case 0: // com.neeraja.recipeapp.utils.NetworkHelper 
+        return (T) DaggerApp_HiltComponents_ApplicationC.this.getNetworkHelper();
+
+        default: throw new AssertionError(id);
+      }
     }
   }
 }
