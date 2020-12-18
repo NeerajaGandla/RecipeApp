@@ -17,6 +17,7 @@ import com.neeraja.recipeapp.di.module.ApplicationModule;
 import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideApiHelperFactory;
 import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideApiServiceFactory;
 import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideBaseUrlFactory;
+import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideMoshiFactory;
 import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideOkHttpClientFactory;
 import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideRetrofitFactory;
 import com.neeraja.recipeapp.ui.view.CategoryActivity;
@@ -99,7 +100,7 @@ public final class DaggerApp_HiltComponents_ApplicationC extends App_HiltCompone
       synchronized (local) {
         local = retrofit;
         if (local instanceof MemoizedSentinel) {
-          local = ApplicationModule_ProvideRetrofitFactory.provideRetrofit(applicationModule, getOkHttpClient(), ApplicationModule_ProvideBaseUrlFactory.provideBaseUrl(applicationModule));
+          local = ApplicationModule_ProvideRetrofitFactory.provideRetrofit(applicationModule, getOkHttpClient(), ApplicationModule_ProvideBaseUrlFactory.provideBaseUrl(applicationModule), ApplicationModule_ProvideMoshiFactory.provideMoshi(applicationModule));
           retrofit = DoubleCheck.reentrantCheck(retrofit, local);
         }
       }

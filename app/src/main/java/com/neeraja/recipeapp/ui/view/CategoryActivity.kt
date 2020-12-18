@@ -45,7 +45,7 @@ class CategoryActivity : AppCompatActivity() {
             when (it.status) {
                 Status.SUCCESS -> {
                     progressBar.visibility = View.GONE
-                    it.data?.let { users -> renderList(users) }
+                    it.data?.let { users -> renderList(users.categories) }
                     recyclerView.visibility = View.VISIBLE
                 }
                 Status.LOADING -> {

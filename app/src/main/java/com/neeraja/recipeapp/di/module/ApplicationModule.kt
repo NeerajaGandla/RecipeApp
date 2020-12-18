@@ -4,6 +4,9 @@ import com.neeraja.recipeapp.BuildConfig
 import com.neeraja.recipeapp.data.api.ApiHelper
 import com.neeraja.recipeapp.data.api.ApiHelperImpl
 import com.neeraja.recipeapp.data.api.ApiService
+import com.neeraja.recipeapp.data.model.CategoryJsonConverter
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -34,13 +37,19 @@ class ApplicationModule {
         .build()
 
     @Provides
+    fun provideMoshi(): Moshi {
+        return Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
+    }
+
+    @Provides
     @Singleton
     fun provideRetrofit(
         okHttpClient: OkHttpClient,
-        BASE_URL: String
+        BASE_URL: String,
+        moshi: Moshi
     ): Retrofit =
         Retrofit.Builder()
-            .addConverterFactory(MoshiConverterFactory.create())
+            .addConverterFactory(MoshiConverterFactory.create(moshi))
             .baseUrl(BASE_URL)
             .client(okHttpClient).build()
 
