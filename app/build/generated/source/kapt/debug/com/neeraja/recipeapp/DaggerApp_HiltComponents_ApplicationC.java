@@ -20,7 +20,7 @@ import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideBaseUrlFactory;
 import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideMoshiFactory;
 import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideOkHttpClientFactory;
 import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideRetrofitFactory;
-import com.neeraja.recipeapp.ui.view.activities.CategoryActivity;
+import com.neeraja.recipeapp.ui.view.activities.HomeActivity;
 import com.neeraja.recipeapp.ui.view.fragments.CategoriesFragment;
 import com.neeraja.recipeapp.ui.viewmodel.CategoryViewModel_AssistedFactory;
 import com.neeraja.recipeapp.ui.viewmodel.CategoryViewModel_AssistedFactory_Factory;
@@ -286,7 +286,7 @@ public final class DaggerApp_HiltComponents_ApplicationC extends App_HiltCompone
       }
 
       @Override
-      public void injectCategoryActivity(CategoryActivity arg0) {
+      public void injectHomeActivity(HomeActivity arg0) {
       }
 
       @Override
@@ -332,7 +332,7 @@ public final class DaggerApp_HiltComponents_ApplicationC extends App_HiltCompone
         }
 
         @Override
-        public void injectCategoriesFragment(CategoriesFragment categoriesFragment) {
+        public void injectCategoriesFragment(CategoriesFragment arg0) {
         }
 
         @Override

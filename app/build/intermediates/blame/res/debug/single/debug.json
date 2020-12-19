@@ -12,10 +12,6 @@
         "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/layout_activity_category.xml.flat",
-        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/layout/activity_category.xml"
-    },
-    {
         "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/drawable-anydpi_ic_favorites.xml.flat",
         "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/drawable-anydpi/ic_favorites.xml"
     },
@@ -64,8 +60,16 @@
         "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/drawable-anydpi/ic_bookmarks.xml"
     },
     {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/layout_activity_home.xml.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/layout/activity_home.xml"
+    },
+    {
         "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_favorites.png.flat",
         "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/drawable-hdpi/ic_favorites.png"
+    },
+    {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/drawable_splash_bg.png.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/drawable/splash_bg.png"
     },
     {
         "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/drawable_splash_img.png.flat",
@@ -78,6 +82,10 @@
     {
         "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_favorites.png.flat",
         "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/drawable-mdpi/ic_favorites.png"
+    },
+    {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/layout_activity_splash.xml.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/layout/activity_splash.xml"
     },
     {
         "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_bookmarks.png.flat",

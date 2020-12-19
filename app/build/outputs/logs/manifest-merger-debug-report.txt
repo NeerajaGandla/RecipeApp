@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:2:1-27:12
-INJECTED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:2:1-27:12
-INJECTED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:2:1-27:12
-INJECTED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:2:1-27:12
+ADDED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:2:1-29:12
+INJECTED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:2:1-29:12
+INJECTED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:2:1-29:12
+INJECTED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:2:1-29:12
 MERGED from [io.coil-kt:coil:1.1.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/e7acb9463c475848946f86a58f1c125b/jetified-coil-1.1.0/AndroidManifest.xml:2:1-9:12
 MERGED from [io.coil-kt:coil-base:1.1.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/5237a6c06e3787f35acc58b67157d00c/jetified-coil-base-1.1.0/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.fragment:fragment-ktx:1.1.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/a2bce8b7c11b9cd7c0f6a415a7c8a0b9/jetified-fragment-ktx-1.1.0/AndroidManifest.xml:17:1-24:12
@@ -63,20 +63,20 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/apple/.gradle/c
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/6f68534e742fee9d3b24c7be6c106962/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/e5ccbcd4c1e08d19ea487133f2cf0518/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.dagger:dagger-lint-aar:2.28] /Users/apple/.gradle/caches/transforms-2/files-2.1/7a924762e4f1616ed1adab74720e870c/jetified-dagger-lint-aar-2.28/AndroidManifest.xml:16:1-18:12
-INJECTED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:2:1-27:12
-INJECTED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:2:1-27:12
-INJECTED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:2:1-29:12
+INJECTED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:2:1-29:12
+INJECTED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:2:1-29:12
 	package
 		ADDED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:3:5-36
 		INJECTED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml
-		ADDED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:2:1-27:12
+		ADDED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:2:1-29:12
 		INJECTED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml
-		ADDED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:2:1-27:12
+		ADDED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:2:1-29:12
 		INJECTED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:2:11-69
@@ -89,7 +89,7 @@ ADDED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidMa
 	android:name
 		ADDED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:6:22-76
 application
-ADDED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:8:5-25:19
+ADDED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:8:5-27:19
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /Users/apple/.gradle/caches/transforms-2/files-2.1/de9f96ca56e6ce757252267d624d9ef5/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /Users/apple/.gradle/caches/transforms-2/files-2.1/de9f96ca56e6ce757252267d624d9ef5/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
 MERGED from [com.google.android.material:material:1.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/772d0d17fd9b5920bc8ae7360df9ea9b/material-1.0.0/AndroidManifest.xml:22:5-20
@@ -122,10 +122,10 @@ MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] /Users/apple/.gradle/ca
 		ADDED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:17:9-44
 	android:name
 		ADDED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:9:9-28
-activity#com.neeraja.recipeapp.ui.view.activities.CategoryActivity
-ADDED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:18:9-24:20
+activity#com.neeraja.recipeapp.ui.view.activities.SplashActivity
+ADDED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:18:9-25:20
 	android:name
-		ADDED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:18:19-70
+		ADDED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:18:19-68
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:19:13-23:29
 action#android.intent.action.MAIN
@@ -136,6 +136,10 @@ category#android.intent.category.LAUNCHER
 ADDED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:22:17-77
 	android:name
 		ADDED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:22:27-74
+activity#com.neeraja.recipeapp.ui.view.activities.HomeActivity
+ADDED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:26:9-69
+	android:name
+		ADDED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:26:19-66
 uses-sdk
 INJECTED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml
@@ -277,8 +281,8 @@ ADDED from [androidx.lifecycle:lifecycle-process:2.0.0] /Users/apple/.gradle/cac
 	android:name
 		ADDED from [androidx.lifecycle:lifecycle-process:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/27fea6d20a3a230d2dc0b3e87b1835b3/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:24:13-79
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-IMPLIED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:2:1-27:12 reason: dagger.lint has a targetSdkVersion < 4
+IMPLIED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:2:1-29:12 reason: dagger.lint has a targetSdkVersion < 4
 uses-permission#android.permission.READ_PHONE_STATE
-IMPLIED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:2:1-27:12 reason: dagger.lint has a targetSdkVersion < 4
+IMPLIED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:2:1-29:12 reason: dagger.lint has a targetSdkVersion < 4
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-IMPLIED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:2:1-27:12 reason: dagger.lint requested WRITE_EXTERNAL_STORAGE
+IMPLIED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:2:1-29:12 reason: dagger.lint requested WRITE_EXTERNAL_STORAGE

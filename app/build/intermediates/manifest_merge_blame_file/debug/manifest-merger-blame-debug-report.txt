@@ -21,7 +21,7 @@
 15    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 16
 17    <application
-17-->/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:8:5-25:19
+17-->/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:8:5-27:19
 18        android:name="com.neeraja.recipeapp.App"
 18-->/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:9:9-28
 19        android:allowBackup="true"
@@ -44,9 +44,9 @@
 28-->/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:16:9-40
 29        android:usesCleartextTraffic="true" >
 29-->/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:17:9-44
-30        <activity android:name="com.neeraja.recipeapp.ui.view.activities.CategoryActivity" >
-30-->/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:18:9-24:20
-30-->/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:18:19-70
+30        <activity android:name="com.neeraja.recipeapp.ui.view.activities.SplashActivity" >
+30-->/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:18:9-25:20
+30-->/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:18:19-68
 31            <intent-filter>
 31-->/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:19:13-23:29
 32                <action android:name="android.intent.action.MAIN" />
@@ -58,17 +58,20 @@
 34-->/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:22:27-74
 35            </intent-filter>
 36        </activity>
-37
-38        <provider
-38-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/27fea6d20a3a230d2dc0b3e87b1835b3/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:23:9-27:43
-39            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-39-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/27fea6d20a3a230d2dc0b3e87b1835b3/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:24:13-79
-40            android:authorities="com.neeraja.recipeapp.lifecycle-process"
-40-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/27fea6d20a3a230d2dc0b3e87b1835b3/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:25:13-69
-41            android:exported="false"
-41-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/27fea6d20a3a230d2dc0b3e87b1835b3/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:26:13-37
-42            android:multiprocess="true" />
-42-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/27fea6d20a3a230d2dc0b3e87b1835b3/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:27:13-40
-43    </application>
-44
-45</manifest>
+37        <activity android:name="com.neeraja.recipeapp.ui.view.activities.HomeActivity" />
+37-->/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:26:9-69
+37-->/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:26:19-66
+38
+39        <provider
+39-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/27fea6d20a3a230d2dc0b3e87b1835b3/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:23:9-27:43
+40            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+40-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/27fea6d20a3a230d2dc0b3e87b1835b3/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:24:13-79
+41            android:authorities="com.neeraja.recipeapp.lifecycle-process"
+41-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/27fea6d20a3a230d2dc0b3e87b1835b3/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:25:13-69
+42            android:exported="false"
+42-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/27fea6d20a3a230d2dc0b3e87b1835b3/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:26:13-37
+43            android:multiprocess="true" />
+43-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/27fea6d20a3a230d2dc0b3e87b1835b3/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:27:13-40
+44    </application>
+45
+46</manifest>
