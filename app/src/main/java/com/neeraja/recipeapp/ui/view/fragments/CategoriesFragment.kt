@@ -1,10 +1,13 @@
-package com.neeraja.recipeapp.ui.view
+package com.neeraja.recipeapp.ui.view.fragments
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,23 +16,25 @@ import com.neeraja.recipeapp.R
 import com.neeraja.recipeapp.data.model.Category
 import com.neeraja.recipeapp.ui.adapter.CategoryAdapter
 import com.neeraja.recipeapp.ui.viewmodel.CategoryViewModel
-import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.activity_category.*
+import kotlinx.android.synthetic.main.fragment_categories.*
 
-@AndroidEntryPoint
-class CategoryActivity : AppCompatActivity() {
-    private val categoryViewModel : CategoryViewModel by viewModels()
+class CategoriesFragment : Fragment() {
+    private val categoryViewModel: CategoryViewModel by viewModels()
     private lateinit var adapter: CategoryAdapter
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_category)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        val view = inflater.inflate(R.layout.fragment_categories, container, false)
         setupUI()
         setupObserver()
+        return view
     }
 
     private fun setupUI() {
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager = LinearLayoutManager(activity)
         adapter = CategoryAdapter(arrayListOf())
         recyclerView.addItemDecoration(
             DividerItemDecoration(
@@ -41,7 +46,7 @@ class CategoryActivity : AppCompatActivity() {
     }
 
     private fun setupObserver() {
-        categoryViewModel.categories.observe(this, Observer {
+        categoryViewModel.categories.observe(viewLifecycleOwner, Observer {
             when (it.status) {
                 Status.SUCCESS -> {
                     progressBar.visibility = View.GONE
@@ -55,7 +60,7 @@ class CategoryActivity : AppCompatActivity() {
                 Status.ERROR -> {
                     //Handle Error
                     progressBar.visibility = View.GONE
-                    Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
+                    Toast.makeText(activity, it.message, Toast.LENGTH_LONG).show()
                 }
             }
         })
@@ -65,5 +70,4 @@ class CategoryActivity : AppCompatActivity() {
         adapter.addData(users)
         adapter.notifyDataSetChanged()
     }
-
 }

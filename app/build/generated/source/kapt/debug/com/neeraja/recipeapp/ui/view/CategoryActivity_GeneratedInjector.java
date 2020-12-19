@@ -1,5 +1,7 @@
 package com.neeraja.recipeapp.ui.view;
 
+import com.neeraja.recipeapp.ui.view.activities.CategoryActivity;
+
 import dagger.hilt.InstallIn;
 import dagger.hilt.android.components.ActivityComponent;
 import dagger.hilt.codegen.OriginatingElement;

@@ -20,7 +20,7 @@ import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideBaseUrlFactory;
 import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideMoshiFactory;
 import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideOkHttpClientFactory;
 import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideRetrofitFactory;
-import com.neeraja.recipeapp.ui.view.CategoryActivity;
+import com.neeraja.recipeapp.ui.view.activities.CategoryActivity;
 import com.neeraja.recipeapp.ui.viewmodel.CategoryViewModel_AssistedFactory;
 import com.neeraja.recipeapp.ui.viewmodel.CategoryViewModel_AssistedFactory_Factory;
 import com.neeraja.recipeapp.utils.NetworkHelper;
