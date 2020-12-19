@@ -21,6 +21,7 @@ import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideMoshiFactory;
 import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideOkHttpClientFactory;
 import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideRetrofitFactory;
 import com.neeraja.recipeapp.ui.view.activities.CategoryActivity;
+import com.neeraja.recipeapp.ui.view.fragments.CategoriesFragment;
 import com.neeraja.recipeapp.ui.viewmodel.CategoryViewModel_AssistedFactory;
 import com.neeraja.recipeapp.ui.viewmodel.CategoryViewModel_AssistedFactory_Factory;
 import com.neeraja.recipeapp.utils.NetworkHelper;
@@ -328,6 +329,10 @@ public final class DaggerApp_HiltComponents_ApplicationC extends App_HiltCompone
 
         private ViewModelProvider.Factory getProvideFactory() {
           return ViewModelFactoryModules_FragmentModule_ProvideFactoryFactory.provideFactory(fragment, ApplicationContextModule_ProvideApplicationFactory.provideApplication(DaggerApp_HiltComponents_ApplicationC.this.applicationContextModule), ActivityCImpl.this.getMapOfStringAndProviderOfViewModelAssistedFactoryOf());
+        }
+
+        @Override
+        public void injectCategoriesFragment(CategoriesFragment categoriesFragment) {
         }
 
         @Override

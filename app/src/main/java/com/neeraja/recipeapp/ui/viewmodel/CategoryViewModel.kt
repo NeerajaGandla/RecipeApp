@@ -16,8 +16,7 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
 import kotlinx.coroutines.launch
 import java.lang.reflect.Type
-
-class CategoryViewModel @ViewModelInject constructor(
+ class CategoryViewModel @ViewModelInject constructor(
     private val categoryRepository: CategoryRepository,
     private val networkHelper: NetworkHelper
 ) : ViewModel() {

@@ -27,7 +27,7 @@
         android:testOnly="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true" >
-        <activity android:name="com.neeraja.recipeapp.ui.view.CategoryActivity" >
+        <activity android:name="com.neeraja.recipeapp.ui.view.activities.CategoryActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

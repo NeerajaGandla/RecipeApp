@@ -2,7 +2,8 @@ package com.neeraja.recipeapp;
 
 import androidx.hilt.lifecycle.ViewModelFactoryModules;
 import com.neeraja.recipeapp.di.module.ApplicationModule;
-import com.neeraja.recipeapp.ui.view.CategoryActivity_GeneratedInjector;
+import com.neeraja.recipeapp.ui.view.activities.CategoryActivity_GeneratedInjector;
+import com.neeraja.recipeapp.ui.view.fragments.CategoriesFragment_GeneratedInjector;
 import com.neeraja.recipeapp.ui.viewmodel.CategoryViewModel_HiltModule;
 import dagger.Binds;
 import dagger.Component;
@@ -164,7 +165,8 @@ public final class App_HiltComponents {
       }
   )
   @FragmentScoped
-  public abstract static class FragmentC implements FragmentComponent,
+  public abstract static class FragmentC implements CategoriesFragment_GeneratedInjector,
+      FragmentComponent,
       DefaultViewModelFactories.FragmentEntryPoint,
       ViewComponentManager.ViewWithFragmentComponentBuilderEntryPoint,
       GeneratedComponent {

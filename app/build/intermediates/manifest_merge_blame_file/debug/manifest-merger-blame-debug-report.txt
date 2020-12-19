@@ -44,9 +44,9 @@
 28-->/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:16:9-40
 29        android:usesCleartextTraffic="true" >
 29-->/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:17:9-44
-30        <activity android:name="com.neeraja.recipeapp.ui.view.CategoryActivity" >
+30        <activity android:name="com.neeraja.recipeapp.ui.view.activities.CategoryActivity" >
 30-->/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:18:9-24:20
-30-->/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:18:19-59
+30-->/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:18:19-70
 31            <intent-filter>
 31-->/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:19:13-23:29
 32                <action android:name="android.intent.action.MAIN" />
