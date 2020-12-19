@@ -1,7 +1,9 @@
-package com.neeraja.recipeapp.data.model
+package com.neeraja.recipeapp.data.model.db
 
+import androidx.room.Entity
 import com.squareup.moshi.Json
 
+@Entity(tableName = "categories")
 data class Category(
     @Json(name = "idCategory")
     val id: String,

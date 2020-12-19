@@ -1,6 +1,6 @@
 package com.neeraja.recipeapp.data.repository;
 
-import com.neeraja.recipeapp.data.api.ApiHelper;
+import com.neeraja.recipeapp.data.remote.ApiHelper;
 import dagger.internal.Factory;
 import javax.annotation.Generated;
 import javax.inject.Provider;

@@ -1,6 +1,6 @@
 package com.neeraja.recipeapp.di.module;
 
-import com.neeraja.recipeapp.data.api.ApiService;
+import com.neeraja.recipeapp.data.remote.ApiService;
 import dagger.internal.Factory;
 import dagger.internal.Preconditions;
 import javax.annotation.Generated;

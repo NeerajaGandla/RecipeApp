@@ -6,17 +6,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mindorks.framework.mvvm.utils.Resource
-import com.neeraja.recipeapp.data.model.CategoriesResponse
-import com.neeraja.recipeapp.data.model.Category
-import com.neeraja.recipeapp.data.model.CategoryJsonConverter
+import com.neeraja.recipeapp.data.model.api.CategoriesResponse
 import com.neeraja.recipeapp.data.repository.CategoryRepository
 import com.neeraja.recipeapp.utils.NetworkHelper
-import com.squareup.moshi.JsonAdapter
-import com.squareup.moshi.Moshi
-import com.squareup.moshi.Types
 import kotlinx.coroutines.launch
-import java.lang.reflect.Type
- class CategoryViewModel @ViewModelInject constructor(
+
+class CategoryViewModel @ViewModelInject constructor(
     private val categoryRepository: CategoryRepository,
     private val networkHelper: NetworkHelper
 ) : ViewModel() {

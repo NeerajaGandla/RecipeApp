@@ -1,4 +1,4 @@
-package com.neeraja.recipeapp.data.api;
+package com.neeraja.recipeapp.data.remote;
 
 import dagger.internal.Factory;
 import javax.annotation.Generated;
@@ -12,7 +12,7 @@ import javax.inject.Provider;
     "unchecked",
     "rawtypes"
 })
-public final class ApiHelperImpl_Factory implements Factory<ApiHelperImpl> {
+public final class ApiHelperImpl_Factory implements Factory<AppApiHelper> {
   private final Provider<ApiService> apiServiceProvider;
 
   public ApiHelperImpl_Factory(Provider<ApiService> apiServiceProvider) {
@@ -20,7 +20,7 @@ public final class ApiHelperImpl_Factory implements Factory<ApiHelperImpl> {
   }
 
   @Override
-  public ApiHelperImpl get() {
+  public AppApiHelper get() {
     return newInstance(apiServiceProvider.get());
   }
 
@@ -28,7 +28,7 @@ public final class ApiHelperImpl_Factory implements Factory<ApiHelperImpl> {
     return new ApiHelperImpl_Factory(apiServiceProvider);
   }
 
-  public static ApiHelperImpl newInstance(ApiService apiService) {
-    return new ApiHelperImpl(apiService);
+  public static AppApiHelper newInstance(ApiService apiService) {
+    return new AppApiHelper(apiService);
   }
 }

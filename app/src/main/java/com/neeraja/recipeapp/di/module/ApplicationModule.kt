@@ -1,10 +1,9 @@
 package com.neeraja.recipeapp.di.module
 
 import com.neeraja.recipeapp.BuildConfig
-import com.neeraja.recipeapp.data.api.ApiHelper
-import com.neeraja.recipeapp.data.api.ApiHelperImpl
-import com.neeraja.recipeapp.data.api.ApiService
-import com.neeraja.recipeapp.data.model.CategoryJsonConverter
+import com.neeraja.recipeapp.data.remote.ApiHelper
+import com.neeraja.recipeapp.data.remote.AppApiHelper
+import com.neeraja.recipeapp.data.remote.ApiService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -59,5 +58,5 @@ class ApplicationModule {
 
     @Provides
     @Singleton
-    fun provideApiHelper(apiHelper: ApiHelperImpl): ApiHelper = apiHelper
+    fun provideApiHelper(apiHelper: AppApiHelper): ApiHelper = apiHelper
 }

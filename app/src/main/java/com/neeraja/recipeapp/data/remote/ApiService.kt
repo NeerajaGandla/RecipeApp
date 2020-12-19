@@ -1,7 +1,6 @@
-package com.neeraja.recipeapp.data.api
+package com.neeraja.recipeapp.data.remote
 
-import com.neeraja.recipeapp.data.model.CategoriesResponse
-import com.neeraja.recipeapp.data.model.Category
+import com.neeraja.recipeapp.data.model.api.CategoriesResponse
 import retrofit2.Response
 import retrofit2.http.GET
 

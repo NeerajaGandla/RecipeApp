@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.neeraja.recipeapp.R
-import com.neeraja.recipeapp.data.model.Category
+import com.neeraja.recipeapp.data.model.db.Category
 import kotlinx.android.synthetic.main.category_item_layout.view.*
 
 class CategoryAdapter(

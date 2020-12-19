@@ -9,9 +9,9 @@ import androidx.hilt.lifecycle.ViewModelFactoryModules_ActivityModule_ProvideFac
 import androidx.hilt.lifecycle.ViewModelFactoryModules_FragmentModule_ProvideFactoryFactory;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
-import com.neeraja.recipeapp.data.api.ApiHelper;
-import com.neeraja.recipeapp.data.api.ApiHelperImpl;
-import com.neeraja.recipeapp.data.api.ApiService;
+import com.neeraja.recipeapp.data.remote.ApiHelper;
+import com.neeraja.recipeapp.data.remote.AppApiHelper;
+import com.neeraja.recipeapp.data.remote.ApiService;
 import com.neeraja.recipeapp.data.repository.CategoryRepository;
 import com.neeraja.recipeapp.di.module.ApplicationModule;
 import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideApiHelperFactory;
@@ -123,8 +123,8 @@ public final class DaggerApp_HiltComponents_ApplicationC extends App_HiltCompone
     return (ApiService) local;
   }
 
-  private ApiHelperImpl getApiHelperImpl() {
-    return new ApiHelperImpl(getApiService());
+  private AppApiHelper getApiHelperImpl() {
+    return new AppApiHelper(getApiService());
   }
 
   private ApiHelper getApiHelper() {

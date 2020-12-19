@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mindorks.framework.mvvm.utils.Status
 import com.neeraja.recipeapp.R
-import com.neeraja.recipeapp.data.model.Category
+import com.neeraja.recipeapp.data.model.db.Category
 import com.neeraja.recipeapp.ui.adapter.CategoryAdapter
 import com.neeraja.recipeapp.ui.viewmodel.CategoryViewModel
 import dagger.hilt.android.AndroidEntryPoint
