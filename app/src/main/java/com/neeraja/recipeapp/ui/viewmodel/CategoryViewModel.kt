@@ -20,6 +20,7 @@ import java.lang.reflect.Type
     private val categoryRepository: CategoryRepository,
     private val networkHelper: NetworkHelper
 ) : ViewModel() {
+
     private val _categories = MutableLiveData<Resource<CategoriesResponse>>()
 
     val categories: LiveData<Resource<CategoriesResponse>>

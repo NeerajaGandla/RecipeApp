@@ -10,6 +10,7 @@ import androidx.activity.viewModels
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mindorks.framework.mvvm.utils.Status
@@ -24,8 +25,7 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class CategoriesFragment : Fragment() {
-
-    private val categoryViewModel by activityViewModels<CategoryViewModel>()
+    private lateinit var categoryViewModel : CategoryViewModel
     private lateinit var adapter: CategoryAdapter
 
     override fun onCreateView(
@@ -39,6 +39,7 @@ class CategoriesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        categoryViewModel = ViewModelProvider(requireActivity()).get(CategoryViewModel::class.java)
         setupUI()
         setupObserver()
     }

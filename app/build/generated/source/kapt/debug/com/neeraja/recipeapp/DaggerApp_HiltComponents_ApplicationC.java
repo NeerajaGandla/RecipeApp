@@ -286,7 +286,7 @@ public final class DaggerApp_HiltComponents_ApplicationC extends App_HiltCompone
       }
 
       @Override
-      public void injectCategoryActivity(CategoryActivity categoryActivity) {
+      public void injectCategoryActivity(CategoryActivity arg0) {
       }
 
       @Override
