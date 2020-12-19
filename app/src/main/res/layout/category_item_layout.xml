@@ -41,7 +41,7 @@
             android:id="@+id/textViewDescription"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif"
+            android:fontFamily="monospace"
             android:padding="5dp"
             android:maxLines="2"
             android:ellipsize="end"
