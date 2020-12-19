@@ -26,12 +26,14 @@ MERGED from [androidx.hilt:hilt-common:1.0.0-alpha01] /Users/apple/.gradle/cache
 MERGED from [com.google.dagger:hilt-android:2.28-alpha] /Users/apple/.gradle/caches/transforms-2/files-2.1/09ca32c6b9530b89586b7e9aefd58c9f/jetified-hilt-android-2.28-alpha/AndroidManifest.xml:16:1-19:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/405c54cc7109ff0083585c7324d8bd18/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-fragment:2.3.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/2fe0d0a738c93a8805b173c021239a70/navigation-fragment-2.3.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.room:room-rxjava2:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/e76e297af0beb2badc150d324e5db002/room-rxjava2-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/f072786671fac0c8e8f2b5f2b33208fb/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment:1.2.4] /Users/apple/.gradle/caches/transforms-2/files-2.1/b3a414bd1e8e5fb351c223ea8a44d4e3/fragment-1.2.4/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigation:navigation-runtime:2.3.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/c705ea53e0dd0e01dc49ca02efd21d8b/navigation-runtime-2.3.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.1.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/32e10dcf86f241527483f176d199d814/jetified-activity-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.media:media:1.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/25cd7e2ef3b97436f230a7cbfe19fb8e/media-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/5e756a4bcc8e032982ee44971cc84fe8/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.room:room-runtime:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/2bc0fbd20019c16d47a051cf37846468/room-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/994de7d0ce317329396f9fa93a509a13/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/7248173fb794f93e6df6c4309820ac61/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/f4fc97a7471ede3a8e46b685f864252c/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
@@ -59,6 +61,8 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/
 MERGED from [androidx.print:print:1.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/0b30f8576aa198046c1d60b6f47f7849/print-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/45f9994f4ec9d876534ad56f9230abcd/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.exifinterface:exifinterface:1.3.1] /Users/apple/.gradle/caches/transforms-2/files-2.1/5eb640dd34670943a9cfa88bd0367ab1/exifinterface-1.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.sqlite:sqlite-framework:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/df2565212d56cf4a87c1c87fb91bba4c/sqlite-framework-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/0c7c2d637c60c17e8919dd0268199b0f/sqlite-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/37db4782df2b75b2251a54c69093a33a/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/6f68534e742fee9d3b24c7be6c106962/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/e5ccbcd4c1e08d19ea487133f2cf0518/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
@@ -188,6 +192,8 @@ MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/apple/.gradle/cache
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/405c54cc7109ff0083585c7324d8bd18/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.navigation:navigation-fragment:2.3.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/2fe0d0a738c93a8805b173c021239a70/navigation-fragment-2.3.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.navigation:navigation-fragment:2.3.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/2fe0d0a738c93a8805b173c021239a70/navigation-fragment-2.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-rxjava2:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/e76e297af0beb2badc150d324e5db002/room-rxjava2-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.room:room-rxjava2:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/e76e297af0beb2badc150d324e5db002/room-rxjava2-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/f072786671fac0c8e8f2b5f2b33208fb/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/f072786671fac0c8e8f2b5f2b33208fb/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.2.4] /Users/apple/.gradle/caches/transforms-2/files-2.1/b3a414bd1e8e5fb351c223ea8a44d4e3/fragment-1.2.4/AndroidManifest.xml:20:5-22:41
@@ -200,6 +206,8 @@ MERGED from [androidx.media:media:1.0.0] /Users/apple/.gradle/caches/transforms-
 MERGED from [androidx.media:media:1.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/25cd7e2ef3b97436f230a7cbfe19fb8e/media-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/5e756a4bcc8e032982ee44971cc84fe8/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/5e756a4bcc8e032982ee44971cc84fe8/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.room:room-runtime:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/2bc0fbd20019c16d47a051cf37846468/room-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.room:room-runtime:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/2bc0fbd20019c16d47a051cf37846468/room-runtime-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/994de7d0ce317329396f9fa93a509a13/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/994de7d0ce317329396f9fa93a509a13/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/7248173fb794f93e6df6c4309820ac61/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
@@ -254,6 +262,10 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/apple/.gradle/cach
 MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/45f9994f4ec9d876534ad56f9230abcd/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.exifinterface:exifinterface:1.3.1] /Users/apple/.gradle/caches/transforms-2/files-2.1/5eb640dd34670943a9cfa88bd0367ab1/exifinterface-1.3.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.exifinterface:exifinterface:1.3.1] /Users/apple/.gradle/caches/transforms-2/files-2.1/5eb640dd34670943a9cfa88bd0367ab1/exifinterface-1.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.sqlite:sqlite-framework:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/df2565212d56cf4a87c1c87fb91bba4c/sqlite-framework-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/df2565212d56cf4a87c1c87fb91bba4c/sqlite-framework-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/0c7c2d637c60c17e8919dd0268199b0f/sqlite-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/0c7c2d637c60c17e8919dd0268199b0f/sqlite-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/37db4782df2b75b2251a54c69093a33a/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/37db4782df2b75b2251a54c69093a33a/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/6f68534e742fee9d3b24c7be6c106962/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:20:5-22:41

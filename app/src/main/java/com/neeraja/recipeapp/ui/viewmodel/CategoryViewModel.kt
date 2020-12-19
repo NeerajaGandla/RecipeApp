@@ -6,13 +6,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mindorks.framework.mvvm.utils.Resource
+import com.neeraja.recipeapp.data.AppDataManager
 import com.neeraja.recipeapp.data.model.api.CategoriesResponse
 import com.neeraja.recipeapp.data.repository.CategoryRepository
 import com.neeraja.recipeapp.utils.NetworkHelper
 import kotlinx.coroutines.launch
 
 class CategoryViewModel @ViewModelInject constructor(
-    private val categoryRepository: CategoryRepository,
+    private val dataManager: AppDataManager,
     private val networkHelper: NetworkHelper
 ) : ViewModel() {
 
@@ -29,7 +30,7 @@ class CategoryViewModel @ViewModelInject constructor(
         viewModelScope.launch {
             _categories.postValue(Resource.loading(null))
             if (networkHelper.isNetworkConnected()) {
-                categoryRepository.getCategories().let {
+                dataManager.getCategories().let {
                     if (it.isSuccessful) {
                         _categories.postValue(Resource.success(it.body()))
                     } else _categories.postValue(Resource.error(it.errorBody().toString(), null))

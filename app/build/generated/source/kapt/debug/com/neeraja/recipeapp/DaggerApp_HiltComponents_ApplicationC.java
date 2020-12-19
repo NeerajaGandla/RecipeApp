@@ -2,6 +2,7 @@ package com.neeraja.recipeapp;
 
 import android.app.Activity;
 import android.app.Service;
+import android.content.Context;
 import android.view.View;
 import androidx.fragment.app.Fragment;
 import androidx.hilt.lifecycle.ViewModelAssistedFactory;
@@ -9,14 +10,21 @@ import androidx.hilt.lifecycle.ViewModelFactoryModules_ActivityModule_ProvideFac
 import androidx.hilt.lifecycle.ViewModelFactoryModules_FragmentModule_ProvideFactoryFactory;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
+import com.neeraja.recipeapp.data.AppDataManager;
+import com.neeraja.recipeapp.data.local.AppDatabase;
+import com.neeraja.recipeapp.data.local.AppDbHelper;
+import com.neeraja.recipeapp.data.local.DbHelper;
 import com.neeraja.recipeapp.data.remote.ApiHelper;
-import com.neeraja.recipeapp.data.remote.AppApiHelper;
 import com.neeraja.recipeapp.data.remote.ApiService;
-import com.neeraja.recipeapp.data.repository.CategoryRepository;
+import com.neeraja.recipeapp.data.remote.AppApiHelper;
 import com.neeraja.recipeapp.di.module.ApplicationModule;
 import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideApiHelperFactory;
 import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideApiServiceFactory;
+import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideAppDatabaseFactory;
 import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideBaseUrlFactory;
+import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideContextFactory;
+import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideDatabaseNameFactory;
+import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideDbHelperFactory;
 import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideMoshiFactory;
 import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideOkHttpClientFactory;
 import com.neeraja.recipeapp.di.module.ApplicationModule_ProvideRetrofitFactory;
@@ -65,6 +73,12 @@ public final class DaggerApp_HiltComponents_ApplicationC extends App_HiltCompone
   private volatile Object apiService = new MemoizedSentinel();
 
   private volatile Object apiHelper = new MemoizedSentinel();
+
+  private volatile Object context = new MemoizedSentinel();
+
+  private volatile Object appDatabase = new MemoizedSentinel();
+
+  private volatile Object dbHelper = new MemoizedSentinel();
 
   private volatile Object networkHelper = new MemoizedSentinel();
 
@@ -123,7 +137,7 @@ public final class DaggerApp_HiltComponents_ApplicationC extends App_HiltCompone
     return (ApiService) local;
   }
 
-  private AppApiHelper getApiHelperImpl() {
+  private AppApiHelper getAppApiHelper() {
     return new AppApiHelper(getApiService());
   }
 
@@ -133,12 +147,58 @@ public final class DaggerApp_HiltComponents_ApplicationC extends App_HiltCompone
       synchronized (local) {
         local = apiHelper;
         if (local instanceof MemoizedSentinel) {
-          local = ApplicationModule_ProvideApiHelperFactory.provideApiHelper(applicationModule, getApiHelperImpl());
+          local = ApplicationModule_ProvideApiHelperFactory.provideApiHelper(applicationModule, getAppApiHelper());
           apiHelper = DoubleCheck.reentrantCheck(apiHelper, local);
         }
       }
     }
     return (ApiHelper) local;
+  }
+
+  private Context getContext() {
+    Object local = context;
+    if (local instanceof MemoizedSentinel) {
+      synchronized (local) {
+        local = context;
+        if (local instanceof MemoizedSentinel) {
+          local = ApplicationModule_ProvideContextFactory.provideContext(applicationModule, ApplicationContextModule_ProvideApplicationFactory.provideApplication(applicationContextModule));
+          context = DoubleCheck.reentrantCheck(context, local);
+        }
+      }
+    }
+    return (Context) local;
+  }
+
+  private AppDatabase getAppDatabase() {
+    Object local = appDatabase;
+    if (local instanceof MemoizedSentinel) {
+      synchronized (local) {
+        local = appDatabase;
+        if (local instanceof MemoizedSentinel) {
+          local = ApplicationModule_ProvideAppDatabaseFactory.provideAppDatabase(applicationModule, ApplicationModule_ProvideDatabaseNameFactory.provideDatabaseName(applicationModule), getContext());
+          appDatabase = DoubleCheck.reentrantCheck(appDatabase, local);
+        }
+      }
+    }
+    return (AppDatabase) local;
+  }
+
+  private AppDbHelper getAppDbHelper() {
+    return new AppDbHelper(getAppDatabase());
+  }
+
+  private DbHelper getDbHelper() {
+    Object local = dbHelper;
+    if (local instanceof MemoizedSentinel) {
+      synchronized (local) {
+        local = dbHelper;
+        if (local instanceof MemoizedSentinel) {
+          local = ApplicationModule_ProvideDbHelperFactory.provideDbHelper(applicationModule, getAppDbHelper());
+          dbHelper = DoubleCheck.reentrantCheck(dbHelper, local);
+        }
+      }
+    }
+    return (DbHelper) local;
   }
 
   private NetworkHelper getNetworkHelper() {
@@ -241,7 +301,7 @@ public final class DaggerApp_HiltComponents_ApplicationC extends App_HiltCompone
     private final class ActivityCImpl extends App_HiltComponents.ActivityC {
       private final Activity activity;
 
-      private volatile Provider<CategoryRepository> categoryRepositoryProvider;
+      private volatile Provider<AppDataManager> appDataManagerProvider;
 
       private volatile Provider<CategoryViewModel_AssistedFactory> categoryViewModel_AssistedFactoryProvider;
 
@@ -249,21 +309,21 @@ public final class DaggerApp_HiltComponents_ApplicationC extends App_HiltCompone
         this.activity = activityParam;
       }
 
-      private CategoryRepository getCategoryRepository() {
-        return new CategoryRepository(DaggerApp_HiltComponents_ApplicationC.this.getApiHelper());
+      private AppDataManager getAppDataManager() {
+        return new AppDataManager(DaggerApp_HiltComponents_ApplicationC.this.getApiHelper(), DaggerApp_HiltComponents_ApplicationC.this.getDbHelper());
       }
 
-      private Provider<CategoryRepository> getCategoryRepositoryProvider() {
-        Object local = categoryRepositoryProvider;
+      private Provider<AppDataManager> getAppDataManagerProvider() {
+        Object local = appDataManagerProvider;
         if (local == null) {
           local = new SwitchingProvider<>(1);
-          categoryRepositoryProvider = (Provider<CategoryRepository>) local;
+          appDataManagerProvider = (Provider<AppDataManager>) local;
         }
-        return (Provider<CategoryRepository>) local;
+        return (Provider<AppDataManager>) local;
       }
 
       private CategoryViewModel_AssistedFactory getCategoryViewModel_AssistedFactory() {
-        return CategoryViewModel_AssistedFactory_Factory.newInstance(getCategoryRepositoryProvider(), DaggerApp_HiltComponents_ApplicationC.this.getNetworkHelperProvider());
+        return CategoryViewModel_AssistedFactory_Factory.newInstance(getAppDataManagerProvider(), DaggerApp_HiltComponents_ApplicationC.this.getNetworkHelperProvider());
       }
 
       private Provider<CategoryViewModel_AssistedFactory> getCategoryViewModel_AssistedFactoryProvider(
@@ -286,7 +346,7 @@ public final class DaggerApp_HiltComponents_ApplicationC extends App_HiltCompone
       }
 
       @Override
-      public void injectHomeActivity(HomeActivity arg0) {
+      public void injectHomeActivity(HomeActivity homeActivity) {
       }
 
       @Override
@@ -332,7 +392,7 @@ public final class DaggerApp_HiltComponents_ApplicationC extends App_HiltCompone
         }
 
         @Override
-        public void injectCategoriesFragment(CategoriesFragment arg0) {
+        public void injectCategoriesFragment(CategoriesFragment categoriesFragment) {
         }
 
         @Override
@@ -404,8 +464,8 @@ public final class DaggerApp_HiltComponents_ApplicationC extends App_HiltCompone
             case 0: // com.neeraja.recipeapp.ui.viewmodel.CategoryViewModel_AssistedFactory 
             return (T) ActivityCImpl.this.getCategoryViewModel_AssistedFactory();
 
-            case 1: // com.neeraja.recipeapp.data.repository.CategoryRepository 
-            return (T) ActivityCImpl.this.getCategoryRepository();
+            case 1: // com.neeraja.recipeapp.data.AppDataManager 
+            return (T) ActivityCImpl.this.getAppDataManager();
 
             default: throw new AssertionError(id);
           }

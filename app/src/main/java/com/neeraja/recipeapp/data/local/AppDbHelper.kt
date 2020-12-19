@@ -1,5 +1,7 @@
 package com.neeraja.recipeapp.data.local
 
-class AppDbHelper : DbHelper {
+import javax.inject.Inject
+
+class AppDbHelper @Inject constructor(private val appDatabase: AppDatabase): DbHelper {
 
 }
