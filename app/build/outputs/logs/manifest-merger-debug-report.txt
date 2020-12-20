@@ -113,9 +113,9 @@ MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] /Users/apple/.gradle/ca
 	android:label
 		ADDED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:12:9-41
 	android:roundIcon
-		ADDED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:14:9-54
+		ADDED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:14:9-58
 	android:icon
-		ADDED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:11:9-43
+		ADDED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:11:9-47
 	android:allowBackup
 		ADDED from /Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/AndroidManifest.xml:10:9-35
 	android:theme

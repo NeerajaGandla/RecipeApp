@@ -8,80 +8,60 @@
         "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/navigation/navigation.xml"
     },
     {
-        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
-    },
-    {
         "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/drawable-anydpi_ic_favorites.xml.flat",
         "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/drawable-anydpi/ic_favorites.xml"
-    },
-    {
-        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
         "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_bookmarks.png.flat",
         "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/drawable-mdpi/ic_bookmarks.png"
     },
     {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_app_launcher_foreground.png.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/mipmap-xhdpi/ic_app_launcher_foreground.png"
+    },
+    {
         "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
         "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_app_launcher.png.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/mipmap-xhdpi/ic_app_launcher.png"
     },
     {
         "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/xml_network_security_config.xml.flat",
-        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/xml/network_security_config.xml"
-    },
-    {
         "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
-    },
-    {
-        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_bookmarks.png.flat",
-        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/drawable-hdpi/ic_bookmarks.png"
     },
     {
         "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/layout_fragment_categories.xml.flat",
         "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/layout/fragment_categories.xml"
     },
     {
-        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_bookmarks.png.flat",
-        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/drawable-xhdpi/ic_bookmarks.png"
-    },
-    {
         "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_favorites.png.flat",
         "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/drawable-xhdpi/ic_favorites.png"
     },
     {
-        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/drawable-anydpi_ic_bookmarks.xml.flat",
-        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/drawable-anydpi/ic_bookmarks.xml"
-    },
-    {
-        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/layout_activity_home.xml.flat",
-        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/layout/activity_home.xml"
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_app_launcher.png.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/mipmap-xxhdpi/ic_app_launcher.png"
     },
     {
         "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_favorites.png.flat",
         "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/drawable-hdpi/ic_favorites.png"
     },
     {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_app_launcher_round.png.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/mipmap-mdpi/ic_app_launcher_round.png"
+    },
+    {
         "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/drawable_splash_bg.png.flat",
         "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/drawable/splash_bg.png"
     },
     {
-        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/drawable_splash_img.png.flat",
-        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/drawable/splash_img.png"
-    },
-    {
-        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml"
-    },
-    {
-        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_favorites.png.flat",
-        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/drawable-mdpi/ic_favorites.png"
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_app_launcher_round.png.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/mipmap-xhdpi/ic_app_launcher_round.png"
     },
     {
         "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/layout_activity_splash.xml.flat",
@@ -96,8 +76,8 @@
         "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_app_launcher.png.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/mipmap-xxxhdpi/ic_app_launcher.png"
     },
     {
         "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
@@ -108,20 +88,108 @@
         "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/drawable-xxhdpi/ic_favorites.png"
     },
     {
-        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/layout_category_item_layout.xml.flat",
-        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/layout/category_item_layout.xml"
-    },
-    {
         "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
         "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_app_launcher.png.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/mipmap-hdpi/ic_app_launcher.png"
+    },
+    {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_app_launcher_round.png.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/mipmap-hdpi/ic_app_launcher_round.png"
+    },
+    {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_app_launcher_round.xml.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/mipmap-anydpi-v26/ic_app_launcher_round.xml"
     },
     {
         "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",
         "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_app_launcher_foreground.png.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/mipmap-mdpi/ic_app_launcher_foreground.png"
+    },
+    {
         "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/drawable_ic_launcher_background.xml.flat",
         "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_app_launcher.png.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/mipmap-mdpi/ic_app_launcher.png"
+    },
+    {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_app_launcher_foreground.png.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/mipmap-xxxhdpi/ic_app_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/xml_network_security_config.xml.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/xml/network_security_config.xml"
+    },
+    {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_app_launcher_foreground.png.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/mipmap-xxhdpi/ic_app_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_bookmarks.png.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/drawable-hdpi/ic_bookmarks.png"
+    },
+    {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_bookmarks.png.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/drawable-xhdpi/ic_bookmarks.png"
+    },
+    {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/drawable-anydpi_ic_bookmarks.xml.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/drawable-anydpi/ic_bookmarks.xml"
+    },
+    {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/layout_activity_home.xml.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/layout/activity_home.xml"
+    },
+    {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_app_launcher.xml.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/mipmap-anydpi-v26/ic_app_launcher.xml"
+    },
+    {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/drawable_splash_img.png.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/drawable/splash_img.png"
+    },
+    {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_app_launcher_foreground.png.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/mipmap-hdpi/ic_app_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_app_launcher_round.png.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/mipmap-xxhdpi/ic_app_launcher_round.png"
+    },
+    {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_favorites.png.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/drawable-mdpi/ic_favorites.png"
+    },
+    {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/layout_category_item_layout.xml.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/layout/category_item_layout.xml"
+    },
+    {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_app_launcher_round.png.flat",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/mipmap-xxxhdpi/ic_app_launcher_round.png"
     },
     {
         "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",
