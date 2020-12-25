@@ -10,8 +10,18 @@ class AppDataManager @Inject constructor(
     private val apiHelper: ApiHelper,
     private val dbHelper: DbHelper
 ) : DataManager {
-    override suspend fun getCategories(): Response<CategoriesResponse> {
-        return apiHelper.getCategories()
-    }
 
+    override suspend fun getCategories(): Response<CategoriesResponse> {
+        val cachedCategories = dbHelper.getCategories()
+        if (!cachedCategories.isNullOrEmpty()) {
+            return Response.success(CategoriesResponse(cachedCategories))
+        }
+        val apiResponse = apiHelper.getCategories()
+        if (apiResponse.isSuccessful) {
+            dbHelper.saveCategories((apiResponse.body() as CategoriesResponse).categories)
+        } else {
+            return Response.error(apiResponse.errorBody(), null)
+        }
+        return Response.success(CategoriesResponse(dbHelper.getCategories()))
+    }
 }

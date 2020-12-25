@@ -53,3 +53,7 @@ q
 Aapp/src/main/java/com/neeraja/recipeapp/data/local/AppDbHelper.kt,f/5/f56ee6cacf451cdb5a3ab0e62472a29108edea0d
 
 Oapp/src/main/java/com/neeraja/recipeapp/ui/view/fragments/CategoriesFragment.kt,6/3/638f7bf9fd3267fe6e2db8ede42fd699e71759ff
+X
+(gradle/wrapper/gradle-wrapper.properties,f/b/fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
+A
+gradle.properties,2/a/2afbb999f001938c88fa43fc2ef52abf0f8213e4

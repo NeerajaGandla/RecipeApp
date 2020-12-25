@@ -10,8 +10,8 @@ import io.reactivex.Single
 @Dao
 interface CategoryDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(options: List<Category?>?)
+    fun insertAll(options: List<Category>)
 
     @Query("SELECT * FROM categories")
-    fun loadAll(): Single<List<Category?>?>?
+    fun loadAll(): List<Category>
 }

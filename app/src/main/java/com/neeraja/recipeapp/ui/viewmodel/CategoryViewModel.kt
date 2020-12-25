@@ -10,6 +10,7 @@ import com.neeraja.recipeapp.data.AppDataManager
 import com.neeraja.recipeapp.data.model.api.CategoriesResponse
 import com.neeraja.recipeapp.data.repository.CategoryRepository
 import com.neeraja.recipeapp.utils.NetworkHelper
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class CategoryViewModel @ViewModelInject constructor(
@@ -30,10 +31,17 @@ class CategoryViewModel @ViewModelInject constructor(
         viewModelScope.launch {
             _categories.postValue(Resource.loading(null))
             if (networkHelper.isNetworkConnected()) {
-                dataManager.getCategories().let {
-                    if (it.isSuccessful) {
-                        _categories.postValue(Resource.success(it.body()))
-                    } else _categories.postValue(Resource.error(it.errorBody().toString(), null))
+                launch(Dispatchers.IO) {
+                    dataManager.getCategories().let {
+                        if (it.isSuccessful) {
+                            _categories.postValue(Resource.success(it.body()))
+                        } else _categories.postValue(
+                            Resource.error(
+                                it.errorBody().toString(),
+                                null
+                            )
+                        )
+                    }
                 }
             } else _categories.postValue(Resource.error("No Internet Connection", null))
         }
