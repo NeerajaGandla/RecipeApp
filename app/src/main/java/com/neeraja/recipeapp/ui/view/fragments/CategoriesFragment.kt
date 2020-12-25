@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -13,23 +14,26 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.mindorks.framework.mvvm.utils.Status
 import com.neeraja.recipeapp.R
 import com.neeraja.recipeapp.data.model.db.Category
+import com.neeraja.recipeapp.databinding.FragmentCategoriesBinding
 import com.neeraja.recipeapp.ui.adapter.CategoryAdapter
 import com.neeraja.recipeapp.ui.viewmodel.CategoryViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_categories.*
 
 @AndroidEntryPoint
 class CategoriesFragment : Fragment() {
-    private lateinit var categoryViewModel : CategoryViewModel
+    private lateinit var categoryViewModel: CategoryViewModel
     private lateinit var adapter: CategoryAdapter
+    private lateinit var binding: FragmentCategoriesBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_categories, container, false)
-        return view
+        binding = DataBindingUtil.inflate<FragmentCategoriesBinding>(
+            inflater,
+            R.layout.fragment_categories, container, false
+        )
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -40,32 +44,32 @@ class CategoriesFragment : Fragment() {
     }
 
     private fun setupUI() {
-        recyclerView.layoutManager = LinearLayoutManager(activity)
+        binding.recyclerView.layoutManager = LinearLayoutManager(activity)
         adapter = CategoryAdapter(arrayListOf())
-        recyclerView.addItemDecoration(
+        binding.recyclerView.addItemDecoration(
             DividerItemDecoration(
-                recyclerView.context,
-                (recyclerView.layoutManager as LinearLayoutManager).orientation
+                binding.recyclerView.context,
+                (binding.recyclerView.layoutManager as LinearLayoutManager).orientation
             )
         )
-        recyclerView.adapter = adapter
+        binding.recyclerView.adapter = adapter
     }
 
     private fun setupObserver() {
         categoryViewModel.categories.observe(viewLifecycleOwner, Observer {
             when (it.status) {
                 Status.SUCCESS -> {
-                    progressBar.visibility = View.GONE
+                    binding.progressBar.visibility = View.GONE
                     it.data?.let { users -> renderList(users.categories) }
-                    recyclerView.visibility = View.VISIBLE
+                    binding.recyclerView.visibility = View.VISIBLE
                 }
                 Status.LOADING -> {
-                    progressBar.visibility = View.VISIBLE
-                    recyclerView.visibility = View.GONE
+                    binding.progressBar.visibility = View.VISIBLE
+                    binding.recyclerView.visibility = View.GONE
                 }
                 Status.ERROR -> {
                     //Handle Error
-                    progressBar.visibility = View.GONE
+                    binding.progressBar.visibility = View.GONE
                     Toast.makeText(activity, it.message, Toast.LENGTH_LONG).show()
                 }
             }
