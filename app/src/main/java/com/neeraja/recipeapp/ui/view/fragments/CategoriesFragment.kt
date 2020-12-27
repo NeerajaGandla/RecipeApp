@@ -48,8 +48,8 @@ class CategoriesFragment : Fragment() {
         adapter = CategoryAdapter(arrayListOf())
         binding.recyclerView.addItemDecoration(
             DividerItemDecoration(
-                binding.recyclerView.context,
-                (binding.recyclerView.layoutManager as LinearLayoutManager).orientation
+                context,
+                DividerItemDecoration.VERTICAL
             )
         )
         binding.recyclerView.adapter = adapter

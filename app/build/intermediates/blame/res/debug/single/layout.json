@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/category_item_layout.xml",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/layout/category_item_layout.xml"
+    },
+    {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_categories.xml",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/layout/fragment_categories.xml"
+    },
+    {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_home.xml",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/layout/activity_home.xml"
+    },
+    {
+        "merged": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_splash.xml",
+        "source": "/Users/apple/Neeraja/AndroidProjects/RecipeApp/app/src/main/res/layout/activity_splash.xml"
+    }
+]
