@@ -4,6 +4,8 @@ import android.database.Cursor;
 import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
 import androidx.room.RoomSQLiteQuery;
+import androidx.room.util.CursorUtil;
+import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
 import com.neeraja.recipeapp.data.model.db.Category;
 import java.lang.Override;
@@ -11,21 +13,19 @@ import java.lang.String;
 import java.lang.SuppressWarnings;
 import java.util.ArrayList;
 import java.util.List;
-import javax.annotation.Generated;
 
-@Generated("androidx.room.RoomProcessor")
-@SuppressWarnings("unchecked")
+@SuppressWarnings({"unchecked", "deprecation"})
 public final class CategoryDao_Impl implements CategoryDao {
   private final RoomDatabase __db;
 
-  private final EntityInsertionAdapter __insertionAdapterOfCategory;
+  private final EntityInsertionAdapter<Category> __insertionAdapterOfCategory;
 
   public CategoryDao_Impl(RoomDatabase __db) {
     this.__db = __db;
     this.__insertionAdapterOfCategory = new EntityInsertionAdapter<Category>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR REPLACE INTO `categories`(`id`,`categoryName`,`thumbnail`,`description`) VALUES (?,?,?,?)";
+        return "INSERT OR REPLACE INTO `categories` (`id`,`categoryName`,`thumbnail`,`description`) VALUES (?,?,?,?)";
       }
 
       @Override
@@ -55,7 +55,8 @@ public final class CategoryDao_Impl implements CategoryDao {
   }
 
   @Override
-  public void insertAll(List<Category> options) {
+  public void insertAll(final List<Category> options) {
+    __db.assertNotSuspendingTransaction();
     __db.beginTransaction();
     try {
       __insertionAdapterOfCategory.insert(options);
@@ -69,12 +70,13 @@ public final class CategoryDao_Impl implements CategoryDao {
   public List<Category> loadAll() {
     final String _sql = "SELECT * FROM categories";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
-    final Cursor _cursor = __db.query(_statement);
+    __db.assertNotSuspendingTransaction();
+    final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
     try {
-      final int _cursorIndexOfId = _cursor.getColumnIndexOrThrow("id");
-      final int _cursorIndexOfCategoryName = _cursor.getColumnIndexOrThrow("categoryName");
-      final int _cursorIndexOfThumbnail = _cursor.getColumnIndexOrThrow("thumbnail");
-      final int _cursorIndexOfDescription = _cursor.getColumnIndexOrThrow("description");
+      final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+      final int _cursorIndexOfCategoryName = CursorUtil.getColumnIndexOrThrow(_cursor, "categoryName");
+      final int _cursorIndexOfThumbnail = CursorUtil.getColumnIndexOrThrow(_cursor, "thumbnail");
+      final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
       final List<Category> _result = new ArrayList<Category>(_cursor.getCount());
       while(_cursor.moveToNext()) {
         final Category _item;

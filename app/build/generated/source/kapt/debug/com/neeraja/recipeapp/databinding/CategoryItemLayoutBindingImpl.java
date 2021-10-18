@@ -5,7 +5,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import android.view.View;
 @SuppressWarnings("unchecked")
-@javax.annotation.Generated("Android Data Binding")
 public class CategoryItemLayoutBindingImpl extends CategoryItemLayoutBinding  {
 
     @Nullable
@@ -46,7 +45,7 @@ public class CategoryItemLayoutBindingImpl extends CategoryItemLayoutBinding  {
     @Override
     public void invalidateAll() {
         synchronized(this) {
-                mDirtyFlags = 0x1L;
+                mDirtyFlags = 0x4L;
         }
         requestRebind();
     }
@@ -64,7 +63,28 @@ public class CategoryItemLayoutBindingImpl extends CategoryItemLayoutBinding  {
     @Override
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
+        if (BR.clickListener == variableId) {
+            setClickListener((android.view.View.OnClickListener) variable);
+        }
+        else if (BR.categoryId == variableId) {
+            setCategoryId((java.lang.String) variable);
+        }
+        else {
+            variableSet = false;
+        }
             return variableSet;
+    }
+
+    public void setClickListener(@Nullable android.view.View.OnClickListener ClickListener) {
+        this.mClickListener = ClickListener;
+        synchronized(this) {
+            mDirtyFlags |= 0x1L;
+        }
+        notifyPropertyChanged(BR.clickListener);
+        super.requestRebind();
+    }
+    public void setCategoryId(@Nullable java.lang.String CategoryId) {
+        this.mCategoryId = CategoryId;
     }
 
     @Override
@@ -81,14 +101,25 @@ public class CategoryItemLayoutBindingImpl extends CategoryItemLayoutBinding  {
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
+        android.view.View.OnClickListener clickListener = mClickListener;
+
+        if ((dirtyFlags & 0x5L) != 0) {
+        }
         // batch finished
+        if ((dirtyFlags & 0x5L) != 0) {
+            // api target 1
+
+            this.mboundView0.setOnClickListener(clickListener);
+        }
     }
     // Listener Stub Implementations
     // callback impls
     // dirty flag
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
-        flag 0 (0x1L): null
+        flag 0 (0x1L): clickListener
+        flag 1 (0x2L): categoryId
+        flag 2 (0x3L): null
     flag mapping end*/
     //end
 }

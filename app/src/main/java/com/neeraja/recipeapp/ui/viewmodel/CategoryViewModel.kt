@@ -5,10 +5,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.mindorks.framework.mvvm.utils.Resource
+import com.neeraja.recipeapp.utils.Resource
 import com.neeraja.recipeapp.data.AppDataManager
 import com.neeraja.recipeapp.data.model.api.CategoriesResponse
-import com.neeraja.recipeapp.data.repository.CategoryRepository
 import com.neeraja.recipeapp.utils.NetworkHelper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -19,7 +18,6 @@ class CategoryViewModel @ViewModelInject constructor(
 ) : ViewModel() {
 
     private val _categories = MutableLiveData<Resource<CategoriesResponse>>()
-
     val categories: LiveData<Resource<CategoriesResponse>>
         get() = _categories
 

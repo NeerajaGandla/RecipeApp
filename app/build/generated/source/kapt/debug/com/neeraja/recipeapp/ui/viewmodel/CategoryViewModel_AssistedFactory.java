@@ -6,11 +6,9 @@ import androidx.lifecycle.SavedStateHandle;
 import com.neeraja.recipeapp.data.AppDataManager;
 import com.neeraja.recipeapp.utils.NetworkHelper;
 import java.lang.Override;
-import javax.annotation.Generated;
 import javax.inject.Inject;
 import javax.inject.Provider;
 
-@Generated("androidx.hilt.AndroidXHiltProcessor")
 public final class CategoryViewModel_AssistedFactory implements ViewModelAssistedFactory<CategoryViewModel> {
   private final Provider<AppDataManager> dataManager;
 
@@ -25,7 +23,7 @@ public final class CategoryViewModel_AssistedFactory implements ViewModelAssiste
 
   @Override
   @NonNull
-  public CategoryViewModel create(@NonNull SavedStateHandle arg0) {
+  public CategoryViewModel create(SavedStateHandle handle) {
     return new CategoryViewModel(dataManager.get(), networkHelper.get());
   }
 }

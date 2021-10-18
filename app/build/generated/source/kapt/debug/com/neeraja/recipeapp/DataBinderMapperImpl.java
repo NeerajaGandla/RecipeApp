@@ -10,6 +10,8 @@ import com.neeraja.recipeapp.databinding.ActivityHomeBindingImpl;
 import com.neeraja.recipeapp.databinding.ActivitySplashBindingImpl;
 import com.neeraja.recipeapp.databinding.CategoryItemLayoutBindingImpl;
 import com.neeraja.recipeapp.databinding.FragmentCategoriesBindingImpl;
+import com.neeraja.recipeapp.databinding.FragmentFilterByTypeBindingImpl;
+import com.neeraja.recipeapp.databinding.MealItemLayoutBindingImpl;
 import java.lang.IllegalArgumentException;
 import java.lang.Integer;
 import java.lang.Object;
@@ -19,9 +21,7 @@ import java.lang.String;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import javax.annotation.Generated;
 
-@Generated("Android Data Binding")
 public class DataBinderMapperImpl extends DataBinderMapper {
   private static final int LAYOUT_ACTIVITYHOME = 1;
 
@@ -31,13 +31,19 @@ public class DataBinderMapperImpl extends DataBinderMapper {
 
   private static final int LAYOUT_FRAGMENTCATEGORIES = 4;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(4);
+  private static final int LAYOUT_FRAGMENTFILTERBYTYPE = 5;
+
+  private static final int LAYOUT_MEALITEMLAYOUT = 6;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(6);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.neeraja.recipeapp.R.layout.activity_home, LAYOUT_ACTIVITYHOME);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.neeraja.recipeapp.R.layout.activity_splash, LAYOUT_ACTIVITYSPLASH);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.neeraja.recipeapp.R.layout.category_item_layout, LAYOUT_CATEGORYITEMLAYOUT);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.neeraja.recipeapp.R.layout.fragment_categories, LAYOUT_FRAGMENTCATEGORIES);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.neeraja.recipeapp.R.layout.fragment_filter_by_type, LAYOUT_FRAGMENTFILTERBYTYPE);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.neeraja.recipeapp.R.layout.meal_item_layout, LAYOUT_MEALITEMLAYOUT);
   }
 
   @Override
@@ -72,6 +78,18 @@ public class DataBinderMapperImpl extends DataBinderMapper {
             return new FragmentCategoriesBindingImpl(component, view);
           }
           throw new IllegalArgumentException("The tag for fragment_categories is invalid. Received: " + tag);
+        }
+        case  LAYOUT_FRAGMENTFILTERBYTYPE: {
+          if ("layout/fragment_filter_by_type_0".equals(tag)) {
+            return new FragmentFilterByTypeBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for fragment_filter_by_type is invalid. Received: " + tag);
+        }
+        case  LAYOUT_MEALITEMLAYOUT: {
+          if ("layout/meal_item_layout_0".equals(tag)) {
+            return new MealItemLayoutBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for meal_item_layout is invalid. Received: " + tag);
         }
       }
     }
@@ -118,21 +136,26 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerBrLookup {
-    static final SparseArray<String> sKeys = new SparseArray<String>(1);
+    static final SparseArray<String> sKeys = new SparseArray<String>(4);
 
     static {
       sKeys.put(0, "_all");
+      sKeys.put(1, "categoryId");
+      sKeys.put(2, "clickListener");
+      sKeys.put(3, "mealId");
     }
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(4);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(6);
 
     static {
       sKeys.put("layout/activity_home_0", com.neeraja.recipeapp.R.layout.activity_home);
       sKeys.put("layout/activity_splash_0", com.neeraja.recipeapp.R.layout.activity_splash);
       sKeys.put("layout/category_item_layout_0", com.neeraja.recipeapp.R.layout.category_item_layout);
       sKeys.put("layout/fragment_categories_0", com.neeraja.recipeapp.R.layout.fragment_categories);
+      sKeys.put("layout/fragment_filter_by_type_0", com.neeraja.recipeapp.R.layout.fragment_filter_by_type);
+      sKeys.put("layout/meal_item_layout_0", com.neeraja.recipeapp.R.layout.meal_item_layout);
     }
   }
 }

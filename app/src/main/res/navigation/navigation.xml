@@ -9,5 +9,20 @@
         android:id="@+id/categoriesFragment"
         android:name="com.neeraja.recipeapp.ui.view.fragments.CategoriesFragment"
         android:label="fragment_categories"
-        tools:layout="@layout/fragment_categories" />
+        tools:layout="@layout/fragment_categories">
+        <action
+            android:id="@+id/action_categoriesFragment_to_filterByTypeFragment"
+            app:destination="@id/filterByTypeFragment">
+            <argument
+                android:name="category"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/filterByTypeFragment"
+        android:name="com.neeraja.recipeapp.ui.view.fragments.FilterByTypeFragment"
+        android:label="FilterByTypeFragment"
+        tools:layout="@layout/fragment_categories"/>
 </navigation>

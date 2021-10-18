@@ -1,4 +1,4 @@
-package com.mindorks.framework.mvvm.utils
+package com.neeraja.recipeapp.utils
 
 enum class Status {
     SUCCESS,

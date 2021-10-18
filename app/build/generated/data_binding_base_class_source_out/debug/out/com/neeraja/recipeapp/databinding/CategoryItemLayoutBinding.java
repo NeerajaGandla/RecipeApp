@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.neeraja.recipeapp.R;
@@ -24,12 +25,32 @@ public abstract class CategoryItemLayoutBinding extends ViewDataBinding {
   @NonNull
   public final TextView textViewTitle;
 
+  @Bindable
+  protected View.OnClickListener mClickListener;
+
+  @Bindable
+  protected String mCategoryId;
+
   protected CategoryItemLayoutBinding(Object _bindingComponent, View _root, int _localFieldCount,
       ImageView imageViewThumbNail, TextView textViewDescription, TextView textViewTitle) {
     super(_bindingComponent, _root, _localFieldCount);
     this.imageViewThumbNail = imageViewThumbNail;
     this.textViewDescription = textViewDescription;
     this.textViewTitle = textViewTitle;
+  }
+
+  public abstract void setClickListener(@Nullable View.OnClickListener clickListener);
+
+  @Nullable
+  public View.OnClickListener getClickListener() {
+    return mClickListener;
+  }
+
+  public abstract void setCategoryId(@Nullable String categoryId);
+
+  @Nullable
+  public String getCategoryId() {
+    return mCategoryId;
   }
 
   @NonNull

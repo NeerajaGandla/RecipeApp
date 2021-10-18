@@ -6,35 +6,36 @@ import android.content.ContextWrapper;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import androidx.annotation.CallSuper;
-import androidx.annotation.LayoutRes;
 import androidx.annotation.MainThread;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import dagger.hilt.android.internal.lifecycle.DefaultViewModelFactories;
 import dagger.hilt.android.internal.managers.FragmentComponentManager;
-import dagger.hilt.internal.GeneratedComponentManager;
+import dagger.hilt.internal.GeneratedComponentManagerHolder;
 import dagger.hilt.internal.Preconditions;
 import dagger.hilt.internal.UnsafeCasts;
 import java.lang.Object;
 import java.lang.Override;
-import javax.annotation.Generated;
+import java.lang.SuppressWarnings;
 
 /**
  * A generated base class to be extended by the @dagger.hilt.android.AndroidEntryPoint annotated class. If using the Gradle plugin, this is swapped as the base class via bytecode transformation.
  */
-@Generated("dagger.hilt.android.processor.internal.androidentrypoint.FragmentGenerator")
-public abstract class Hilt_CategoriesFragment extends Fragment implements GeneratedComponentManager<Object> {
+@SuppressWarnings("deprecation")
+public abstract class Hilt_CategoriesFragment extends Fragment implements GeneratedComponentManagerHolder {
   private ContextWrapper componentContext;
 
   private volatile FragmentComponentManager componentManager;
 
   private final Object componentManagerLock = new Object();
 
+  private boolean injected = false;
+
   Hilt_CategoriesFragment() {
     super();
   }
 
-  Hilt_CategoriesFragment(@LayoutRes int contentLayoutId) {
+  Hilt_CategoriesFragment(int contentLayoutId) {
     super(contentLayoutId);
   }
 
@@ -76,14 +77,15 @@ public abstract class Hilt_CategoriesFragment extends Fragment implements Genera
 
   @Override
   public final Object generatedComponent() {
-    return componentManager().generatedComponent();
+    return this.componentManager().generatedComponent();
   }
 
   protected FragmentComponentManager createComponentManager() {
     return new FragmentComponentManager(this);
   }
 
-  protected final FragmentComponentManager componentManager() {
+  @Override
+  public final FragmentComponentManager componentManager() {
     if (componentManager == null) {
       synchronized (componentManagerLock) {
         if (componentManager == null) {
@@ -95,15 +97,14 @@ public abstract class Hilt_CategoriesFragment extends Fragment implements Genera
   }
 
   protected void inject() {
-    ((CategoriesFragment_GeneratedInjector) generatedComponent()).injectCategoriesFragment(UnsafeCasts.<CategoriesFragment>unsafeCast(this));
+    if (!injected) {
+      injected = true;
+      ((CategoriesFragment_GeneratedInjector) this.generatedComponent()).injectCategoriesFragment(UnsafeCasts.<CategoriesFragment>unsafeCast(this));
+    }
   }
 
   @Override
   public ViewModelProvider.Factory getDefaultViewModelProviderFactory() {
-    ViewModelProvider.Factory factory = DefaultViewModelFactories.getFragmentFactory(this);
-    if (factory != null) {
-      return factory;
-    }
-    return super.getDefaultViewModelProviderFactory();
+    return DefaultViewModelFactories.getFragmentFactory(this);
   }
 }

@@ -4,6 +4,8 @@ import androidx.room.DatabaseConfiguration;
 import androidx.room.InvalidationTracker;
 import androidx.room.RoomOpenHelper;
 import androidx.room.RoomOpenHelper.Delegate;
+import androidx.room.RoomOpenHelper.ValidationResult;
+import androidx.room.util.DBUtil;
 import androidx.room.util.TableInfo;
 import androidx.room.util.TableInfo.Column;
 import androidx.room.util.TableInfo.ForeignKey;
@@ -14,18 +16,20 @@ import androidx.sqlite.db.SupportSQLiteOpenHelper.Callback;
 import androidx.sqlite.db.SupportSQLiteOpenHelper.Configuration;
 import com.neeraja.recipeapp.data.local.dao.CategoryDao;
 import com.neeraja.recipeapp.data.local.dao.CategoryDao_Impl;
-import java.lang.IllegalStateException;
+import com.neeraja.recipeapp.data.local.dao.MealDao;
+import com.neeraja.recipeapp.data.local.dao.MealDao_Impl;
 import java.lang.Override;
 import java.lang.String;
 import java.lang.SuppressWarnings;
 import java.util.HashMap;
 import java.util.HashSet;
-import javax.annotation.Generated;
+import java.util.Set;
 
-@Generated("androidx.room.RoomProcessor")
-@SuppressWarnings("unchecked")
+@SuppressWarnings({"unchecked", "deprecation"})
 public final class AppDatabase_Impl extends AppDatabase {
   private volatile CategoryDao _categoryDao;
+
+  private volatile MealDao _mealDao;
 
   @Override
   protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration configuration) {
@@ -33,13 +37,20 @@ public final class AppDatabase_Impl extends AppDatabase {
       @Override
       public void createAllTables(SupportSQLiteDatabase _db) {
         _db.execSQL("CREATE TABLE IF NOT EXISTS `categories` (`id` TEXT NOT NULL, `categoryName` TEXT NOT NULL, `thumbnail` TEXT NOT NULL, `description` TEXT NOT NULL, PRIMARY KEY(`id`))");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `meals` (`id` INTEGER NOT NULL, `mealName` TEXT NOT NULL, `mealImageUrl` TEXT NOT NULL, `category` TEXT, PRIMARY KEY(`id`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"fd4eddd8cfac5336b03a173bdcc7165d\")");
+        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'b6b39885af50058569fe57da8ef34340')");
       }
 
       @Override
       public void dropAllTables(SupportSQLiteDatabase _db) {
         _db.execSQL("DROP TABLE IF EXISTS `categories`");
+        _db.execSQL("DROP TABLE IF EXISTS `meals`");
+        if (mCallbacks != null) {
+          for (int _i = 0, _size = mCallbacks.size(); _i < _size; _i++) {
+            mCallbacks.get(_i).onDestructiveMigration(_db);
+          }
+        }
       }
 
       @Override
@@ -63,23 +74,47 @@ public final class AppDatabase_Impl extends AppDatabase {
       }
 
       @Override
-      protected void validateMigration(SupportSQLiteDatabase _db) {
+      public void onPreMigrate(SupportSQLiteDatabase _db) {
+        DBUtil.dropFtsSyncTriggers(_db);
+      }
+
+      @Override
+      public void onPostMigrate(SupportSQLiteDatabase _db) {
+      }
+
+      @Override
+      protected RoomOpenHelper.ValidationResult onValidateSchema(SupportSQLiteDatabase _db) {
         final HashMap<String, TableInfo.Column> _columnsCategories = new HashMap<String, TableInfo.Column>(4);
-        _columnsCategories.put("id", new TableInfo.Column("id", "TEXT", true, 1));
-        _columnsCategories.put("categoryName", new TableInfo.Column("categoryName", "TEXT", true, 0));
-        _columnsCategories.put("thumbnail", new TableInfo.Column("thumbnail", "TEXT", true, 0));
-        _columnsCategories.put("description", new TableInfo.Column("description", "TEXT", true, 0));
+        _columnsCategories.put("id", new TableInfo.Column("id", "TEXT", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsCategories.put("categoryName", new TableInfo.Column("categoryName", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsCategories.put("thumbnail", new TableInfo.Column("thumbnail", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsCategories.put("description", new TableInfo.Column("description", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysCategories = new HashSet<TableInfo.ForeignKey>(0);
         final HashSet<TableInfo.Index> _indicesCategories = new HashSet<TableInfo.Index>(0);
         final TableInfo _infoCategories = new TableInfo("categories", _columnsCategories, _foreignKeysCategories, _indicesCategories);
         final TableInfo _existingCategories = TableInfo.read(_db, "categories");
         if (! _infoCategories.equals(_existingCategories)) {
-          throw new IllegalStateException("Migration didn't properly handle categories(com.neeraja.recipeapp.data.model.db.Category).\n"
+          return new RoomOpenHelper.ValidationResult(false, "categories(com.neeraja.recipeapp.data.model.db.Category).\n"
                   + " Expected:\n" + _infoCategories + "\n"
                   + " Found:\n" + _existingCategories);
         }
+        final HashMap<String, TableInfo.Column> _columnsMeals = new HashMap<String, TableInfo.Column>(4);
+        _columnsMeals.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsMeals.put("mealName", new TableInfo.Column("mealName", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsMeals.put("mealImageUrl", new TableInfo.Column("mealImageUrl", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsMeals.put("category", new TableInfo.Column("category", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysMeals = new HashSet<TableInfo.ForeignKey>(0);
+        final HashSet<TableInfo.Index> _indicesMeals = new HashSet<TableInfo.Index>(0);
+        final TableInfo _infoMeals = new TableInfo("meals", _columnsMeals, _foreignKeysMeals, _indicesMeals);
+        final TableInfo _existingMeals = TableInfo.read(_db, "meals");
+        if (! _infoMeals.equals(_existingMeals)) {
+          return new RoomOpenHelper.ValidationResult(false, "meals(com.neeraja.recipeapp.data.model.db.Meal).\n"
+                  + " Expected:\n" + _infoMeals + "\n"
+                  + " Found:\n" + _existingMeals);
+        }
+        return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "fd4eddd8cfac5336b03a173bdcc7165d", "e2bf404588057e4282229c4f51e4b19b");
+    }, "b6b39885af50058569fe57da8ef34340", "7558cddf76a0177d5128dcaf2f9d3690");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(configuration.context)
         .name(configuration.name)
         .callback(_openCallback)
@@ -90,7 +125,9 @@ public final class AppDatabase_Impl extends AppDatabase {
 
   @Override
   protected InvalidationTracker createInvalidationTracker() {
-    return new InvalidationTracker(this, "categories");
+    final HashMap<String, String> _shadowTablesMap = new HashMap<String, String>(0);
+    HashMap<String, Set<String>> _viewTables = new HashMap<String, Set<String>>(0);
+    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "categories","meals");
   }
 
   @Override
@@ -100,6 +137,7 @@ public final class AppDatabase_Impl extends AppDatabase {
     try {
       super.beginTransaction();
       _db.execSQL("DELETE FROM `categories`");
+      _db.execSQL("DELETE FROM `meals`");
       super.setTransactionSuccessful();
     } finally {
       super.endTransaction();
@@ -120,6 +158,20 @@ public final class AppDatabase_Impl extends AppDatabase {
           _categoryDao = new CategoryDao_Impl(this);
         }
         return _categoryDao;
+      }
+    }
+  }
+
+  @Override
+  public MealDao mealsDao() {
+    if (_mealDao != null) {
+      return _mealDao;
+    } else {
+      synchronized(this) {
+        if(_mealDao == null) {
+          _mealDao = new MealDao_Impl(this);
+        }
+        return _mealDao;
       }
     }
   }

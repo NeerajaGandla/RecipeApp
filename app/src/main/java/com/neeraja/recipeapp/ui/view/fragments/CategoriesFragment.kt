@@ -10,13 +10,15 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.mindorks.framework.mvvm.utils.Status
+import com.neeraja.recipeapp.utils.Status
 import com.neeraja.recipeapp.R
 import com.neeraja.recipeapp.data.model.db.Category
 import com.neeraja.recipeapp.databinding.FragmentCategoriesBinding
 import com.neeraja.recipeapp.ui.adapter.CategoryAdapter
 import com.neeraja.recipeapp.ui.viewmodel.CategoryViewModel
+import com.neeraja.recipeapp.utils.GridSpacingItemDecoration
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -44,13 +46,10 @@ class CategoriesFragment : Fragment() {
     }
 
     private fun setupUI() {
-        binding.recyclerView.layoutManager = LinearLayoutManager(activity)
+        binding.recyclerView.layoutManager = GridLayoutManager(activity, 2)
         adapter = CategoryAdapter(arrayListOf())
         binding.recyclerView.addItemDecoration(
-            DividerItemDecoration(
-                context,
-                DividerItemDecoration.VERTICAL
-            )
+            GridSpacingItemDecoration(true, 2, 10, true)
         )
         binding.recyclerView.adapter = adapter
     }
