@@ -4,6 +4,7 @@ import com.neeraja.recipeapp.data.local.DbHelper
 import com.neeraja.recipeapp.data.model.api.CategoriesResponse
 import com.neeraja.recipeapp.data.model.api.MealsResponse
 import com.neeraja.recipeapp.data.remote.ApiHelper
+import com.neeraja.recipeapp.data.model.db.Meal
 import retrofit2.Response
 import javax.inject.Inject
 
@@ -39,5 +40,17 @@ class AppDataManager @Inject constructor(
             return Response.error(apiResponse.errorBody(), null)
         }
         return Response.success(MealsResponse(dbHelper.getMealsByCategory(category)))
+    }
+
+    override suspend fun isFavorite(meal: Meal): Int {
+        return dbHelper.isFavorite(meal)
+    }
+
+    override suspend fun setFavorite(meal: Meal) {
+        dbHelper.setFavorite(meal)
+    }
+
+    override suspend fun getFavoriteMeals(): Response<MealsResponse> {
+        return Response.success(MealsResponse(dbHelper.getFavoriteMeals()))
     }
 }

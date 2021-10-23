@@ -7,7 +7,7 @@ import com.neeraja.recipeapp.data.local.dao.MealDao
 import com.neeraja.recipeapp.data.model.db.Category
 import com.neeraja.recipeapp.data.model.db.Meal
 
-@Database(entities = [Category::class, Meal::class], version = 1)
+@Database(entities = [Category::class, Meal::class], version = 2, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun categoriesDao() : CategoryDao
     abstract fun mealsDao() : MealDao

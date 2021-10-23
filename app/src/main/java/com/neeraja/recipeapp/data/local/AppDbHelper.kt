@@ -26,4 +26,16 @@ class AppDbHelper @Inject constructor(val appDatabase: AppDatabase) : DbHelper {
         appDatabase.mealsDao().insertAll(_meals)
     }
 
+    override suspend fun isFavorite(meal: Meal): Int {
+        return appDatabase.mealsDao().isFavorite(meal.id)
+    }
+
+    override suspend fun setFavorite(meal: Meal) {
+        appDatabase.mealsDao().setFavorite(meal)
+    }
+
+    override suspend fun getFavoriteMeals() : List<Meal> {
+        return appDatabase.mealsDao().getFavoriteMeals()
+    }
+
 }

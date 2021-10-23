@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
+import androidx.databinding.Bindable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.neeraja.recipeapp.R;
@@ -28,6 +29,9 @@ public abstract class ActivityHomeBinding extends ViewDataBinding {
   @NonNull
   public final TextView tvTitle;
 
+  @Bindable
+  protected View.OnClickListener mFavoritesClickListener;
+
   protected ActivityHomeBinding(Object _bindingComponent, View _root, int _localFieldCount,
       ImageView ivBookmarks, ImageView ivWishlist, Toolbar toolBar, TextView tvTitle) {
     super(_bindingComponent, _root, _localFieldCount);
@@ -35,6 +39,14 @@ public abstract class ActivityHomeBinding extends ViewDataBinding {
     this.ivWishlist = ivWishlist;
     this.toolBar = toolBar;
     this.tvTitle = tvTitle;
+  }
+
+  public abstract void setFavoritesClickListener(
+      @Nullable View.OnClickListener favoritesClickListener);
+
+  @Nullable
+  public View.OnClickListener getFavoritesClickListener() {
+    return mFavoritesClickListener;
   }
 
   @NonNull

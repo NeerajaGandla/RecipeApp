@@ -1,5 +1,6 @@
 package com.neeraja.recipeapp.data.model.db
 
+import androidx.databinding.Bindable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
@@ -13,5 +14,6 @@ data class Meal(
         val mealName: String,
         @Json(name = "strMealThumb")
         val mealImageUrl: String,
-        val category: String?
+        val category: String?,
+        val isFavorite: Int = 0
 )

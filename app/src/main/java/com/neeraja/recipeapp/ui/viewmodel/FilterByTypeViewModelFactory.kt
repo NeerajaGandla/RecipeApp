@@ -6,10 +6,13 @@ import androidx.lifecycle.ViewModel
 import com.neeraja.recipeapp.data.AppDataManager
 import com.neeraja.recipeapp.utils.NetworkHelper
 
-class FilterByTypeViewModelFactory constructor(val dataManager: AppDataManager,
-                                               val networkHelper: NetworkHelper,
-                                               val category: String) : ViewModelProvider.Factory {
+class FilterByTypeViewModelFactory constructor(
+    val dataManager: AppDataManager,
+    val networkHelper: NetworkHelper,
+    val category: String?,
+    val isFavorites: Boolean
+) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return FilterByCategoryViewModel(dataManager , networkHelper , category) as T
+        return FilterByCategoryViewModel(dataManager, networkHelper, category, isFavorites) as T
     }
 }

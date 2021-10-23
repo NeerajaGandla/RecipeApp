@@ -11,33 +11,35 @@ import com.neeraja.recipeapp.data.model.db.Category
 import com.neeraja.recipeapp.data.model.db.Meal
 import com.neeraja.recipeapp.databinding.CategoryItemLayoutBinding
 import com.neeraja.recipeapp.databinding.MealItemLayoutBinding
+import com.neeraja.recipeapp.ui.view.clicklisteners.MealClickListener
 import com.neeraja.recipeapp.ui.view.fragments.CategoriesFragmentDirections
+import com.neeraja.recipeapp.ui.view.fragments.FilterByTypeFragmentDirections
 
 class MealAdapter(
-    private val meals: ArrayList<Meal>
+    private val meals: ArrayList<Meal>,
+    private val favoriteClickListener: FavoriteClickListener
 ) : RecyclerView.Adapter<MealAdapter.DataViewHolder>() {
+
+    interface FavoriteClickListener {
+        fun onFavoriteClick(meal: Meal)
+    }
 
     inner class DataViewHolder(val binding: MealItemLayoutBinding)
         : RecyclerView.ViewHolder(binding.root) {
         init {
-            binding.setClickListener { view ->
-                navigateToMeal(binding.mealId, view)
+            binding.clickListener = View.OnClickListener { view ->
+                navigateToMeal(binding.meal?.id, view)
+            }
+            binding.favoriteClickListener = favoriteClickListener
+        }
+
+        private fun navigateToMeal(mealId: Int?, view: View) {
+            mealId?.let {
+                var action = FilterByTypeFragmentDirections.actionFilterByTypeFragmentToRecipeDetailFragment(mealId = mealId)
+                view.findNavController().navigate(action)
             }
         }
 
-        private fun navigateToMeal(mealId: String?, view: View) {
-//            var action = CategoriesFragmentDirections.actionCategoriesFragmentToFilterByTypeFragment(categoryId = categoryId)
-//            view.findNavController().navigate(action)
-        }
-
-        fun bind(meal: Meal) {
-            with(binding) {
-                mealId = meal.id.toString()
-                textViewTitle.text = meal.mealName
-                textViewDescription.text = meal.category
-                imageViewThumbNail.load(meal.mealImageUrl)
-            }
-        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DataViewHolder {
@@ -48,11 +50,16 @@ class MealAdapter(
 
     override fun getItemCount(): Int = meals.size
 
-    override fun onBindViewHolder(holder: DataViewHolder, position: Int) =
-        holder.bind(meals[position])
+    override fun onBindViewHolder(holder: DataViewHolder, position: Int) {
+        holder.binding.meal = meals[position]
+        holder.binding.executePendingBindings();
+    }
 
     fun addData(list: List<Meal>) {
         meals.addAll(list)
     }
 
+    fun clearData() {
+        meals.clear()
+    }
 }

@@ -14,10 +14,9 @@ public class ActivityHomeBindingImpl extends ActivityHomeBinding  {
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.toolBar, 1);
-        sViewsWithIds.put(R.id.tv_title, 2);
-        sViewsWithIds.put(R.id.iv_bookmarks, 3);
-        sViewsWithIds.put(R.id.iv_wishlist, 4);
+        sViewsWithIds.put(R.id.toolBar, 2);
+        sViewsWithIds.put(R.id.tv_title, 3);
+        sViewsWithIds.put(R.id.iv_bookmarks, 4);
     }
     // views
     @NonNull
@@ -32,11 +31,12 @@ public class ActivityHomeBindingImpl extends ActivityHomeBinding  {
     }
     private ActivityHomeBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.ImageView) bindings[3]
             , (android.widget.ImageView) bindings[4]
-            , (androidx.appcompat.widget.Toolbar) bindings[1]
-            , (android.widget.TextView) bindings[2]
+            , (android.widget.ImageView) bindings[1]
+            , (androidx.appcompat.widget.Toolbar) bindings[2]
+            , (android.widget.TextView) bindings[3]
             );
+        this.ivWishlist.setTag(null);
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);
         setRootTag(root);
@@ -47,7 +47,7 @@ public class ActivityHomeBindingImpl extends ActivityHomeBinding  {
     @Override
     public void invalidateAll() {
         synchronized(this) {
-                mDirtyFlags = 0x1L;
+                mDirtyFlags = 0x2L;
         }
         requestRebind();
     }
@@ -65,7 +65,22 @@ public class ActivityHomeBindingImpl extends ActivityHomeBinding  {
     @Override
     public boolean setVariable(int variableId, @Nullable Object variable)  {
         boolean variableSet = true;
+        if (BR.favoritesClickListener == variableId) {
+            setFavoritesClickListener((android.view.View.OnClickListener) variable);
+        }
+        else {
+            variableSet = false;
+        }
             return variableSet;
+    }
+
+    public void setFavoritesClickListener(@Nullable android.view.View.OnClickListener FavoritesClickListener) {
+        this.mFavoritesClickListener = FavoritesClickListener;
+        synchronized(this) {
+            mDirtyFlags |= 0x1L;
+        }
+        notifyPropertyChanged(BR.favoritesClickListener);
+        super.requestRebind();
     }
 
     @Override
@@ -82,14 +97,24 @@ public class ActivityHomeBindingImpl extends ActivityHomeBinding  {
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
+        android.view.View.OnClickListener favoritesClickListener = mFavoritesClickListener;
+
+        if ((dirtyFlags & 0x3L) != 0) {
+        }
         // batch finished
+        if ((dirtyFlags & 0x3L) != 0) {
+            // api target 1
+
+            this.ivWishlist.setOnClickListener(favoritesClickListener);
+        }
     }
     // Listener Stub Implementations
     // callback impls
     // dirty flag
     private  long mDirtyFlags = 0xffffffffffffffffL;
     /* flag mapping
-        flag 0 (0x1L): null
+        flag 0 (0x1L): favoritesClickListener
+        flag 1 (0x2L): null
     flag mapping end*/
     //end
 }

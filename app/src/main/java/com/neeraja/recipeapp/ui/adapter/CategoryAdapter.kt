@@ -15,8 +15,8 @@ class CategoryAdapter(
     private val users: ArrayList<Category>
 ) : RecyclerView.Adapter<CategoryAdapter.DataViewHolder>() {
 
-    inner class DataViewHolder(val binding: CategoryItemLayoutBinding)
-        : RecyclerView.ViewHolder(binding.root) {
+    inner class DataViewHolder(val binding: CategoryItemLayoutBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         init {
             binding.setClickListener { view ->
                 navigateToCategory(binding.categoryId, view)
@@ -24,7 +24,8 @@ class CategoryAdapter(
         }
 
         private fun navigateToCategory(categoryId: String?, view: View) {
-            var action = CategoriesFragmentDirections.actionCategoriesFragmentToFilterByTypeFragment(category = categoryId)
+            var action =
+                CategoriesFragmentDirections.actionCategoriesFragmentToFilterByTypeFragment(category = categoryId)
             view.findNavController().navigate(action)
         }
 

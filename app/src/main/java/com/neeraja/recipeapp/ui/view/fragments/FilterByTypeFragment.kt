@@ -26,18 +26,19 @@ import com.neeraja.recipeapp.ui.viewmodel.FilterByTypeViewModelFactory
 import com.neeraja.recipeapp.utils.GridSpacingItemDecoration
 import com.neeraja.recipeapp.utils.NetworkHelper
 
-
 @AndroidEntryPoint
-class FilterByTypeFragment : Fragment() {
+class FilterByTypeFragment : Fragment(), MealAdapter.FavoriteClickListener {
+
     @Inject
     lateinit var dataManager: AppDataManager
+
     @Inject
     lateinit var networkHelper: NetworkHelper
     private lateinit var adapter: MealAdapter
     private lateinit var binding: FragmentCategoriesBinding
-    private lateinit var category: String
+    private var category: String? = null
+    private var isFavorites: Boolean = false
     lateinit private var filterByCategoryViewModel: FilterByCategoryViewModel
-//    @Inject lateinit var viewModelFactory: FilterByCategoryViewModel.Factory
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -57,28 +58,35 @@ class FilterByTypeFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         if (arguments != null) {
-            category = arguments?.get("category") as String
-            val factory = FilterByTypeViewModelFactory(dataManager, networkHelper, category)
-            filterByCategoryViewModel = ViewModelProvider(
-                requireActivity(),
-                factory
-            ).get(FilterByCategoryViewModel::class.java)
+            category = FilterByTypeFragmentArgs.fromBundle(requireArguments()).category
+            isFavorites = FilterByTypeFragmentArgs.fromBundle(requireArguments()).isFavorites
         }
         setupUI()
-        setupObserver()
     }
 
     private fun setupUI() {
         binding.recyclerView.layoutManager = GridLayoutManager(activity, 2)
-        adapter = MealAdapter(arrayListOf())
+        adapter = MealAdapter(arrayListOf(), this)
         binding.recyclerView.addItemDecoration(
-            GridSpacingItemDecoration(true, 2, 10, true)
+            GridSpacingItemDecoration(true, 2, 20, true)
         )
         binding.recyclerView.adapter = adapter
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        val factory =
+            FilterByTypeViewModelFactory(dataManager, networkHelper, category, isFavorites)
+        filterByCategoryViewModel = ViewModelProvider(
+            this,
+            factory
+        ).get(FilterByCategoryViewModel::class.java)
+        setupObserver()
+    }
+
     private fun setupObserver() {
-        filterByCategoryViewModel.meals.observe(viewLifecycleOwner, Observer {
+        val observer = Observer {
             when (it.status) {
                 Status.SUCCESS -> {
                     binding.progressBar.visibility = View.GONE
@@ -97,11 +105,18 @@ class FilterByTypeFragment : Fragment() {
                     Toast.makeText(activity, it.message, Toast.LENGTH_LONG).show()
                 }
             }
-        })
+        }
+        filterByCategoryViewModel.meals.observe(viewLifecycleOwner, observer)
     }
 
     private fun renderList(meals: List<Meal>) {
+        println("Meals: " + meals.toString())
+        adapter.clearData()
         adapter.addData(meals)
         adapter.notifyDataSetChanged()
+    }
+
+    override fun onFavoriteClick(meal: Meal) {
+        filterByCategoryViewModel.onFavoriteClicked(meal)
     }
 }

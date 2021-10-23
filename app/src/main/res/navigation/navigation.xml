@@ -24,5 +24,36 @@
         android:id="@+id/filterByTypeFragment"
         android:name="com.neeraja.recipeapp.ui.view.fragments.FilterByTypeFragment"
         android:label="FilterByTypeFragment"
-        tools:layout="@layout/fragment_categories"/>
+        tools:layout="@layout/fragment_categories">
+        <argument
+            android:name="category"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="isFavorites"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_filterByTypeFragment_to_categoriesFragment"
+            app:destination="@id/categoriesFragment" />
+        <action
+            android:id="@+id/action_filterByTypeFragment_to_recipeDetailFragment"
+            app:destination="@id/recipeDetailFragment">
+            <argument
+                android:name="mealId"
+                android:defaultValue="0"
+                app:argType="integer" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/recipeDetailFragment"
+        android:name="com.neeraja.recipeapp.ui.view.fragments.RecipeDetailFragment"
+        android:label="recipe_detail_fragment"
+        tools:layout="@layout/recipe_detail_fragment">
+        <argument
+            android:name="mealId"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
 </navigation>

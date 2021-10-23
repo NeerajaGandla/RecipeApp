@@ -40,7 +40,7 @@ class CategoriesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        categoryViewModel = ViewModelProvider(requireActivity()).get(CategoryViewModel::class.java)
+        categoryViewModel = ViewModelProvider(this).get(CategoryViewModel::class.java)
         setupUI()
         setupObserver()
     }
@@ -49,7 +49,7 @@ class CategoriesFragment : Fragment() {
         binding.recyclerView.layoutManager = GridLayoutManager(activity, 2)
         adapter = CategoryAdapter(arrayListOf())
         binding.recyclerView.addItemDecoration(
-            GridSpacingItemDecoration(true, 2, 10, true)
+            GridSpacingItemDecoration(true, 2, 20, true)
         )
         binding.recyclerView.adapter = adapter
     }

@@ -1218,6 +1218,7 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable ic_bookmarks
+drawable ic_favorite_hollow
 drawable ic_favorites
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -1299,6 +1300,8 @@ id action_categoriesFragment_to_filterByTypeFragment
 id action_container
 id action_context_bar
 id action_divider
+id action_filterByTypeFragment_to_categoriesFragment
+id action_filterByTypeFragment_to_recipeDetailFragment
 id action_image
 id action_menu_divider
 id action_menu_presenter
@@ -1417,6 +1420,7 @@ id info
 id invisible
 id italic
 id item_touch_helper_previous_elevation
+id ivFavorite
 id iv_bookmarks
 id iv_wishlist
 id jumpToEnd
@@ -1472,6 +1476,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id ratio
+id recipeDetailFragment
 id rectangles
 id recyclerView
 id reverseSawtooth
@@ -1676,6 +1681,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout recipe_detail_fragment
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -1686,6 +1692,7 @@ mipmap ic_app_launcher_round
 mipmap ic_launcher
 mipmap ic_launcher_round
 navigation navigation
+string PORT_NUMBER
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description

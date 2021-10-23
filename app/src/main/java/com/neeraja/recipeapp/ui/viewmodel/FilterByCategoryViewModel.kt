@@ -4,50 +4,35 @@ import androidx.lifecycle.*
 import com.neeraja.recipeapp.utils.Resource
 import com.neeraja.recipeapp.data.AppDataManager
 import com.neeraja.recipeapp.data.model.api.MealsResponse
+import com.neeraja.recipeapp.data.model.db.Meal
 import com.neeraja.recipeapp.utils.NetworkHelper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import androidx.databinding.DataBindingUtil
-import com.squareup.inject.assisted.Assisted
-import com.squareup.inject.assisted.AssistedInject
 import androidx.hilt.lifecycle.ViewModelInject
 
 class FilterByCategoryViewModel @ViewModelInject constructor(
     val dataManager: AppDataManager,
     val networkHelper: NetworkHelper,
-    val category: String
+    val category: String?,
+    val isFavorites: Boolean
 ) : ViewModel() {
-
-//    @AssistedInject.Factory
-//    interface Factory {
-//        override fun create(category: String): FilterByCategoryViewModel
-//    }
-//
-//    companion object {
-//        fun provideFactory(
-//            assistedFactory: Factory,
-//            category: String
-//        ): ViewModelProvider.Factory = object : ViewModelProvider.Factory {
-//            override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-//                return assistedFactory.create(itemId) as T
-//            }
-//        }
-//    }
 
     private val _meals = MutableLiveData<Resource<MealsResponse>>()
     val meals: LiveData<Resource<MealsResponse>>
         get() = _meals
 
     init {
-        fetchMealsByCategory(category)
+        if (isFavorites) fetchFavorites()
+        else fetchMealsByCategory(category)
     }
 
-    private fun fetchMealsByCategory(category: String) {
+    fun fetchMealsByCategory(category: String?) {
         viewModelScope.launch {
             _meals.postValue(Resource.loading(null))
             if (networkHelper.isNetworkConnected()) {
                 launch(Dispatchers.IO) {
-                    dataManager.getMealsByCategory(category).let {
+                    dataManager.getMealsByCategory(category!!).let {
                         if (it.isSuccessful) {
                             _meals.postValue(Resource.success(it.body()))
                         } else _meals.postValue(
@@ -59,6 +44,47 @@ class FilterByCategoryViewModel @ViewModelInject constructor(
                     }
                 }
             } else _meals.postValue(Resource.error("No Internet Connection", null))
+        }
+    }
+
+    fun fetchFavorites() {
+        viewModelScope.launch {
+            _meals.postValue(Resource.loading(null))
+            if (networkHelper.isNetworkConnected()) {
+                launch(Dispatchers.IO) {
+                    dataManager.getFavoriteMeals().let {
+                        if (it.isSuccessful) {
+                            _meals.postValue(Resource.success(it.body()))
+                        } else _meals.postValue(
+                            Resource.error(
+                                it.errorBody().toString(),
+                                null
+                            )
+                        )
+                    }
+                }
+            } else _meals.postValue(Resource.error("No Internet Connection", null))
+        }
+    }
+
+
+    fun onFavoriteClicked(meal: Meal) {
+        viewModelScope.launch {
+            val job = launch(Dispatchers.IO) {
+                val isFavorite = dataManager.isFavorite(meal)
+                val _meal = meal.copy(
+                    isFavorite = when (isFavorite) {
+                        1 -> 0
+                        else -> 1
+                    }
+                )
+                dataManager.setFavorite(_meal)
+            }
+            job.join()
+            if (isFavorites)
+                fetchFavorites()
+            else
+                fetchMealsByCategory(category)
         }
     }
 }
