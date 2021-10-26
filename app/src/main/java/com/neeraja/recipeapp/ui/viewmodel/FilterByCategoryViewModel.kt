@@ -10,12 +10,16 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import androidx.databinding.DataBindingUtil
 import androidx.hilt.lifecycle.ViewModelInject
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class FilterByCategoryViewModel @ViewModelInject constructor(
+
+@HiltViewModel
+class FilterByCategoryViewModel @Inject constructor(
     val dataManager: AppDataManager,
     val networkHelper: NetworkHelper,
     val category: String?,
-    val isFavorites: Boolean
+    val isFavorites: String = "N"
 ) : ViewModel() {
 
     private val _meals = MutableLiveData<Resource<MealsResponse>>()
@@ -23,7 +27,7 @@ class FilterByCategoryViewModel @ViewModelInject constructor(
         get() = _meals
 
     init {
-        if (isFavorites) fetchFavorites()
+        if (isFavorites.equals("Y")) fetchFavorites()
         else fetchMealsByCategory(category)
     }
 
@@ -81,7 +85,7 @@ class FilterByCategoryViewModel @ViewModelInject constructor(
                 dataManager.setFavorite(_meal)
             }
             job.join()
-            if (isFavorites)
+            if (isFavorites.equals("Y"))
                 fetchFavorites()
             else
                 fetchMealsByCategory(category)

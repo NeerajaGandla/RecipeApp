@@ -8,6 +8,7 @@ import com.neeraja.recipeapp.R
 import com.neeraja.recipeapp.databinding.ActivityHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
 import android.view.View
+import androidx.navigation.Navigation
 
 @AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
@@ -24,7 +25,7 @@ class HomeActivity : AppCompatActivity() {
     private fun navigateToFavorites() {
         val navController = Navigation.findNavController(this, R.id.myNavHostFragment)
         val bundle = Bundle()
-        bundle.putBoolean("isFavorites", true)
+        bundle.putString("isFavorites", "Y")
         navController.navigate(R.id.filterByTypeFragment, bundle);
     }
 

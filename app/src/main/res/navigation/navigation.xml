@@ -32,8 +32,8 @@
             app:nullable="true" />
         <argument
             android:name="isFavorites"
-            android:defaultValue="false"
-            app:argType="boolean" />
+            android:defaultValue="N"
+            app:argType="string" />
         <action
             android:id="@+id/action_filterByTypeFragment_to_categoriesFragment"
             app:destination="@id/categoriesFragment" />

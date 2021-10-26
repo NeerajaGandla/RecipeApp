@@ -10,7 +10,7 @@ class FilterByTypeViewModelFactory constructor(
     val dataManager: AppDataManager,
     val networkHelper: NetworkHelper,
     val category: String?,
-    val isFavorites: Boolean
+    val isFavorites: String
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         return FilterByCategoryViewModel(dataManager, networkHelper, category, isFavorites) as T

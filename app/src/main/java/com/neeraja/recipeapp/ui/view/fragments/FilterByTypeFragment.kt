@@ -37,7 +37,7 @@ class FilterByTypeFragment : Fragment(), MealAdapter.FavoriteClickListener {
     private lateinit var adapter: MealAdapter
     private lateinit var binding: FragmentCategoriesBinding
     private var category: String? = null
-    private var isFavorites: Boolean = false
+    private var isFavorites: String = "N"
     lateinit private var filterByCategoryViewModel: FilterByCategoryViewModel
 
     override fun onCreateView(
@@ -76,8 +76,7 @@ class FilterByTypeFragment : Fragment(), MealAdapter.FavoriteClickListener {
     override fun onResume() {
         super.onResume()
 
-        val factory =
-            FilterByTypeViewModelFactory(dataManager, networkHelper, category, isFavorites)
+        val factory = FilterByTypeViewModelFactory(dataManager, networkHelper, category, isFavorites)
         filterByCategoryViewModel = ViewModelProvider(
             this,
             factory
@@ -86,7 +85,7 @@ class FilterByTypeFragment : Fragment(), MealAdapter.FavoriteClickListener {
     }
 
     private fun setupObserver() {
-        val observer = Observer {
+        filterByCategoryViewModel.meals.observe(viewLifecycleOwner, Observer {
             when (it.status) {
                 Status.SUCCESS -> {
                     binding.progressBar.visibility = View.GONE
@@ -105,8 +104,7 @@ class FilterByTypeFragment : Fragment(), MealAdapter.FavoriteClickListener {
                     Toast.makeText(activity, it.message, Toast.LENGTH_LONG).show()
                 }
             }
-        }
-        filterByCategoryViewModel.meals.observe(viewLifecycleOwner, observer)
+        })
     }
 
     private fun renderList(meals: List<Meal>) {
