@@ -18,6 +18,7 @@ class HomeActivity : AppCompatActivity() {
         val binding =
             DataBindingUtil.setContentView<ActivityHomeBinding>(this, R.layout.activity_home)
         binding.favoritesClickListener = View.OnClickListener {
+            println("favorites clicked")
             navigateToFavorites()
         }
     }

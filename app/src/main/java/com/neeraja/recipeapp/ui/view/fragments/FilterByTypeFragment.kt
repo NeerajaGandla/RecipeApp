@@ -20,6 +20,8 @@ import javax.inject.Inject
 import com.neeraja.recipeapp.R
 
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import com.neeraja.recipeapp.data.AppDataManager
 import com.neeraja.recipeapp.ui.viewmodel.FilterByTypeViewModelFactory
@@ -57,6 +59,8 @@ class FilterByTypeFragment : Fragment(), MealAdapter.FavoriteClickListener {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        val controller: NavController = Navigation.findNavController(view!!)
+        controller.popBackStack(R.id.recipeDetailFragment, true)
         if (arguments != null) {
             category = FilterByTypeFragmentArgs.fromBundle(requireArguments()).category
             isFavorites = FilterByTypeFragmentArgs.fromBundle(requireArguments()).isFavorites
@@ -85,7 +89,7 @@ class FilterByTypeFragment : Fragment(), MealAdapter.FavoriteClickListener {
     }
 
     private fun setupObserver() {
-        filterByCategoryViewModel.meals.observe(viewLifecycleOwner, Observer {
+        filterByCategoryViewModel._meals.observe(viewLifecycleOwner, Observer {
             when (it.status) {
                 Status.SUCCESS -> {
                     binding.progressBar.visibility = View.GONE

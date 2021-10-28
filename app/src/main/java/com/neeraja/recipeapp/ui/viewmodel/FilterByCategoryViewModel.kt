@@ -22,9 +22,7 @@ class FilterByCategoryViewModel @Inject constructor(
     val isFavorites: String = "N"
 ) : ViewModel() {
 
-    private val _meals = MutableLiveData<Resource<MealsResponse>>()
-    val meals: LiveData<Resource<MealsResponse>>
-        get() = _meals
+    val _meals = MutableLiveData<Resource<MealsResponse>>()
 
     init {
         if (isFavorites.equals("Y")) fetchFavorites()

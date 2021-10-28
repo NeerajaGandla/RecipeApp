@@ -6,7 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import com.neeraja.recipeapp.R
+
+import androidx.navigation.NavController
+
 
 class RecipeDetailFragment : Fragment() {
 
@@ -28,5 +32,4 @@ class RecipeDetailFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(RecipeDetailViewModel::class.java)
         // TODO: Use the ViewModel
     }
-
 }
