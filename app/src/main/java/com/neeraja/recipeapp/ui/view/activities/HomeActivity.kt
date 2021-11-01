@@ -27,6 +27,7 @@ class HomeActivity : AppCompatActivity() {
         val navController = Navigation.findNavController(this, R.id.myNavHostFragment)
         val bundle = Bundle()
         bundle.putString("isFavorites", "Y")
+        navController.popBackStack(R.id.filterByTypeFragment, true);
         navController.navigate(R.id.filterByTypeFragment, bundle);
     }
 

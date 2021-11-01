@@ -12,6 +12,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.hilt.lifecycle.ViewModelInject
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
+import kotlinx.coroutines.*
 
 
 @HiltViewModel
@@ -56,7 +57,9 @@ class FilterByCategoryViewModel @Inject constructor(
                 launch(Dispatchers.IO) {
                     dataManager.getFavoriteMeals().let {
                         if (it.isSuccessful) {
+                            println("Body: " + it.body().toString())
                             _meals.postValue(Resource.success(it.body()))
+                            println(_meals.getValue().toString())
                         } else _meals.postValue(
                             Resource.error(
                                 it.errorBody().toString(),
