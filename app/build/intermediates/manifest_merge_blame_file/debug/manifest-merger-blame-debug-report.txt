@@ -39,59 +39,58 @@
 23-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:14:9-58
 24        android:supportsRtl="true"
 24-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:15:9-35
-25        android:testOnly="true"
-26        android:theme="@style/AppTheme"
-26-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:16:9-40
-27        android:usesCleartextTraffic="true" >
-27-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:17:9-44
-28        <activity android:name="com.neeraja.recipeapp.ui.view.activities.SplashActivity" >
-28-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:18:9-25:20
-28-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:18:19-68
-29            <intent-filter>
-29-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:19:13-23:29
-30                <action android:name="android.intent.action.MAIN" />
-30-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:20:17-69
-30-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:20:25-66
-31
-32                <category android:name="android.intent.category.LAUNCHER" />
-32-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:22:17-77
-32-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:22:27-74
-33            </intent-filter>
-34        </activity>
-35        <activity android:name="com.neeraja.recipeapp.ui.view.activities.HomeActivity" />
-35-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:26:9-69
-35-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:26:19-66
-36
-37        <provider
-37-->[com.amitshekhar.android:debug-db:1.0.6] C:\Users\NEERAJA\.gradle\caches\transforms-3\1aa85dd29308f268479b194dd1b9a3d7\transformed\jetified-debug-db-1.0.6\AndroidManifest.xml:12:9-16:40
-38            android:name="com.amitshekhar.debug.DebugDBInitProvider"
-38-->[com.amitshekhar.android:debug-db:1.0.6] C:\Users\NEERAJA\.gradle\caches\transforms-3\1aa85dd29308f268479b194dd1b9a3d7\transformed\jetified-debug-db-1.0.6\AndroidManifest.xml:13:13-69
-39            android:authorities="com.neeraja.recipeapp.DebugDBInitProvider"
-39-->[com.amitshekhar.android:debug-db:1.0.6] C:\Users\NEERAJA\.gradle\caches\transforms-3\1aa85dd29308f268479b194dd1b9a3d7\transformed\jetified-debug-db-1.0.6\AndroidManifest.xml:14:13-71
-40            android:enabled="true"
-40-->[com.amitshekhar.android:debug-db:1.0.6] C:\Users\NEERAJA\.gradle\caches\transforms-3\1aa85dd29308f268479b194dd1b9a3d7\transformed\jetified-debug-db-1.0.6\AndroidManifest.xml:15:13-35
-41            android:exported="false" />
-41-->[com.amitshekhar.android:debug-db:1.0.6] C:\Users\NEERAJA\.gradle\caches\transforms-3\1aa85dd29308f268479b194dd1b9a3d7\transformed\jetified-debug-db-1.0.6\AndroidManifest.xml:16:13-37
-42
-43        <service
-43-->[androidx.room:room-runtime:2.2.5] C:\Users\NEERAJA\.gradle\caches\transforms-3\3052c2b9a43d8be132ee50c85d79566f\transformed\room-runtime-2.2.5\AndroidManifest.xml:25:9-28:40
-44            android:name="androidx.room.MultiInstanceInvalidationService"
-44-->[androidx.room:room-runtime:2.2.5] C:\Users\NEERAJA\.gradle\caches\transforms-3\3052c2b9a43d8be132ee50c85d79566f\transformed\room-runtime-2.2.5\AndroidManifest.xml:26:13-74
-45            android:directBootAware="true"
-45-->[androidx.room:room-runtime:2.2.5] C:\Users\NEERAJA\.gradle\caches\transforms-3\3052c2b9a43d8be132ee50c85d79566f\transformed\room-runtime-2.2.5\AndroidManifest.xml:27:13-43
-46            android:exported="false" />
-46-->[androidx.room:room-runtime:2.2.5] C:\Users\NEERAJA\.gradle\caches\transforms-3\3052c2b9a43d8be132ee50c85d79566f\transformed\room-runtime-2.2.5\AndroidManifest.xml:28:13-37
-47
-48        <provider
-48-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\424ecd08e70bd7b44aab5fff9ee3831e\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
-49            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-49-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\424ecd08e70bd7b44aab5fff9ee3831e\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
-50            android:authorities="com.neeraja.recipeapp.lifecycle-process"
-50-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\424ecd08e70bd7b44aab5fff9ee3831e\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
-51            android:exported="false"
-51-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\424ecd08e70bd7b44aab5fff9ee3831e\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
-52            android:multiprocess="true" />
-52-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\424ecd08e70bd7b44aab5fff9ee3831e\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
-53    </application>
-54
-55</manifest>
+25        android:theme="@style/AppTheme"
+25-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:16:9-40
+26        android:usesCleartextTraffic="true" >
+26-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:17:9-44
+27        <activity android:name="com.neeraja.recipeapp.ui.view.activities.SplashActivity" >
+27-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:18:9-25:20
+27-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:18:19-68
+28            <intent-filter>
+28-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:19:13-23:29
+29                <action android:name="android.intent.action.MAIN" />
+29-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:20:17-69
+29-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:20:25-66
+30
+31                <category android:name="android.intent.category.LAUNCHER" />
+31-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:22:17-77
+31-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:22:27-74
+32            </intent-filter>
+33        </activity>
+34        <activity android:name="com.neeraja.recipeapp.ui.view.activities.HomeActivity" />
+34-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:26:9-69
+34-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:26:19-66
+35
+36        <provider
+36-->[com.amitshekhar.android:debug-db:1.0.6] C:\Users\NEERAJA\.gradle\caches\transforms-3\1aa85dd29308f268479b194dd1b9a3d7\transformed\jetified-debug-db-1.0.6\AndroidManifest.xml:12:9-16:40
+37            android:name="com.amitshekhar.debug.DebugDBInitProvider"
+37-->[com.amitshekhar.android:debug-db:1.0.6] C:\Users\NEERAJA\.gradle\caches\transforms-3\1aa85dd29308f268479b194dd1b9a3d7\transformed\jetified-debug-db-1.0.6\AndroidManifest.xml:13:13-69
+38            android:authorities="com.neeraja.recipeapp.DebugDBInitProvider"
+38-->[com.amitshekhar.android:debug-db:1.0.6] C:\Users\NEERAJA\.gradle\caches\transforms-3\1aa85dd29308f268479b194dd1b9a3d7\transformed\jetified-debug-db-1.0.6\AndroidManifest.xml:14:13-71
+39            android:enabled="true"
+39-->[com.amitshekhar.android:debug-db:1.0.6] C:\Users\NEERAJA\.gradle\caches\transforms-3\1aa85dd29308f268479b194dd1b9a3d7\transformed\jetified-debug-db-1.0.6\AndroidManifest.xml:15:13-35
+40            android:exported="false" />
+40-->[com.amitshekhar.android:debug-db:1.0.6] C:\Users\NEERAJA\.gradle\caches\transforms-3\1aa85dd29308f268479b194dd1b9a3d7\transformed\jetified-debug-db-1.0.6\AndroidManifest.xml:16:13-37
+41
+42        <service
+42-->[androidx.room:room-runtime:2.2.5] C:\Users\NEERAJA\.gradle\caches\transforms-3\3052c2b9a43d8be132ee50c85d79566f\transformed\room-runtime-2.2.5\AndroidManifest.xml:25:9-28:40
+43            android:name="androidx.room.MultiInstanceInvalidationService"
+43-->[androidx.room:room-runtime:2.2.5] C:\Users\NEERAJA\.gradle\caches\transforms-3\3052c2b9a43d8be132ee50c85d79566f\transformed\room-runtime-2.2.5\AndroidManifest.xml:26:13-74
+44            android:directBootAware="true"
+44-->[androidx.room:room-runtime:2.2.5] C:\Users\NEERAJA\.gradle\caches\transforms-3\3052c2b9a43d8be132ee50c85d79566f\transformed\room-runtime-2.2.5\AndroidManifest.xml:27:13-43
+45            android:exported="false" />
+45-->[androidx.room:room-runtime:2.2.5] C:\Users\NEERAJA\.gradle\caches\transforms-3\3052c2b9a43d8be132ee50c85d79566f\transformed\room-runtime-2.2.5\AndroidManifest.xml:28:13-37
+46
+47        <provider
+47-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\424ecd08e70bd7b44aab5fff9ee3831e\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
+48            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+48-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\424ecd08e70bd7b44aab5fff9ee3831e\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
+49            android:authorities="com.neeraja.recipeapp.lifecycle-process"
+49-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\424ecd08e70bd7b44aab5fff9ee3831e\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
+50            android:exported="false"
+50-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\424ecd08e70bd7b44aab5fff9ee3831e\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
+51            android:multiprocess="true" />
+51-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\424ecd08e70bd7b44aab5fff9ee3831e\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
+52    </application>
+53
+54</manifest>

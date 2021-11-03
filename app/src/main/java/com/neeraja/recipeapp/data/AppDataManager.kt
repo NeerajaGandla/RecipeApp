@@ -3,6 +3,7 @@ package com.neeraja.recipeapp.data
 import com.neeraja.recipeapp.data.local.DbHelper
 import com.neeraja.recipeapp.data.model.api.CategoriesResponse
 import com.neeraja.recipeapp.data.model.api.MealsResponse
+import com.neeraja.recipeapp.data.model.api.RecipeResponse
 import com.neeraja.recipeapp.data.remote.ApiHelper
 import com.neeraja.recipeapp.data.model.db.Meal
 import retrofit2.Response
@@ -52,5 +53,15 @@ class AppDataManager @Inject constructor(
 
     override suspend fun getFavoriteMeals(): Response<MealsResponse> {
         return Response.success(MealsResponse(dbHelper.getFavoriteMeals()))
+    }
+
+    override suspend fun getRecipeDetails(idMeal: String): Response<RecipeResponse> {
+        val apiResponse = apiHelper.getRecipeDetails(idMeal)
+        if (apiResponse.isSuccessful) {
+            var mealsData = (apiResponse.body() as RecipeResponse).meals.toMutableList()
+            return Response.success(RecipeResponse(mealsData))
+        } else {
+            return Response.error(apiResponse.errorBody(), null)
+        }
     }
 }
