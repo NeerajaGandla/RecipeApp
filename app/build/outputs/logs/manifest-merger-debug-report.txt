@@ -32,11 +32,14 @@ MERGED from [androidx.navigation:navigation-fragment:2.3.5] C:\Users\NEERAJA\.gr
 MERGED from [androidx.room:room-rxjava2:2.2.5] C:\Users\NEERAJA\.gradle\caches\transforms-3\b391f50f9b37ddd824e7fd452efd157f\transformed\room-rxjava2-2.2.5\AndroidManifest.xml:17:1-24:12
 MERGED from [com.amitshekhar.android:debug-db-base:1.0.6] C:\Users\NEERAJA\.gradle\caches\transforms-3\130f6e5be86207920068794a1ce9b627\transformed\jetified-debug-db-base-1.0.6\AndroidManifest.xml:20:1-32:12
 MERGED from [androidx.room:room-runtime:2.2.5] C:\Users\NEERAJA\.gradle\caches\transforms-3\3052c2b9a43d8be132ee50c85d79566f\transformed\room-runtime-2.2.5\AndroidManifest.xml:17:1-31:12
+MERGED from [androidx.fragment:fragment:1.3.0-rc02] C:\Users\NEERAJA\.gradle\caches\transforms-3\61170a46f202b9db89179d30a70ecc71\transformed\fragment-1.3.0-rc02\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-runtime:2.3.5] C:\Users\NEERAJA\.gradle\caches\transforms-3\57644b3f1d71fc1153c739e17528480a\transformed\navigation-runtime-2.3.5\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.2.0-rc01] C:\Users\NEERAJA\.gradle\caches\transforms-3\6ff90de646ec00638a7a4194f5c28891\transformed\jetified-activity-1.2.0-rc01\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.0-rc01] C:\Users\NEERAJA\.gradle\caches\transforms-3\990af3408ade8f609b5edcc69c6f6c6e\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.0-rc01\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat-resources:1.2.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\e2daf8109e344ea11d0ffa66c78bc469\transformed\jetified-appcompat-resources-1.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.media:media:1.0.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\e2cf17f6ce43e190da12aefab2b88257\transformed\media-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\1bd38ba65c9f8e618f1c77432b6bf3ba\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\c428c46f37641ecd3508adf415b23b8a\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.fragment:fragment:1.3.0-rc02] C:\Users\NEERAJA\.gradle\caches\transforms-3\61170a46f202b9db89179d30a70ecc71\transformed\fragment-1.3.0-rc02\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\2d7669d2400a4f0d3f9520e76a08b9b8\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\f0a8d085b88b41284feb1f085664b0b1\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\237d7d0ad543e63cdc6bbe75800e0296\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -45,8 +48,6 @@ MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\NEERAJ
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\63e560b6ac3fb71411375e9f23165a9e\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\bea397d0c0ab330a9e1bbe61525c3fe4\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\29beb856eb24729a103f6ab99768b825\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.navigation:navigation-runtime:2.3.5] C:\Users\NEERAJA\.gradle\caches\transforms-3\57644b3f1d71fc1153c739e17528480a\transformed\navigation-runtime-2.3.5\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.activity:activity:1.2.0-rc01] C:\Users\NEERAJA\.gradle\caches\transforms-3\6ff90de646ec00638a7a4194f5c28891\transformed\jetified-activity-1.2.0-rc01\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigation:navigation-common:2.3.5] C:\Users\NEERAJA\.gradle\caches\transforms-3\4b767551bcaa80de342bd7212816f100\transformed\navigation-common-2.3.5\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\NEERAJA\.gradle\caches\transforms-3\511402da36b0705ab38595b379e3795e\transformed\drawerlayout-1.1.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.customview:customview:1.1.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\e565478fac4798ea1cf1878420525a7d\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
@@ -61,7 +62,6 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.3.0-rc01] C:\Users
 MERGED from [androidx.savedstate:savedstate-ktx:1.1.0-rc01] C:\Users\NEERAJA\.gradle\caches\transforms-3\c67d01ee6ac74560e1915fe587e22c21\transformed\jetified-savedstate-ktx-1.1.0-rc01\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\36b502251d8d3d67e5018ec346040e21\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.2.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\a4a80073cd8a711fb35635f1c5c92fec\transformed\lifecycle-livedata-2.2.0\AndroidManifest.xml:17:1-24:12
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.0-rc01] C:\Users\NEERAJA\.gradle\caches\transforms-3\990af3408ade8f609b5edcc69c6f6c6e\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.0-rc01\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.0-rc01] C:\Users\NEERAJA\.gradle\caches\transforms-3\c01b06d5c47a096b92328c0d3c10a053\transformed\lifecycle-livedata-core-2.3.0-rc01\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\e88bf94e3268e311fc82e3f1792674e7\transformed\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.savedstate:savedstate:1.1.0-rc01] C:\Users\NEERAJA\.gradle\caches\transforms-3\62b907ffa2e5ae54903e0da63108399e\transformed\jetified-savedstate-1.1.0-rc01\AndroidManifest.xml:17:1-24:12
@@ -219,6 +219,14 @@ MERGED from [com.amitshekhar.android:debug-db-base:1.0.6] C:\Users\NEERAJA\.grad
 MERGED from [com.amitshekhar.android:debug-db-base:1.0.6] C:\Users\NEERAJA\.gradle\caches\transforms-3\130f6e5be86207920068794a1ce9b627\transformed\jetified-debug-db-base-1.0.6\AndroidManifest.xml:25:5-27:41
 MERGED from [androidx.room:room-runtime:2.2.5] C:\Users\NEERAJA\.gradle\caches\transforms-3\3052c2b9a43d8be132ee50c85d79566f\transformed\room-runtime-2.2.5\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.room:room-runtime:2.2.5] C:\Users\NEERAJA\.gradle\caches\transforms-3\3052c2b9a43d8be132ee50c85d79566f\transformed\room-runtime-2.2.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.0-rc02] C:\Users\NEERAJA\.gradle\caches\transforms-3\61170a46f202b9db89179d30a70ecc71\transformed\fragment-1.3.0-rc02\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.0-rc02] C:\Users\NEERAJA\.gradle\caches\transforms-3\61170a46f202b9db89179d30a70ecc71\transformed\fragment-1.3.0-rc02\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime:2.3.5] C:\Users\NEERAJA\.gradle\caches\transforms-3\57644b3f1d71fc1153c739e17528480a\transformed\navigation-runtime-2.3.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime:2.3.5] C:\Users\NEERAJA\.gradle\caches\transforms-3\57644b3f1d71fc1153c739e17528480a\transformed\navigation-runtime-2.3.5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.2.0-rc01] C:\Users\NEERAJA\.gradle\caches\transforms-3\6ff90de646ec00638a7a4194f5c28891\transformed\jetified-activity-1.2.0-rc01\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.2.0-rc01] C:\Users\NEERAJA\.gradle\caches\transforms-3\6ff90de646ec00638a7a4194f5c28891\transformed\jetified-activity-1.2.0-rc01\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.0-rc01] C:\Users\NEERAJA\.gradle\caches\transforms-3\990af3408ade8f609b5edcc69c6f6c6e\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.0-rc01\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.0-rc01] C:\Users\NEERAJA\.gradle\caches\transforms-3\990af3408ade8f609b5edcc69c6f6c6e\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.0-rc01\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat-resources:1.2.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\e2daf8109e344ea11d0ffa66c78bc469\transformed\jetified-appcompat-resources-1.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat-resources:1.2.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\e2daf8109e344ea11d0ffa66c78bc469\transformed\jetified-appcompat-resources-1.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.media:media:1.0.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\e2cf17f6ce43e190da12aefab2b88257\transformed\media-1.0.0\AndroidManifest.xml:20:5-44
@@ -227,8 +235,6 @@ MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\NEERAJA\.gra
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\1bd38ba65c9f8e618f1c77432b6bf3ba\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\c428c46f37641ecd3508adf415b23b8a\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\c428c46f37641ecd3508adf415b23b8a\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.fragment:fragment:1.3.0-rc02] C:\Users\NEERAJA\.gradle\caches\transforms-3\61170a46f202b9db89179d30a70ecc71\transformed\fragment-1.3.0-rc02\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.fragment:fragment:1.3.0-rc02] C:\Users\NEERAJA\.gradle\caches\transforms-3\61170a46f202b9db89179d30a70ecc71\transformed\fragment-1.3.0-rc02\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\2d7669d2400a4f0d3f9520e76a08b9b8\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\2d7669d2400a4f0d3f9520e76a08b9b8\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\f0a8d085b88b41284feb1f085664b0b1\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
@@ -245,10 +251,6 @@ MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\NEER
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\bea397d0c0ab330a9e1bbe61525c3fe4\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\29beb856eb24729a103f6ab99768b825\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\29beb856eb24729a103f6ab99768b825\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.navigation:navigation-runtime:2.3.5] C:\Users\NEERAJA\.gradle\caches\transforms-3\57644b3f1d71fc1153c739e17528480a\transformed\navigation-runtime-2.3.5\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.navigation:navigation-runtime:2.3.5] C:\Users\NEERAJA\.gradle\caches\transforms-3\57644b3f1d71fc1153c739e17528480a\transformed\navigation-runtime-2.3.5\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.activity:activity:1.2.0-rc01] C:\Users\NEERAJA\.gradle\caches\transforms-3\6ff90de646ec00638a7a4194f5c28891\transformed\jetified-activity-1.2.0-rc01\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.activity:activity:1.2.0-rc01] C:\Users\NEERAJA\.gradle\caches\transforms-3\6ff90de646ec00638a7a4194f5c28891\transformed\jetified-activity-1.2.0-rc01\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.navigation:navigation-common:2.3.5] C:\Users\NEERAJA\.gradle\caches\transforms-3\4b767551bcaa80de342bd7212816f100\transformed\navigation-common-2.3.5\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.navigation:navigation-common:2.3.5] C:\Users\NEERAJA\.gradle\caches\transforms-3\4b767551bcaa80de342bd7212816f100\transformed\navigation-common-2.3.5\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\NEERAJA\.gradle\caches\transforms-3\511402da36b0705ab38595b379e3795e\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
@@ -277,8 +279,6 @@ MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\NEERAJA\.gradl
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\36b502251d8d3d67e5018ec346040e21\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.2.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\a4a80073cd8a711fb35635f1c5c92fec\transformed\lifecycle-livedata-2.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.2.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\a4a80073cd8a711fb35635f1c5c92fec\transformed\lifecycle-livedata-2.2.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.0-rc01] C:\Users\NEERAJA\.gradle\caches\transforms-3\990af3408ade8f609b5edcc69c6f6c6e\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.0-rc01\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.0-rc01] C:\Users\NEERAJA\.gradle\caches\transforms-3\990af3408ade8f609b5edcc69c6f6c6e\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.0-rc01\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.0-rc01] C:\Users\NEERAJA\.gradle\caches\transforms-3\c01b06d5c47a096b92328c0d3c10a053\transformed\lifecycle-livedata-core-2.3.0-rc01\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.0-rc01] C:\Users\NEERAJA\.gradle\caches\transforms-3\c01b06d5c47a096b92328c0d3c10a053\transformed\lifecycle-livedata-core-2.3.0-rc01\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\NEERAJA\.gradle\caches\transforms-3\e88bf94e3268e311fc82e3f1792674e7\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41

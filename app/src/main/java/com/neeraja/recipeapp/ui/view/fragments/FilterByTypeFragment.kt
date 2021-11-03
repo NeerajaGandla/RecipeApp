@@ -1,5 +1,6 @@
 package com.neeraja.recipeapp.ui.view.fragments
 
+import android.app.Application
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,10 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.lifecycle.SavedStateViewModelFactory
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.neeraja.recipeapp.utils.Status
+import com.neeraja.recipeapp.utils.*
 import com.neeraja.recipeapp.data.model.db.Meal
 import com.neeraja.recipeapp.databinding.FragmentCategoriesBinding
 import com.neeraja.recipeapp.ui.adapter.MealAdapter
@@ -20,27 +23,22 @@ import javax.inject.Inject
 import com.neeraja.recipeapp.R
 
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import com.neeraja.recipeapp.data.AppDataManager
-import com.neeraja.recipeapp.ui.viewmodel.FilterByTypeViewModelFactory
 import com.neeraja.recipeapp.utils.GridSpacingItemDecoration
 import com.neeraja.recipeapp.utils.NetworkHelper
 
 @AndroidEntryPoint
 class FilterByTypeFragment : Fragment(), MealAdapter.FavoriteClickListener {
 
-    @Inject
-    lateinit var dataManager: AppDataManager
-
-    @Inject
-    lateinit var networkHelper: NetworkHelper
     private lateinit var adapter: MealAdapter
     private lateinit var binding: FragmentCategoriesBinding
     private var category: String? = null
     private var isFavorites: String = "N"
-    lateinit private var filterByCategoryViewModel: FilterByCategoryViewModel
+    private val filterByCategoryViewModel: FilterByCategoryViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -66,6 +64,7 @@ class FilterByTypeFragment : Fragment(), MealAdapter.FavoriteClickListener {
             isFavorites = FilterByTypeFragmentArgs.fromBundle(requireArguments()).isFavorites
         }
         setupUI()
+        filterByCategoryViewModel.saveState(isFavorites, category)
     }
 
     private fun setupUI() {
@@ -79,12 +78,6 @@ class FilterByTypeFragment : Fragment(), MealAdapter.FavoriteClickListener {
 
     override fun onResume() {
         super.onResume()
-
-        val factory = FilterByTypeViewModelFactory(dataManager, networkHelper, category, isFavorites)
-        filterByCategoryViewModel = ViewModelProvider(
-            this,
-            factory
-        ).get(FilterByCategoryViewModel::class.java)
         setupObserver()
     }
 
