@@ -43,12 +43,16 @@ class AppDataManager @Inject constructor(
         return Response.success(MealsResponse(dbHelper.getMealsByCategory(category)))
     }
 
-    override suspend fun isFavorite(meal: Meal): Int {
-        return dbHelper.isFavorite(meal)
+    override suspend fun isFavorite(mealId: Int): Int {
+        return dbHelper.isFavorite(mealId)
     }
 
     override suspend fun setFavorite(meal: Meal) {
         dbHelper.setFavorite(meal)
+    }
+
+    override suspend fun setFavorite(mealId: Int, isFavorite: Int) {
+        dbHelper.setFavorite(mealId, isFavorite)
     }
 
     override suspend fun getFavoriteMeals(): Response<MealsResponse> {

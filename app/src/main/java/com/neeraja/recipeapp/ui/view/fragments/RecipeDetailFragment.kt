@@ -24,7 +24,7 @@ import com.neeraja.recipeapp.utils.Status
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class RecipeDetailFragment : Fragment() {
+class RecipeDetailFragment : Fragment(), View.OnClickListener {
 
     companion object {
         fun newInstance() = RecipeDetailFragment()
@@ -77,9 +77,21 @@ class RecipeDetailFragment : Fragment() {
     }
 
     fun renderUI(mealDetail: MealDetail) {
-        binding.imageView.load(mealDetail.mealImg)
-        binding.recipeTitleTv.text = mealDetail.mealName
-        binding.recipeIngredientsTv.text = mealDetail.getIngredients()
-        binding.recipeDescription.text = mealDetail.instructions
+        binding.mealDetail = mealDetail
+        binding.onFavoriteClickListener = this
+        viewModel.isFavorite(mealID)
+        setupFavoriteObserver()
+    }
+
+    fun setupFavoriteObserver() {
+        viewModel._favorite.observe(this, Observer {
+            it?.let {
+               binding.isFavorite = it
+            }
+        })
+    }
+
+    override fun onClick(view: View) {
+        viewModel.onFavoriteClicked(mealID)
     }
 }

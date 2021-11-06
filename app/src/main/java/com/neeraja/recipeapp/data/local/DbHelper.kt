@@ -8,7 +8,8 @@ interface DbHelper {
     suspend fun saveCategories(categories: List<Category>)
     suspend fun getMealsByCategory(category: String): List<Meal>
     suspend fun saveMealsByCategory(meals: MutableList<Meal>, category: String)
-    suspend fun isFavorite(meal: Meal) : Int
+    suspend fun isFavorite(mealId: Int) : Int
     suspend fun setFavorite(meal: Meal)
+    suspend fun setFavorite(mealId: Int, isFavorite: Int)
     suspend fun getFavoriteMeals(): List<Meal>
 }

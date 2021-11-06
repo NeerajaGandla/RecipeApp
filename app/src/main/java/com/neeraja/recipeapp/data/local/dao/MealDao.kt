@@ -18,6 +18,9 @@ interface MealDao {
     @Update
     fun setFavorite(meal: Meal)
 
+    @Query("UPDATE meals SET isFavorite = :isFavorite WHERE id = :mealId")
+    fun setFavorite(mealId: Int, isFavorite:Int)
+
     @Query("SELECT * FROM meals WHERE isFavorite = 1")
     fun getFavoriteMeals(): List<Meal>
 }

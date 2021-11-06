@@ -9,6 +9,7 @@ import androidx.lifecycle.viewModelScope
 import com.neeraja.recipeapp.utils.Resource
 import com.neeraja.recipeapp.data.AppDataManager
 import com.neeraja.recipeapp.data.model.api.RecipeResponse
+import com.neeraja.recipeapp.data.model.db.Meal
 import com.neeraja.recipeapp.utils.NetworkHelper
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -23,6 +24,7 @@ class RecipeViewModel @Inject constructor(
 ) : ViewModel() {
 
     val _recipe = MutableLiveData<Resource<RecipeResponse>>()
+    val _favorite = MutableLiveData<Int>()
 
     private fun fetchRecipe() {
         viewModelScope.launch {
@@ -52,4 +54,29 @@ class RecipeViewModel @Inject constructor(
         savedStateHandle.set("MealID", mealId)
         fetchRecipe()
     }
+
+    fun isFavorite(mealId: Int) {
+        viewModelScope.launch {
+            _favorite.postValue(0)
+            launch(Dispatchers.IO) {
+                _favorite.postValue(dataManager.isFavorite(mealId))
+            }
+        }
+    }
+
+    fun onFavoriteClicked(mealId: Int) {
+        viewModelScope.launch {
+            val job = launch(Dispatchers.IO) {
+                val isFavorite = dataManager.isFavorite(mealId)
+                val favoriteVal = when (isFavorite) {
+                    1 -> 0
+                    else -> 1
+                }
+                dataManager.setFavorite(mealId, favoriteVal)
+            }
+            job.join()
+            isFavorite(mealId)
+        }
+    }
+
 }
