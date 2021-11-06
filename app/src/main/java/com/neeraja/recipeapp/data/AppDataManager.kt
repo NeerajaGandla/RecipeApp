@@ -55,7 +55,7 @@ class AppDataManager @Inject constructor(
         return Response.success(MealsResponse(dbHelper.getFavoriteMeals()))
     }
 
-    override suspend fun getRecipeDetails(idMeal: String): Response<RecipeResponse> {
+    override suspend fun getRecipeDetails(idMeal: Int): Response<RecipeResponse> {
         val apiResponse = apiHelper.getRecipeDetails(idMeal)
         if (apiResponse.isSuccessful) {
             var mealsData = (apiResponse.body() as RecipeResponse).meals.toMutableList()

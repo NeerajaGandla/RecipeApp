@@ -55,7 +55,8 @@
         tools:layout="@layout/recipe_detail_fragment">
         <argument
             android:name="mealId"
+            app:argType="integer"
             android:defaultValue="0"
-            app:argType="integer" />
+            />
     </fragment>
 </navigation>

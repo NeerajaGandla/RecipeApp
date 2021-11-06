@@ -12,7 +12,7 @@ class AppApiHelper @Inject constructor(private val apiService: ApiService) : Api
         return apiService.getMealsByCategory(category)
     }
 
-    override suspend fun getRecipeDetails(idMeal: String): Response<RecipeResponse> {
+    override suspend fun getRecipeDetails(idMeal: Int): Response<RecipeResponse> {
         return apiService.getRecipeDetails(idMeal)
     }
 }

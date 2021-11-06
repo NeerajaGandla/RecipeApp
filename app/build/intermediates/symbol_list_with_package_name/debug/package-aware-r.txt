@@ -1416,6 +1416,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageView
 id imageViewThumbNail
 id info
 id invisible
@@ -1477,7 +1478,12 @@ id progress_circular
 id progress_horizontal
 id radio
 id ratio
+id recipeDescription
+id recipeDescriptionHeadingTv
 id recipeDetailFragment
+id recipeIngredientsHeadingTv
+id recipeIngredientsTv
+id recipeTitleTv
 id rectangles
 id recyclerView
 id reverseSawtooth

@@ -12,29 +12,33 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 import com.neeraja.recipeapp.R
+import coil.load
 
 import androidx.navigation.NavController
 import com.neeraja.recipeapp.data.model.api.MealDetail
 import com.neeraja.recipeapp.databinding.FragmentCategoriesBinding
+import com.neeraja.recipeapp.databinding.RecipeDetailFragmentBinding
 import com.neeraja.recipeapp.ui.viewmodel.FilterByCategoryViewModel
 import com.neeraja.recipeapp.ui.viewmodel.RecipeViewModel
 import com.neeraja.recipeapp.utils.Status
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class RecipeDetailFragment : Fragment() {
 
     companion object {
         fun newInstance() = RecipeDetailFragment()
     }
 
+    private lateinit var binding: RecipeDetailFragmentBinding
     private val viewModel: RecipeViewModel by viewModels()
-    private lateinit var mealID: String
+    private var mealID: Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate<FragmentCategoriesBinding>(
+        binding = DataBindingUtil.inflate<RecipeDetailFragmentBinding>(
             inflater,
             R.layout.recipe_detail_fragment, container, false
         )
@@ -44,15 +48,10 @@ class RecipeDetailFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         if (arguments != null) {
-            mealID = FilterByTypeFragmentArgs.fromBundle(requireArguments()).category
+            mealID = RecipeDetailFragmentArgs.fromBundle(requireArguments()).mealId
         }
-        setupUI()
-        viewModel.saveState(mealID)
+        viewModel.setMealId(mealID)
         setupObserver()
-    }
-
-    fun setupUI() {
-
     }
 
     fun setupObserver() {
@@ -78,6 +77,9 @@ class RecipeDetailFragment : Fragment() {
     }
 
     fun renderUI(mealDetail: MealDetail) {
-        // TODO: 03-11-2021
+        binding.imageView.load(mealDetail.mealImg)
+        binding.recipeTitleTv.text = mealDetail.mealName
+        binding.recipeIngredientsTv.text = mealDetail.getIngredients()
+        binding.recipeDescription.text = mealDetail.instructions
     }
 }

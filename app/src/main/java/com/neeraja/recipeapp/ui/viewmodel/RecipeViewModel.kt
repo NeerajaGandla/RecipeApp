@@ -8,27 +8,28 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.neeraja.recipeapp.utils.Resource
 import com.neeraja.recipeapp.data.AppDataManager
-import com.neeraja.recipeapp.data.model.api.CategoriesResponse
+import com.neeraja.recipeapp.data.model.api.RecipeResponse
 import com.neeraja.recipeapp.utils.NetworkHelper
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @HiltViewModel
 class RecipeViewModel @Inject constructor(
-    private val dataManager: AppDataManager,
-    private val networkHelper: NetworkHelper,
-    val savedStateHandle: SavedStateHandle
+    val dataManager: AppDataManager,
+    val networkHelper: NetworkHelper,
+    private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
-    private val _recipe = MutableLiveData<Resource<RecipeResponse>>()
+    val _recipe = MutableLiveData<Resource<RecipeResponse>>()
 
     private fun fetchRecipe() {
         viewModelScope.launch {
             _recipe.postValue(Resource.loading(null))
             if (networkHelper.isNetworkConnected()) {
                 launch(Dispatchers.IO) {
-                    dataManager.getRecipeDetails(getMealId()).let {
+                    dataManager.getRecipeDetails(getMealId().getValue()!!).let {
                         if (it.isSuccessful) {
                             _recipe.postValue(Resource.success(it.body()))
                         } else _recipe.postValue(
@@ -43,11 +44,11 @@ class RecipeViewModel @Inject constructor(
         }
     }
 
-    fun getMealId(): String {
-        return savedStateHandle.getLiveData("MealID").getValue()
+    fun getMealId(): LiveData<Int> {
+        return savedStateHandle.getLiveData("MealID")
     }
 
-    fun setMealId(meald: String) {
+    fun setMealId(mealId: Int) {
         savedStateHandle.set("MealID", mealId)
         fetchRecipe()
     }

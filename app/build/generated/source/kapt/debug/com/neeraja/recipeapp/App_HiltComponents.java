@@ -5,8 +5,10 @@ import com.neeraja.recipeapp.di.module.ApplicationModule;
 import com.neeraja.recipeapp.ui.view.activities.HomeActivity_GeneratedInjector;
 import com.neeraja.recipeapp.ui.view.fragments.CategoriesFragment_GeneratedInjector;
 import com.neeraja.recipeapp.ui.view.fragments.FilterByTypeFragment_GeneratedInjector;
+import com.neeraja.recipeapp.ui.view.fragments.RecipeDetailFragment_GeneratedInjector;
 import com.neeraja.recipeapp.ui.viewmodel.CategoryViewModel_HiltModule;
 import com.neeraja.recipeapp.ui.viewmodel.FilterByCategoryViewModel_HiltModules;
+import com.neeraja.recipeapp.ui.viewmodel.RecipeViewModel_HiltModules;
 import dagger.Binds;
 import dagger.Component;
 import dagger.Module;
@@ -148,7 +150,8 @@ public final class App_HiltComponents {
           ViewModelCBuilderModule.class,
           CategoryViewModel_HiltModule.class,
           FilterByCategoryViewModel_HiltModules.KeyModule.class,
-          HiltWrapper_ActivityRetainedComponentManager_LifecycleModule.class
+          HiltWrapper_ActivityRetainedComponentManager_LifecycleModule.class,
+          RecipeViewModel_HiltModules.KeyModule.class
       }
   )
   @ActivityRetainedScoped
@@ -185,7 +188,8 @@ public final class App_HiltComponents {
   @Subcomponent(
       modules = {
           FilterByCategoryViewModel_HiltModules.BindsModule.class,
-          HiltWrapper_HiltViewModelFactory_ViewModelModule.class
+          HiltWrapper_HiltViewModelFactory_ViewModelModule.class,
+          RecipeViewModel_HiltModules.BindsModule.class
       }
   )
   @ViewModelScoped
@@ -215,6 +219,7 @@ public final class App_HiltComponents {
   @FragmentScoped
   public abstract static class FragmentC implements CategoriesFragment_GeneratedInjector,
       FilterByTypeFragment_GeneratedInjector,
+      RecipeDetailFragment_GeneratedInjector,
       FragmentComponent,
       HiltWrapper_DefaultViewModelFactories_FragmentEntryPoint,
       ViewComponentManager.ViewWithFragmentComponentBuilderEntryPoint,

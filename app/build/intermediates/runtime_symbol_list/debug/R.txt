@@ -1415,6 +1415,7 @@ int id ifRoom 0x7f0800a8
 int id ignore 0x7f0800a9
 int id ignoreRequest 0x7f0800aa
 int id image 0x7f0800ab
+int id imageView 0x7f080159
 int id imageViewThumbNail 0x7f0800ac
 int id info 0x7f0800ad
 int id invisible 0x7f0800ae
@@ -1476,7 +1477,12 @@ int id progress_circular 0x7f0800e5
 int id progress_horizontal 0x7f0800e6
 int id radio 0x7f0800e7
 int id ratio 0x7f0800e8
+int id recipeDescription 0x7f08015a
+int id recipeDescriptionHeadingTv 0x7f08015b
 int id recipeDetailFragment 0x7f0800e9
+int id recipeIngredientsHeadingTv 0x7f08015c
+int id recipeIngredientsTv 0x7f08015d
+int id recipeTitleTv 0x7f08015e
 int id rectangles 0x7f0800ea
 int id recyclerView 0x7f0800eb
 int id reverseSawtooth 0x7f0800ec

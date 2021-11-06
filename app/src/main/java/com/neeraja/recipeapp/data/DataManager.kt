@@ -13,5 +13,5 @@ interface DataManager {
     suspend fun isFavorite(meal: Meal) : Int
     suspend fun setFavorite(meal : Meal)
     suspend fun getFavoriteMeals(): Response<MealsResponse>
-    suspend fun getRecipeDetails(idMeal: String): Response<RecipeResponse>
+    suspend fun getRecipeDetails(idMeal: Int): Response<RecipeResponse>
 }
