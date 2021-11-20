@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/categoriesFragment"
-        android:name="com.neeraja.recipeapp.ui.view.fragments.CategoriesFragment"
+        android:name="com.neeraja.recipeapp.ui.fragments.CategoriesFragment"
         android:label="fragment_categories"
         tools:layout="@layout/fragment_categories">
         <action
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/filterByTypeFragment"
-        android:name="com.neeraja.recipeapp.ui.view.fragments.FilterByTypeFragment"
+        android:name="com.neeraja.recipeapp.ui.fragments.FilterByTypeFragment"
         android:label="FilterByTypeFragment"
         tools:layout="@layout/fragment_categories">
         <argument
@@ -50,7 +50,7 @@
     </fragment>
     <fragment
         android:id="@+id/recipeDetailFragment"
-        android:name="com.neeraja.recipeapp.ui.view.fragments.RecipeDetailFragment"
+        android:name="com.neeraja.recipeapp.ui.fragments.RecipeDetailFragment"
         android:label="recipe_detail_fragment"
         tools:layout="@layout/recipe_detail_fragment">
         <argument

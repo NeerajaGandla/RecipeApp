@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.neeraja.recipeapp.data.model.db.Category
 import com.neeraja.recipeapp.databinding.CategoryItemLayoutBinding
-import com.neeraja.recipeapp.ui.view.fragments.CategoriesFragmentDirections
+import com.neeraja.recipeapp.ui.fragments.CategoriesFragmentDirections
 
 class CategoryAdapter(
     private val users: ArrayList<Category>

@@ -1,4 +1,4 @@
-package com.neeraja.recipeapp.ui.view.fragments
+package com.neeraja.recipeapp.ui.fragments
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle

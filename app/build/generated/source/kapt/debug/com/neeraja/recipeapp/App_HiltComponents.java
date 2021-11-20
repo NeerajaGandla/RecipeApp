@@ -2,10 +2,10 @@ package com.neeraja.recipeapp;
 
 import androidx.hilt.lifecycle.ViewModelFactoryModules;
 import com.neeraja.recipeapp.di.module.ApplicationModule;
-import com.neeraja.recipeapp.ui.view.activities.HomeActivity_GeneratedInjector;
-import com.neeraja.recipeapp.ui.view.fragments.CategoriesFragment_GeneratedInjector;
-import com.neeraja.recipeapp.ui.view.fragments.FilterByTypeFragment_GeneratedInjector;
-import com.neeraja.recipeapp.ui.view.fragments.RecipeDetailFragment_GeneratedInjector;
+import com.neeraja.recipeapp.ui.activities.HomeActivity_GeneratedInjector;
+import com.neeraja.recipeapp.ui.fragments.CategoriesFragment_GeneratedInjector;
+import com.neeraja.recipeapp.ui.fragments.FilterByTypeFragment_GeneratedInjector;
+import com.neeraja.recipeapp.ui.fragments.RecipeDetailFragment_GeneratedInjector;
 import com.neeraja.recipeapp.ui.viewmodel.CategoryViewModel_HiltModule;
 import com.neeraja.recipeapp.ui.viewmodel.FilterByCategoryViewModel_HiltModules;
 import com.neeraja.recipeapp.ui.viewmodel.RecipeViewModel_HiltModules;

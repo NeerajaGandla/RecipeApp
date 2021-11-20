@@ -13,7 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.view.activities.HomeActivity">
+        tools:context=".ui.activities.HomeActivity">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolBar"

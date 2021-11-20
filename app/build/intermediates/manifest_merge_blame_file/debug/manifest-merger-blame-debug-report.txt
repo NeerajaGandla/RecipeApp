@@ -17,8 +17,8 @@
 12-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:6:5-79
 12-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:6:22-76
 13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-13-->[com.amitshekhar.android:debug-db-base:1.0.6] C:\Users\NEERAJA\.gradle\caches\transforms-3\130f6e5be86207920068794a1ce9b627\transformed\jetified-debug-db-base-1.0.6\AndroidManifest.xml:30:5-76
-13-->[com.amitshekhar.android:debug-db-base:1.0.6] C:\Users\NEERAJA\.gradle\caches\transforms-3\130f6e5be86207920068794a1ce9b627\transformed\jetified-debug-db-base-1.0.6\AndroidManifest.xml:30:22-73
+13-->[com.amitshekhar.android:debug-db-base:1.0.6] C:\Users\NEERAJA\.gradle\caches\transforms-3\19a809aa4f29d56460c44511440dea78\transformed\jetified-debug-db-base-1.0.6\AndroidManifest.xml:30:5-76
+13-->[com.amitshekhar.android:debug-db-base:1.0.6] C:\Users\NEERAJA\.gradle\caches\transforms-3\19a809aa4f29d56460c44511440dea78\transformed\jetified-debug-db-base-1.0.6\AndroidManifest.xml:30:22-73
 14
 15    <application
 15-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:8:5-27:19
@@ -44,9 +44,9 @@
 26-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:16:9-40
 27        android:usesCleartextTraffic="true" >
 27-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:17:9-44
-28        <activity android:name="com.neeraja.recipeapp.ui.view.activities.SplashActivity" >
+28        <activity android:name="com.neeraja.recipeapp.ui.activities.SplashActivity" >
 28-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:18:9-25:20
-28-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:18:19-68
+28-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:18:19-63
 29            <intent-filter>
 29-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:19:13-23:29
 30                <action android:name="android.intent.action.MAIN" />
@@ -58,9 +58,9 @@
 32-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:22:27-74
 33            </intent-filter>
 34        </activity>
-35        <activity android:name="com.neeraja.recipeapp.ui.view.activities.HomeActivity" />
-35-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:26:9-69
-35-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:26:19-66
+35        <activity android:name="com.neeraja.recipeapp.ui.activities.HomeActivity" />
+35-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:26:9-64
+35-->D:\Workspace\AndroidProjects\RecipeApp\app\src\main\AndroidManifest.xml:26:19-61
 36
 37        <provider
 37-->[com.amitshekhar.android:debug-db:1.0.6] C:\Users\NEERAJA\.gradle\caches\transforms-3\1aa85dd29308f268479b194dd1b9a3d7\transformed\jetified-debug-db-1.0.6\AndroidManifest.xml:12:9-16:40

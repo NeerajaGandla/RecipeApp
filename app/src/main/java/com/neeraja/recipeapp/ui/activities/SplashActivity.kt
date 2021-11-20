@@ -1,4 +1,4 @@
-package com.neeraja.recipeapp.ui.view.activities
+package com.neeraja.recipeapp.ui.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

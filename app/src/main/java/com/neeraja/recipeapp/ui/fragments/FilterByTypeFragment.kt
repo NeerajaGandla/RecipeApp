@@ -1,4 +1,4 @@
-package com.neeraja.recipeapp.ui.view.fragments
+package com.neeraja.recipeapp.ui.fragments
 
 import android.app.Application
 import android.os.Bundle
@@ -57,7 +57,7 @@ class FilterByTypeFragment : Fragment(), MealAdapter.FavoriteClickListener {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val controller: NavController = Navigation.findNavController(view!!)
+        val controller: NavController = Navigation.findNavController(requireView())
         controller.popBackStack(R.id.recipeDetailFragment, true)
         if (arguments != null) {
             category = FilterByTypeFragmentArgs.fromBundle(requireArguments()).category

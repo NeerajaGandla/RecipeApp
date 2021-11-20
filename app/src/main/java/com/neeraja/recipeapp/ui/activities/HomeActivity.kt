@@ -1,4 +1,4 @@
-package com.neeraja.recipeapp.ui.view.activities
+package com.neeraja.recipeapp.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

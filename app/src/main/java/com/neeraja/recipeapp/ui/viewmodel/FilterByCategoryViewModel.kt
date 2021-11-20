@@ -31,15 +31,17 @@ class FilterByCategoryViewModel @Inject constructor(
             _meals.postValue(Resource.loading(null))
             if (networkHelper.isNetworkConnected()) {
                 launch(Dispatchers.IO) {
-                    dataManager.getMealsByCategory(category!!).let {
-                        if (it.isSuccessful) {
-                            _meals.postValue(Resource.success(it.body()))
-                        } else _meals.postValue(
-                            Resource.error(
-                                it.errorBody().toString(),
-                                null
+                    category?.let { value ->
+                        dataManager.getMealsByCategory(value).let {
+                            if (it.isSuccessful) {
+                                _meals.postValue(Resource.success(it.body()))
+                            } else _meals.postValue(
+                                Resource.error(
+                                    it.errorBody().toString(),
+                                    null
+                                )
                             )
-                        )
+                        }
                     }
                 }
             } else _meals.postValue(Resource.error("No Internet Connection", null))

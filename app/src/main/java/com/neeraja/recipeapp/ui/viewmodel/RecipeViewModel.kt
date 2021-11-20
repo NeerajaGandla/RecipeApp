@@ -31,15 +31,17 @@ class RecipeViewModel @Inject constructor(
             _recipe.postValue(Resource.loading(null))
             if (networkHelper.isNetworkConnected()) {
                 launch(Dispatchers.IO) {
-                    dataManager.getRecipeDetails(getMealId().getValue()!!).let {
-                        if (it.isSuccessful) {
-                            _recipe.postValue(Resource.success(it.body()))
-                        } else _recipe.postValue(
-                            Resource.error(
-                                it.errorBody().toString(),
-                                null
+                    getMealId().value?.let { value ->
+                        dataManager.getRecipeDetails(value).let {
+                            if (it.isSuccessful) {
+                                _recipe.postValue(Resource.success(it.body()))
+                            } else _recipe.postValue(
+                                Resource.error(
+                                    it.errorBody().toString(),
+                                    null
+                                )
                             )
-                        )
+                        }
                     }
                 }
             } else _recipe.postValue(Resource.error("No Internet Connection", null))

@@ -11,9 +11,9 @@ import com.neeraja.recipeapp.data.model.db.Category
 import com.neeraja.recipeapp.data.model.db.Meal
 import com.neeraja.recipeapp.databinding.CategoryItemLayoutBinding
 import com.neeraja.recipeapp.databinding.MealItemLayoutBinding
-import com.neeraja.recipeapp.ui.view.clicklisteners.MealClickListener
-import com.neeraja.recipeapp.ui.view.fragments.CategoriesFragmentDirections
-import com.neeraja.recipeapp.ui.view.fragments.FilterByTypeFragmentDirections
+import com.neeraja.recipeapp.ui.clicklisteners.MealClickListener
+import com.neeraja.recipeapp.ui.fragments.CategoriesFragmentDirections
+import com.neeraja.recipeapp.ui.fragments.FilterByTypeFragmentDirections
 
 class MealAdapter(
     private val meals: ArrayList<Meal>,
