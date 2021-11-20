@@ -12,19 +12,37 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import androidx.databinding.DataBindingUtil
 import androidx.hilt.lifecycle.ViewModelInject
+import dagger.assisted.Assisted
+import dagger.assisted.AssistedInject
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.*
 
 
-@HiltViewModel
-class FilterByCategoryViewModel @Inject constructor(
+class FilterByCategoryViewModel @AssistedInject constructor(
     val dataManager: AppDataManager,
     val networkHelper: NetworkHelper,
-    private val state: SavedStateHandle
+    @Assisted("category") private val category: String?,
+    @Assisted("isFavorites") private val isFavorites: String
 ) : ViewModel() {
 
+    class Factory(
+        private val assistedFactory: FilterByCategoryViewModelFactory,
+        private val category: String?,
+        private val isFavorites: String
+    ) : ViewModelProvider.Factory {
+        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+            return assistedFactory.create(category, isFavorites) as T
+        }
+
+    }
+
     val _meals = MutableLiveData<Resource<MealsResponse>>()
+
+    init {
+        if (isFavorites.equals("Y")) fetchFavorites()
+        else fetchMealsByCategory(category)
+    }
 
     fun fetchMealsByCategory(category: String?) {
         viewModelScope.launch {
@@ -55,9 +73,7 @@ class FilterByCategoryViewModel @Inject constructor(
                 launch(Dispatchers.IO) {
                     dataManager.getFavoriteMeals().let {
                         if (it.isSuccessful) {
-                            println("Body: " + it.body().toString())
                             _meals.postValue(Resource.success(it.body()))
-                            println(_meals.getValue().toString())
                         } else _meals.postValue(
                             Resource.error(
                                 it.errorBody().toString(),
@@ -68,22 +84,6 @@ class FilterByCategoryViewModel @Inject constructor(
                 }
             } else _meals.postValue(Resource.error("No Internet Connection", null))
         }
-    }
-
-    fun getCategory(): LiveData<String> {
-        return state.getLiveData(CATEGORY)
-    }
-
-    fun getIsFavorites(): LiveData<String> {
-        return state.getLiveData(IS_FAVORITES)
-    }
-
-    fun saveState(isFavorites: String, category: String?) {
-        state.set(IS_FAVORITES, isFavorites)
-        state.set(CATEGORY, category)
-        val str = getIsFavorites().getValue()
-        if (str.equals("Y")) fetchFavorites()
-        else fetchMealsByCategory(getCategory().getValue())
     }
 
     fun onFavoriteClicked(meal: Meal) {
@@ -99,10 +99,10 @@ class FilterByCategoryViewModel @Inject constructor(
                 dataManager.setFavorite(_meal)
             }
             job.join()
-            if (getIsFavorites().getValue().equals("Y"))
+            if (isFavorites.equals("Y"))
                 fetchFavorites()
             else
-                fetchMealsByCategory(getCategory().getValue())
+                fetchMealsByCategory(category)
         }
     }
 }

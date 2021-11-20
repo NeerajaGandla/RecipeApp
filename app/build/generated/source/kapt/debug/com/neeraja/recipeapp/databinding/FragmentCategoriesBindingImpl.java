@@ -14,8 +14,9 @@ public class FragmentCategoriesBindingImpl extends FragmentCategoriesBinding  {
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.recyclerView, 1);
-        sViewsWithIds.put(R.id.progressBar, 2);
+        sViewsWithIds.put(R.id.edit_search, 1);
+        sViewsWithIds.put(R.id.recyclerView, 2);
+        sViewsWithIds.put(R.id.progressBar, 3);
     }
     // views
     @NonNull
@@ -26,12 +27,13 @@ public class FragmentCategoriesBindingImpl extends FragmentCategoriesBinding  {
     // Inverse Binding Event Handlers
 
     public FragmentCategoriesBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 3, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 4, sIncludes, sViewsWithIds));
     }
     private FragmentCategoriesBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.ProgressBar) bindings[2]
-            , (androidx.recyclerview.widget.RecyclerView) bindings[1]
+            , (android.widget.EditText) bindings[1]
+            , (android.widget.ProgressBar) bindings[3]
+            , (androidx.recyclerview.widget.RecyclerView) bindings[2]
             );
         this.mboundView0 = (android.widget.FrameLayout) bindings[0];
         this.mboundView0.setTag(null);

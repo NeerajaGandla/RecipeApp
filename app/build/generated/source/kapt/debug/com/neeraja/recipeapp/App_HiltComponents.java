@@ -7,8 +7,6 @@ import com.neeraja.recipeapp.ui.fragments.CategoriesFragment_GeneratedInjector;
 import com.neeraja.recipeapp.ui.fragments.FilterByTypeFragment_GeneratedInjector;
 import com.neeraja.recipeapp.ui.fragments.RecipeDetailFragment_GeneratedInjector;
 import com.neeraja.recipeapp.ui.viewmodel.CategoryViewModel_HiltModule;
-import com.neeraja.recipeapp.ui.viewmodel.FilterByCategoryViewModel_HiltModules;
-import com.neeraja.recipeapp.ui.viewmodel.RecipeViewModel_HiltModules;
 import dagger.Binds;
 import dagger.Component;
 import dagger.Module;
@@ -27,10 +25,10 @@ import dagger.hilt.android.internal.builders.ServiceComponentBuilder;
 import dagger.hilt.android.internal.builders.ViewComponentBuilder;
 import dagger.hilt.android.internal.builders.ViewModelComponentBuilder;
 import dagger.hilt.android.internal.builders.ViewWithFragmentComponentBuilder;
-import dagger.hilt.android.internal.lifecycle.HiltWrapper_DefaultViewModelFactories_ActivityEntryPoint;
+import dagger.hilt.android.internal.lifecycle.DefaultViewModelFactories;
+import dagger.hilt.android.internal.lifecycle.HiltViewModelFactory;
 import dagger.hilt.android.internal.lifecycle.HiltWrapper_DefaultViewModelFactories_ActivityModule;
-import dagger.hilt.android.internal.lifecycle.HiltWrapper_DefaultViewModelFactories_FragmentEntryPoint;
-import dagger.hilt.android.internal.lifecycle.HiltWrapper_HiltViewModelFactory_ViewModelFactoriesEntryPoint;
+import dagger.hilt.android.internal.lifecycle.HiltWrapper_HiltViewModelFactory_ActivityCreatorEntryPoint;
 import dagger.hilt.android.internal.lifecycle.HiltWrapper_HiltViewModelFactory_ViewModelModule;
 import dagger.hilt.android.internal.managers.ActivityComponentManager;
 import dagger.hilt.android.internal.managers.FragmentComponentManager;
@@ -149,9 +147,7 @@ public final class App_HiltComponents {
           ActivityCBuilderModule.class,
           ViewModelCBuilderModule.class,
           CategoryViewModel_HiltModule.class,
-          FilterByCategoryViewModel_HiltModules.KeyModule.class,
-          HiltWrapper_ActivityRetainedComponentManager_LifecycleModule.class,
-          RecipeViewModel_HiltModules.KeyModule.class
+          HiltWrapper_ActivityRetainedComponentManager_LifecycleModule.class
       }
   )
   @ActivityRetainedScoped
@@ -176,7 +172,8 @@ public final class App_HiltComponents {
   @ActivityScoped
   public abstract static class ActivityC implements HomeActivity_GeneratedInjector,
       ActivityComponent,
-      HiltWrapper_DefaultViewModelFactories_ActivityEntryPoint,
+      DefaultViewModelFactories.ActivityEntryPoint,
+      HiltWrapper_HiltViewModelFactory_ActivityCreatorEntryPoint,
       FragmentComponentManager.FragmentComponentBuilderEntryPoint,
       ViewComponentManager.ViewComponentBuilderEntryPoint,
       GeneratedComponent {
@@ -186,15 +183,11 @@ public final class App_HiltComponents {
   }
 
   @Subcomponent(
-      modules = {
-          FilterByCategoryViewModel_HiltModules.BindsModule.class,
-          HiltWrapper_HiltViewModelFactory_ViewModelModule.class,
-          RecipeViewModel_HiltModules.BindsModule.class
-      }
+      modules = HiltWrapper_HiltViewModelFactory_ViewModelModule.class
   )
   @ViewModelScoped
   public abstract static class ViewModelC implements ViewModelComponent,
-      HiltWrapper_HiltViewModelFactory_ViewModelFactoriesEntryPoint,
+      HiltViewModelFactory.ViewModelFactoriesEntryPoint,
       GeneratedComponent {
     @Subcomponent.Builder
     abstract interface Builder extends ViewModelComponentBuilder {
@@ -221,7 +214,7 @@ public final class App_HiltComponents {
       FilterByTypeFragment_GeneratedInjector,
       RecipeDetailFragment_GeneratedInjector,
       FragmentComponent,
-      HiltWrapper_DefaultViewModelFactories_FragmentEntryPoint,
+      DefaultViewModelFactories.FragmentEntryPoint,
       ViewComponentManager.ViewWithFragmentComponentBuilderEntryPoint,
       GeneratedComponent {
     @Subcomponent.Builder

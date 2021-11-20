@@ -28,8 +28,10 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import com.neeraja.recipeapp.data.AppDataManager
+import com.neeraja.recipeapp.ui.viewmodel.FilterByCategoryViewModelFactory
 import com.neeraja.recipeapp.utils.GridSpacingItemDecoration
 import com.neeraja.recipeapp.utils.NetworkHelper
+import java.util.*
 
 @AndroidEntryPoint
 class FilterByTypeFragment : Fragment(), MealAdapter.FavoriteClickListener {
@@ -38,7 +40,11 @@ class FilterByTypeFragment : Fragment(), MealAdapter.FavoriteClickListener {
     private lateinit var binding: FragmentCategoriesBinding
     private var category: String? = null
     private var isFavorites: String = "N"
-    private val filterByCategoryViewModel: FilterByCategoryViewModel by viewModels()
+    @Inject
+    lateinit var assistedFactory: FilterByCategoryViewModelFactory
+    private val filterByCategoryViewModel: FilterByCategoryViewModel by viewModels() {
+        FilterByCategoryViewModel.Factory(assistedFactory, category, isFavorites)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -64,7 +70,7 @@ class FilterByTypeFragment : Fragment(), MealAdapter.FavoriteClickListener {
             isFavorites = FilterByTypeFragmentArgs.fromBundle(requireArguments()).isFavorites
         }
         setupUI()
-        filterByCategoryViewModel.saveState(isFavorites, category)
+        setupObserver()
     }
 
     private fun setupUI() {
@@ -74,11 +80,6 @@ class FilterByTypeFragment : Fragment(), MealAdapter.FavoriteClickListener {
             GridSpacingItemDecoration(true, 2, 20, true)
         )
         binding.recyclerView.adapter = adapter
-    }
-
-    override fun onResume() {
-        super.onResume()
-        setupObserver()
     }
 
     private fun setupObserver() {
@@ -105,7 +106,6 @@ class FilterByTypeFragment : Fragment(), MealAdapter.FavoriteClickListener {
     }
 
     private fun renderList(meals: List<Meal>) {
-        println("Meals: " + meals.toString())
         adapter.clearData()
         adapter.addData(meals)
         adapter.notifyDataSetChanged()

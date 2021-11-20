@@ -11,27 +11,41 @@ import com.neeraja.recipeapp.data.AppDataManager
 import com.neeraja.recipeapp.data.model.api.RecipeResponse
 import com.neeraja.recipeapp.data.model.db.Meal
 import com.neeraja.recipeapp.utils.NetworkHelper
+import com.neeraja.recipeapp.utils.SingleLiveEvent
+import dagger.assisted.Assisted
+import dagger.assisted.AssistedInject
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-@HiltViewModel
-class RecipeViewModel @Inject constructor(
+class RecipeViewModel @AssistedInject constructor(
     val dataManager: AppDataManager,
     val networkHelper: NetworkHelper,
-    private val savedStateHandle: SavedStateHandle
+    @Assisted private val mealId: Int?
 ) : ViewModel() {
 
+    class Factory(
+        private val assistedFactory: RecipeViewModelFactory,
+        private val mealId: Int?
+    ) : ViewModelProvider.Factory {
+        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+            return assistedFactory.create(mealId) as T
+        }
+    }
     val _recipe = MutableLiveData<Resource<RecipeResponse>>()
     val _favorite = MutableLiveData<Int>()
+
+    init {
+        fetchRecipe()
+    }
 
     private fun fetchRecipe() {
         viewModelScope.launch {
             _recipe.postValue(Resource.loading(null))
             if (networkHelper.isNetworkConnected()) {
                 launch(Dispatchers.IO) {
-                    getMealId().value?.let { value ->
+                    mealId?.let { value ->
                         dataManager.getRecipeDetails(value).let {
                             if (it.isSuccessful) {
                                 _recipe.postValue(Resource.success(it.body()))
@@ -46,15 +60,6 @@ class RecipeViewModel @Inject constructor(
                 }
             } else _recipe.postValue(Resource.error("No Internet Connection", null))
         }
-    }
-
-    fun getMealId(): LiveData<Int> {
-        return savedStateHandle.getLiveData("MealID")
-    }
-
-    fun setMealId(mealId: Int) {
-        savedStateHandle.set("MealID", mealId)
-        fetchRecipe()
     }
 
     fun isFavorite(mealId: Int) {

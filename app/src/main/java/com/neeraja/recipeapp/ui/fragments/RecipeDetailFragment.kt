@@ -20,8 +20,10 @@ import com.neeraja.recipeapp.databinding.FragmentCategoriesBinding
 import com.neeraja.recipeapp.databinding.RecipeDetailFragmentBinding
 import com.neeraja.recipeapp.ui.viewmodel.FilterByCategoryViewModel
 import com.neeraja.recipeapp.ui.viewmodel.RecipeViewModel
+import com.neeraja.recipeapp.ui.viewmodel.RecipeViewModelFactory
 import com.neeraja.recipeapp.utils.Status
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class RecipeDetailFragment : Fragment(), View.OnClickListener {
@@ -30,8 +32,13 @@ class RecipeDetailFragment : Fragment(), View.OnClickListener {
         fun newInstance() = RecipeDetailFragment()
     }
 
+    @Inject
+    lateinit var assistedFactory: RecipeViewModelFactory
+
     private lateinit var binding: RecipeDetailFragmentBinding
-    private val viewModel: RecipeViewModel by viewModels()
+    private val viewModel: RecipeViewModel by viewModels() {
+        RecipeViewModel.Factory(assistedFactory, mealID)
+    }
     private var mealID: Int = 0
 
     override fun onCreateView(
@@ -50,12 +57,11 @@ class RecipeDetailFragment : Fragment(), View.OnClickListener {
         if (arguments != null) {
             mealID = RecipeDetailFragmentArgs.fromBundle(requireArguments()).mealId
         }
-        viewModel.setMealId(mealID)
         setupObserver()
     }
 
     fun setupObserver() {
-        viewModel._recipe.observe(this, Observer {
+        viewModel._recipe.observe(viewLifecycleOwner, Observer {
             when (it.status) {
                 Status.LOADING -> {
                     binding.progressBar.visibility = View.VISIBLE
@@ -84,7 +90,7 @@ class RecipeDetailFragment : Fragment(), View.OnClickListener {
     }
 
     fun setupFavoriteObserver() {
-        viewModel._favorite.observe(this, Observer {
+        viewModel._favorite.observe(viewLifecycleOwner, Observer {
             it?.let {
                binding.isFavorite = it
             }

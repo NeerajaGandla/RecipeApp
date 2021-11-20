@@ -9,7 +9,7 @@ data class MealDetail(
     @Json(name = "strArea") val area: String,
     @Json(name = "strInstructions") val instructions: String,
     @Json(name = "strMealThumb") val mealImg: String,
-    @Json(name = "strTags") val tags: String,
+    @Json(name = "strTags") val tags: String?,
     @Json(name = "strYoutube") val youtubeLink: String,
     @Json(name = "strIngredient1") val strIngredient1: String?,
     @Json(name = "strIngredient2") val strIngredient2: String?,
@@ -55,45 +55,45 @@ data class MealDetail(
 ) {
     fun getIngredients(): String {
         var ingredients: String = ""
-        if (strIngredient1 != null && strMeasure1 != null)
+        if (!strIngredient1.isNullOrEmpty()  && !strMeasure1.isNullOrEmpty())
             ingredients += strIngredient1 + " : " + strMeasure1 + "\n"
-        if (strIngredient2 != null && strMeasure2 != null)
+        if (!strIngredient2.isNullOrEmpty() && !strMeasure2.isNullOrEmpty())
             ingredients += strIngredient2 + " : " + strMeasure2 + "\n"
-        if (strIngredient3 != null && strMeasure3 != null)
+        if (!strIngredient3.isNullOrEmpty() && !strMeasure3.isNullOrEmpty())
             ingredients += strIngredient3 + " : " + strMeasure3 + "\n"
-        if (strIngredient4 != null && strMeasure4 != null)
+        if (!strIngredient4.isNullOrEmpty() && !strMeasure4.isNullOrEmpty())
             ingredients += strIngredient4 + " : " + strMeasure4 + "\n"
-        if (strIngredient5 != null && strMeasure5 != null)
+        if (!strIngredient5.isNullOrEmpty() && !strMeasure5.isNullOrEmpty())
             ingredients += strIngredient5 + " : " + strMeasure5 + "\n"
-        if (strIngredient6 != null && strMeasure6 != null)
+        if (!strIngredient6.isNullOrEmpty() && !strMeasure6.isNullOrEmpty())
             ingredients += strIngredient6 + " : " + strMeasure6 + "\n"
-        if (strIngredient7 != null && strMeasure7 != null)
+        if (!strIngredient7.isNullOrEmpty() && !strMeasure7.isNullOrEmpty())
             ingredients += strIngredient7 + " : " + strMeasure7 + "\n"
-        if (strIngredient8 != null && strMeasure8 != null)
+        if (!strIngredient8.isNullOrEmpty() && !strMeasure8.isNullOrEmpty())
             ingredients += strIngredient8 + " : " + strMeasure8 + "\n"
-        if (strIngredient9 != null && strMeasure9 != null)
+        if (!strIngredient9.isNullOrEmpty() && !strMeasure9.isNullOrEmpty())
             ingredients += strIngredient9 + " : " + strMeasure9 + "\n"
-        if (strIngredient10 != null && strMeasure10 != null)
+        if (!strIngredient10.isNullOrEmpty()  && !strMeasure10.isNullOrEmpty())
             ingredients += strIngredient10 + " : " + strMeasure10 + "\n"
-        if (strIngredient11 != null && strMeasure11 != null)
+        if (!strIngredient11.isNullOrEmpty()  && !strMeasure11.isNullOrEmpty())
             ingredients += strIngredient11 + " : " + strMeasure11 + "\n"
-        if (strIngredient12 != null && strMeasure12 != null)
+        if (!strIngredient12.isNullOrEmpty()  && !strMeasure12.isNullOrEmpty())
             ingredients += strIngredient12 + " : " + strMeasure12 + "\n"
-        if (strIngredient13 != null && strMeasure13 != null)
+        if (!strIngredient13.isNullOrEmpty()  && !strMeasure13.isNullOrEmpty())
             ingredients += strIngredient13 + " : " + strMeasure13 + "\n"
-        if (strIngredient14 != null && strMeasure14 != null)
+        if (!strIngredient14.isNullOrEmpty()  && !strMeasure14.isNullOrEmpty())
             ingredients += strIngredient14 + " : " + strMeasure14 + "\n"
-        if (strIngredient15 != null && strMeasure15 != null)
+        if (!strIngredient15.isNullOrEmpty()  && !strMeasure15.isNullOrEmpty())
             ingredients += strIngredient15 + " : " + strMeasure15 + "\n"
-        if (strIngredient16 != null && strMeasure16 != null)
+        if (!strIngredient16.isNullOrEmpty()  && !strMeasure16.isNullOrEmpty())
             ingredients += strIngredient16 + " : " + strMeasure16 + "\n"
-        if (strIngredient17 != null && strMeasure17 != null)
+        if (!strIngredient17.isNullOrEmpty()  && !strMeasure17.isNullOrEmpty())
             ingredients += strIngredient17 + " : " + strMeasure17 + "\n"
-        if (strIngredient18 != null && strMeasure18 != null)
+        if (!strIngredient18.isNullOrEmpty()  && !strMeasure18.isNullOrEmpty())
             ingredients += strIngredient18 + " : " + strMeasure18 + "\n"
-        if (strIngredient19 != null && strMeasure19 != null)
+        if (!strIngredient19.isNullOrEmpty()  && !strMeasure19.isNullOrEmpty())
             ingredients += strIngredient19 + " : " + strMeasure19 + "\n"
-        if (strIngredient20 != null && strMeasure20 != null)
+        if (!strIngredient20.isNullOrEmpty()  && !strMeasure20.isNullOrEmpty())
             ingredients += strIngredient20 + " : " + strMeasure20 + "\n"
         return ingredients
     }

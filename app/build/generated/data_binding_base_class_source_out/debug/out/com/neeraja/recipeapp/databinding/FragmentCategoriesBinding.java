@@ -4,6 +4,7 @@ package com.neeraja.recipeapp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,14 +17,18 @@ import java.lang.Object;
 
 public abstract class FragmentCategoriesBinding extends ViewDataBinding {
   @NonNull
+  public final EditText editSearch;
+
+  @NonNull
   public final ProgressBar progressBar;
 
   @NonNull
   public final RecyclerView recyclerView;
 
   protected FragmentCategoriesBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ProgressBar progressBar, RecyclerView recyclerView) {
+      EditText editSearch, ProgressBar progressBar, RecyclerView recyclerView) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.editSearch = editSearch;
     this.progressBar = progressBar;
     this.recyclerView = recyclerView;
   }
