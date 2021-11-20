@@ -1,17 +1,20 @@
 package com.neeraja.recipeapp.ui.adapter;
 
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import androidx.recyclerview.widget.RecyclerView;
 import com.neeraja.recipeapp.data.model.db.Category;
 import com.neeraja.recipeapp.databinding.CategoryItemLayoutBinding;
 import com.neeraja.recipeapp.ui.fragments.CategoriesFragmentDirections;
+import java.util.*;
 
-@kotlin.Metadata(mv = {1, 4, 2}, bv = {1, 0, 3}, k = 1, d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010 \n\u0000\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\f\u0012\b\u0012\u00060\u0002R\u00020\u00000\u0001:\u0001\u0015B\u001d\u0012\u0016\u0010\u0003\u001a\u0012\u0012\u0004\u0012\u00020\u00050\u0004j\b\u0012\u0004\u0012\u00020\u0005`\u0006\u00a2\u0006\u0002\u0010\u0007J\u0014\u0010\b\u001a\u00020\t2\f\u0010\n\u001a\b\u0012\u0004\u0012\u00020\u00050\u000bJ\b\u0010\f\u001a\u00020\rH\u0016J\u001c\u0010\u000e\u001a\u00020\t2\n\u0010\u000f\u001a\u00060\u0002R\u00020\u00002\u0006\u0010\u0010\u001a\u00020\rH\u0016J\u001c\u0010\u0011\u001a\u00060\u0002R\u00020\u00002\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\rH\u0016R\u001e\u0010\u0003\u001a\u0012\u0012\u0004\u0012\u00020\u00050\u0004j\b\u0012\u0004\u0012\u00020\u0005`\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000\u00a8\u0006\u0016"}, d2 = {"Lcom/neeraja/recipeapp/ui/adapter/CategoryAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lcom/neeraja/recipeapp/ui/adapter/CategoryAdapter$DataViewHolder;", "users", "Ljava/util/ArrayList;", "Lcom/neeraja/recipeapp/data/model/db/Category;", "Lkotlin/collections/ArrayList;", "(Ljava/util/ArrayList;)V", "addData", "", "list", "", "getItemCount", "", "onBindViewHolder", "holder", "position", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "DataViewHolder", "app_debug"})
-public final class CategoryAdapter extends androidx.recyclerview.widget.RecyclerView.Adapter<com.neeraja.recipeapp.ui.adapter.CategoryAdapter.DataViewHolder> {
-    private final java.util.ArrayList<com.neeraja.recipeapp.data.model.db.Category> users = null;
+@kotlin.Metadata(mv = {1, 4, 2}, bv = {1, 0, 3}, k = 1, d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\f\u0012\b\u0012\u00060\u0002R\u00020\u00000\u00012\u00020\u0003:\u0001\u0018B\u0013\u0012\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005\u00a2\u0006\u0002\u0010\u0007J\u0014\u0010\t\u001a\u00020\n2\f\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00060\fJ\b\u0010\r\u001a\u00020\u000eH\u0016J\b\u0010\u000f\u001a\u00020\u0010H\u0016J\u001c\u0010\u0011\u001a\u00020\n2\n\u0010\u0012\u001a\u00060\u0002R\u00020\u00002\u0006\u0010\u0013\u001a\u00020\u0010H\u0016J\u001c\u0010\u0014\u001a\u00060\u0002R\u00020\u00002\u0006\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00020\u0010H\u0016R\u0014\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u0014\u0010\b\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005X\u0082\u000e\u00a2\u0006\u0002\n\u0000\u00a8\u0006\u0019"}, d2 = {"Lcom/neeraja/recipeapp/ui/adapter/CategoryAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lcom/neeraja/recipeapp/ui/adapter/CategoryAdapter$DataViewHolder;", "Landroid/widget/Filterable;", "categories", "Ljava/util/ArrayList;", "Lcom/neeraja/recipeapp/data/model/db/Category;", "(Ljava/util/ArrayList;)V", "filteredList", "addData", "", "list", "", "getFilter", "Landroid/widget/Filter;", "getItemCount", "", "onBindViewHolder", "holder", "position", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "DataViewHolder", "app_debug"})
+public final class CategoryAdapter extends androidx.recyclerview.widget.RecyclerView.Adapter<com.neeraja.recipeapp.ui.adapter.CategoryAdapter.DataViewHolder> implements android.widget.Filterable {
+    private java.util.ArrayList<com.neeraja.recipeapp.data.model.db.Category> filteredList;
+    private final java.util.ArrayList<com.neeraja.recipeapp.data.model.db.Category> categories = null;
     
     @org.jetbrains.annotations.NotNull()
     @java.lang.Override()
@@ -34,8 +37,14 @@ public final class CategoryAdapter extends androidx.recyclerview.widget.Recycler
     java.util.List<com.neeraja.recipeapp.data.model.db.Category> list) {
     }
     
+    @org.jetbrains.annotations.NotNull()
+    @java.lang.Override()
+    public android.widget.Filter getFilter() {
+        return null;
+    }
+    
     public CategoryAdapter(@org.jetbrains.annotations.NotNull()
-    java.util.ArrayList<com.neeraja.recipeapp.data.model.db.Category> users) {
+    java.util.ArrayList<com.neeraja.recipeapp.data.model.db.Category> categories) {
         super();
     }
     

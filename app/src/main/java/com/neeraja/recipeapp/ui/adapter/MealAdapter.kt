@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
@@ -14,11 +16,17 @@ import com.neeraja.recipeapp.databinding.MealItemLayoutBinding
 import com.neeraja.recipeapp.ui.clicklisteners.MealClickListener
 import com.neeraja.recipeapp.ui.fragments.CategoriesFragmentDirections
 import com.neeraja.recipeapp.ui.fragments.FilterByTypeFragmentDirections
+import java.util.*
 
 class MealAdapter(
     private val meals: ArrayList<Meal>,
     private val favoriteClickListener: FavoriteClickListener
-) : RecyclerView.Adapter<MealAdapter.DataViewHolder>() {
+) : RecyclerView.Adapter<MealAdapter.DataViewHolder>(), Filterable {
+    private var filteredList = ArrayList<Meal>()
+
+    init {
+        filteredList = meals
+    }
 
     interface FavoriteClickListener {
         fun onFavoriteClick(meal: Meal)
@@ -48,10 +56,10 @@ class MealAdapter(
         return DataViewHolder(binding)
     }
 
-    override fun getItemCount(): Int = meals.size
+    override fun getItemCount(): Int = filteredList.size
 
     override fun onBindViewHolder(holder: DataViewHolder, position: Int) {
-        holder.binding.meal = meals[position]
+        holder.binding.meal = filteredList[position]
         holder.binding.executePendingBindings();
     }
 
@@ -62,4 +70,34 @@ class MealAdapter(
     fun clearData() {
         meals.clear()
     }
+
+    override fun getFilter(): Filter {
+        return object : Filter() {
+            override fun performFiltering(constraint: CharSequence?): FilterResults {
+                filteredList = if (constraint.isNullOrEmpty()) {
+                    meals
+                } else {
+                    val list = ArrayList<Meal>()
+                    for (character in meals) {
+                        if (character.mealName.toLowerCase(Locale.getDefault())
+                                .contains(constraint.toString().toLowerCase(Locale.getDefault()))
+                        ) {
+                            list.add(character)
+                        }
+                    }
+                    list
+                }
+                val filterResults = FilterResults()
+                filterResults.values = filteredList
+                return filterResults
+            }
+
+            override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
+                filteredList = results?.values as ArrayList<Meal>
+                notifyDataSetChanged()
+            }
+
+        }
+    }
+
 }

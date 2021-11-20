@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,15 +21,19 @@ public abstract class FragmentCategoriesBinding extends ViewDataBinding {
   public final EditText editSearch;
 
   @NonNull
+  public final ImageView ivCancel;
+
+  @NonNull
   public final ProgressBar progressBar;
 
   @NonNull
   public final RecyclerView recyclerView;
 
   protected FragmentCategoriesBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      EditText editSearch, ProgressBar progressBar, RecyclerView recyclerView) {
+      EditText editSearch, ImageView ivCancel, ProgressBar progressBar, RecyclerView recyclerView) {
     super(_bindingComponent, _root, _localFieldCount);
     this.editSearch = editSearch;
+    this.ivCancel = ivCancel;
     this.progressBar = progressBar;
     this.recyclerView = recyclerView;
   }

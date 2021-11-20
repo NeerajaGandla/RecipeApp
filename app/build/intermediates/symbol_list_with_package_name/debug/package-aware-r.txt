@@ -1028,6 +1028,7 @@ dimen design_textinput_caption_translate_y
 dimen disabled_alpha_material_dark
 dimen disabled_alpha_material_light
 dimen dp16
+dimen dp24
 dimen dp8
 dimen fastscroll_default_thickness
 dimen fastscroll_margin
@@ -1428,6 +1429,7 @@ id italic
 id item_touch_helper_previous_elevation
 id ivFavorite
 id iv_bookmarks
+id iv_cancel
 id iv_wishlist
 id jumpToEnd
 id jumpToStart
