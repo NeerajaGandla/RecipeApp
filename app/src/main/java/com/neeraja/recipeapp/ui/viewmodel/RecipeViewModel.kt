@@ -33,8 +33,11 @@ class RecipeViewModel @AssistedInject constructor(
             return assistedFactory.create(mealId) as T
         }
     }
-    val _recipe = MutableLiveData<Resource<RecipeResponse>>()
-    val _favorite = MutableLiveData<Int>()
+    private val _recipe = MutableLiveData<Resource<RecipeResponse>>()
+    val recipe : LiveData<Resource<RecipeResponse>> get() = _recipe
+
+    private val _favorite = MutableLiveData<Int>()
+    val favorite : LiveData<Int> get() = _favorite
 
     init {
         fetchRecipe()

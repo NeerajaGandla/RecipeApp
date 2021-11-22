@@ -103,7 +103,7 @@ class FilterByTypeFragment : Fragment(), MealAdapter.FavoriteClickListener {
     }
 
     private fun setupObserver() {
-        filterByCategoryViewModel._meals.observe(this, Observer {
+        filterByCategoryViewModel.meals.observe(this, Observer {
             when (it.status) {
                 Status.SUCCESS -> {
                     binding.progressBar.visibility = View.GONE

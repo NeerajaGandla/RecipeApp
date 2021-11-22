@@ -61,7 +61,7 @@ class RecipeDetailFragment : Fragment(), View.OnClickListener {
     }
 
     fun setupObserver() {
-        viewModel._recipe.observe(viewLifecycleOwner, Observer {
+        viewModel.recipe.observe(viewLifecycleOwner, Observer {
             when (it.status) {
                 Status.LOADING -> {
                     binding.progressBar.visibility = View.VISIBLE
@@ -90,7 +90,7 @@ class RecipeDetailFragment : Fragment(), View.OnClickListener {
     }
 
     fun setupFavoriteObserver() {
-        viewModel._favorite.observe(viewLifecycleOwner, Observer {
+        viewModel.favorite.observe(viewLifecycleOwner, Observer {
             it?.let {
                binding.isFavorite = it
             }

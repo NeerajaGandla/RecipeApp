@@ -37,7 +37,10 @@ class FilterByCategoryViewModel @AssistedInject constructor(
 
     }
 
-    val _meals = MutableLiveData<Resource<MealsResponse>>()
+    private val _meals = MutableLiveData<Resource<MealsResponse>>()
+
+    val meals : LiveData<Resource<MealsResponse>>
+        get() = _meals
 
     init {
         if (isFavorites.equals("Y")) fetchFavorites()
