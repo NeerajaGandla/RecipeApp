@@ -37,14 +37,21 @@ class FilterByCategoryViewModel @AssistedInject constructor(
 
     }
 
+    private val _searchText = MutableLiveData<String>()
+    val searchText = _searchText
+
     private val _meals = MutableLiveData<Resource<MealsResponse>>()
 
-    val meals : LiveData<Resource<MealsResponse>>
+    val meals: LiveData<Resource<MealsResponse>>
         get() = _meals
 
     init {
         if (isFavorites.equals("Y")) fetchFavorites()
         else fetchMealsByCategory(category)
+    }
+
+    fun setSearchText(text: String) {
+        _searchText.value = text
     }
 
     fun fetchMealsByCategory(category: String?) {

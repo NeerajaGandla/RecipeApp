@@ -46,6 +46,7 @@ class FilterByTypeFragment : Fragment(), MealAdapter.FavoriteClickListener {
     private lateinit var binding: FragmentCategoriesBinding
     private var category: String? = null
     private var isFavorites: String = "N"
+
     @Inject
     lateinit var assistedFactory: FilterByCategoryViewModelFactory
     private val filterByCategoryViewModel: FilterByCategoryViewModel by viewModels() {
@@ -93,16 +94,24 @@ class FilterByTypeFragment : Fragment(), MealAdapter.FavoriteClickListener {
         binding.editSearch.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
             }
+
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
             }
+
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                adapter.filter.filter(s)
+                filterByCategoryViewModel.setSearchText(s.toString())
             }
 
         })
     }
 
     private fun setupObserver() {
+        filterByCategoryViewModel.searchText.observe(this, Observer {
+            it?.let {
+                adapter.filter.filter(it)
+            }
+        })
         filterByCategoryViewModel.meals.observe(this, Observer {
             when (it.status) {
                 Status.SUCCESS -> {
