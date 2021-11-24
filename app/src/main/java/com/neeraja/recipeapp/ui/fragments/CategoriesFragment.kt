@@ -1,7 +1,5 @@
 package com.neeraja.recipeapp.ui.fragments
 
-import android.app.Activity
-import android.content.Context
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -10,40 +8,27 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.SavedStateHandle
-import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.neeraja.recipeapp.utils.Status
 import com.neeraja.recipeapp.R
 import com.neeraja.recipeapp.data.model.db.Category
 import com.neeraja.recipeapp.databinding.FragmentCategoriesBinding
 import com.neeraja.recipeapp.ui.adapter.CategoryAdapter
 import com.neeraja.recipeapp.ui.viewmodel.CategoryViewModel
-import com.neeraja.recipeapp.ui.viewmodel.CategoryViewModelFactory
-import com.neeraja.recipeapp.ui.viewmodel.FilterByCategoryViewModel
-import com.neeraja.recipeapp.ui.viewmodel.FilterByCategoryViewModelFactory
 import com.neeraja.recipeapp.utils.AppUtils.Companion.hideKeyboard
 import com.neeraja.recipeapp.utils.GridSpacingItemDecoration
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class CategoriesFragment : Fragment() {
     private val TAG = "CategoriesFragment"
 
-    @Inject
-    lateinit var assistedFactory: CategoryViewModelFactory
-    private val categoryViewModel: CategoryViewModel by viewModels() {
-        CategoryViewModel.Factory(assistedFactory, SavedStateHandle())
-    }
+    private val categoryViewModel: CategoryViewModel by viewModels()
     private lateinit var adapter: CategoryAdapter
     private lateinit var binding: FragmentCategoriesBinding
 

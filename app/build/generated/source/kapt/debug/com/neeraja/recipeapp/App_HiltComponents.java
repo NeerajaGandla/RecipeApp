@@ -6,6 +6,7 @@ import com.neeraja.recipeapp.ui.activities.HomeActivity_GeneratedInjector;
 import com.neeraja.recipeapp.ui.fragments.CategoriesFragment_GeneratedInjector;
 import com.neeraja.recipeapp.ui.fragments.FilterByTypeFragment_GeneratedInjector;
 import com.neeraja.recipeapp.ui.fragments.RecipeDetailFragment_GeneratedInjector;
+import com.neeraja.recipeapp.ui.viewmodel.CategoryViewModel_HiltModules;
 import dagger.Binds;
 import dagger.Component;
 import dagger.Module;
@@ -145,6 +146,7 @@ public final class App_HiltComponents {
       modules = {
           ActivityCBuilderModule.class,
           ViewModelCBuilderModule.class,
+          CategoryViewModel_HiltModules.KeyModule.class,
           HiltWrapper_ActivityRetainedComponentManager_LifecycleModule.class
       }
   )
@@ -181,7 +183,10 @@ public final class App_HiltComponents {
   }
 
   @Subcomponent(
-      modules = HiltWrapper_HiltViewModelFactory_ViewModelModule.class
+      modules = {
+          CategoryViewModel_HiltModules.BindsModule.class,
+          HiltWrapper_HiltViewModelFactory_ViewModelModule.class
+      }
   )
   @ViewModelScoped
   public abstract static class ViewModelC implements ViewModelComponent,

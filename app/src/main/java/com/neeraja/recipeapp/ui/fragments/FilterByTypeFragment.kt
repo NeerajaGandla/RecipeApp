@@ -1,8 +1,5 @@
 package com.neeraja.recipeapp.ui.fragments
 
-import android.app.Activity
-import android.app.Application
-import android.content.Context
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -10,14 +7,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.SavedStateViewModelFactory
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.neeraja.recipeapp.utils.*
 import com.neeraja.recipeapp.data.model.db.Meal
 import com.neeraja.recipeapp.databinding.FragmentCategoriesBinding
@@ -26,17 +19,12 @@ import com.neeraja.recipeapp.ui.viewmodel.FilterByCategoryViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import com.neeraja.recipeapp.R
-
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
-import com.neeraja.recipeapp.data.AppDataManager
 import com.neeraja.recipeapp.ui.viewmodel.FilterByCategoryViewModelFactory
 import com.neeraja.recipeapp.utils.AppUtils.Companion.hideKeyboard
 import com.neeraja.recipeapp.utils.GridSpacingItemDecoration
-import com.neeraja.recipeapp.utils.NetworkHelper
 import java.util.*
 
 @AndroidEntryPoint
