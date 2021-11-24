@@ -16,7 +16,7 @@ class CategoryViewModel @AssistedInject constructor(
     private val networkHelper: NetworkHelper,
     @Assisted private val state: SavedStateHandle
 ) : ViewModel() {
-    private final val SEARCH_TEXT_KEY = "SEARCH_TEXT"
+    private val SEARCH_TEXT_KEY = "SEARCH_TEXT"
 
     private val _searchText = MutableLiveData<String>()
     val searchText = _searchText

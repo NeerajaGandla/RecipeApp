@@ -64,10 +64,6 @@ class FilterByTypeFragment : Fragment(), MealAdapter.FavoriteClickListener {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
-
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         val controller: NavController = Navigation.findNavController(requireView())
@@ -138,6 +134,9 @@ class FilterByTypeFragment : Fragment(), MealAdapter.FavoriteClickListener {
         adapter.clearData()
         adapter.addData(meals)
         adapter.notifyDataSetChanged()
+        binding.editSearch.text?.let {
+            adapter.filter.filter(it.toString())
+        }
     }
 
     override fun onFavoriteClick(meal: Meal) {

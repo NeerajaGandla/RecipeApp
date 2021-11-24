@@ -5,6 +5,7 @@ import android.content.Context
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -36,6 +37,8 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class CategoriesFragment : Fragment() {
+    private val TAG = "CategoriesFragment"
+
     @Inject
     lateinit var assistedFactory: CategoryViewModelFactory
     private val categoryViewModel: CategoryViewModel by viewModels() {
@@ -55,8 +58,8 @@ class CategoriesFragment : Fragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
         setupUI()
         setupObserver()
     }
@@ -86,11 +89,13 @@ class CategoriesFragment : Fragment() {
 
     private fun setupObserver() {
         categoryViewModel.searchText.observe(this, Observer {
+            Log.d(TAG, "setupObserver() called $it")
             it?.let {
                 adapter.filter.filter(it)
             }
         })
         categoryViewModel.categories.observe(viewLifecycleOwner, Observer {
+            Log.d(TAG, "setupObserver() called" + it.status)
             when (it.status) {
                 Status.SUCCESS -> {
                     binding.progressBar.visibility = View.GONE
@@ -111,8 +116,12 @@ class CategoriesFragment : Fragment() {
     }
 
     private fun renderList(users: List<Category>) {
+        Log.d(TAG, "renderList() called with: users = $users")
         adapter.addData(users)
         adapter.notifyDataSetChanged()
+        binding.editSearch.text?.let {
+            adapter.filter.filter(it.toString())
+        }
     }
 
 }
