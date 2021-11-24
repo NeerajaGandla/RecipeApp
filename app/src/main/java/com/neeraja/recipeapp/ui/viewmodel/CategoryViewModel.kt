@@ -1,6 +1,7 @@
 package com.neeraja.recipeapp.ui.viewmodel
 
 import android.os.Bundle
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import androidx.savedstate.SavedStateRegistryOwner
 import com.neeraja.recipeapp.utils.Resource
@@ -10,12 +11,12 @@ import com.neeraja.recipeapp.utils.NetworkHelper
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.scopes.ViewModelScoped
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-@HiltViewModel
-class CategoryViewModel @Inject constructor(
+class CategoryViewModel @ViewModelInject constructor(
     private val dataManager: AppDataManager,
     private val networkHelper: NetworkHelper
 ) : ViewModel() {
