@@ -6,7 +6,6 @@ import com.neeraja.recipeapp.ui.activities.HomeActivity_GeneratedInjector;
 import com.neeraja.recipeapp.ui.fragments.CategoriesFragment_GeneratedInjector;
 import com.neeraja.recipeapp.ui.fragments.FilterByTypeFragment_GeneratedInjector;
 import com.neeraja.recipeapp.ui.fragments.RecipeDetailFragment_GeneratedInjector;
-import com.neeraja.recipeapp.ui.viewmodel.CategoryViewModel_HiltModule;
 import dagger.Binds;
 import dagger.Component;
 import dagger.Module;
@@ -146,7 +145,6 @@ public final class App_HiltComponents {
       modules = {
           ActivityCBuilderModule.class,
           ViewModelCBuilderModule.class,
-          CategoryViewModel_HiltModule.class,
           HiltWrapper_ActivityRetainedComponentManager_LifecycleModule.class
       }
   )

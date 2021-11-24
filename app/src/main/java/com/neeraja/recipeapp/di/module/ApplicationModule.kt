@@ -2,6 +2,7 @@ package com.neeraja.recipeapp.di.module
 
 import android.app.Application
 import android.content.Context
+import androidx.lifecycle.SavedStateHandle
 import androidx.room.Room
 import com.neeraja.recipeapp.BuildConfig
 import com.neeraja.recipeapp.data.AppDataManager
@@ -35,6 +36,9 @@ class ApplicationModule {
 
     @Provides
     fun provideBaseUrl() = BuildConfig.BASE_URL
+
+//    @Provides
+//    fun provideSavedState() = SavedStateHandle()
 
     @Provides
     @Singleton

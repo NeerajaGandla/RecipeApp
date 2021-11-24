@@ -12,7 +12,9 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
@@ -23,14 +25,22 @@ import com.neeraja.recipeapp.data.model.db.Category
 import com.neeraja.recipeapp.databinding.FragmentCategoriesBinding
 import com.neeraja.recipeapp.ui.adapter.CategoryAdapter
 import com.neeraja.recipeapp.ui.viewmodel.CategoryViewModel
+import com.neeraja.recipeapp.ui.viewmodel.CategoryViewModelFactory
+import com.neeraja.recipeapp.ui.viewmodel.FilterByCategoryViewModel
+import com.neeraja.recipeapp.ui.viewmodel.FilterByCategoryViewModelFactory
 import com.neeraja.recipeapp.utils.AppUtils.Companion.hideKeyboard
 import com.neeraja.recipeapp.utils.GridSpacingItemDecoration
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class CategoriesFragment : Fragment() {
-    private lateinit var categoryViewModel: CategoryViewModel
+    @Inject
+    lateinit var assistedFactory: CategoryViewModelFactory
+    private val categoryViewModel: CategoryViewModel by viewModels() {
+        CategoryViewModel.Factory(assistedFactory, SavedStateHandle())
+    }
     private lateinit var adapter: CategoryAdapter
     private lateinit var binding: FragmentCategoriesBinding
 
@@ -47,7 +57,6 @@ class CategoriesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        categoryViewModel = ViewModelProvider(this).get(CategoryViewModel::class.java)
         setupUI()
         setupObserver()
     }
@@ -69,13 +78,18 @@ class CategoriesFragment : Fragment() {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             }
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                adapter.filter.filter(s)
+                categoryViewModel.setSearchText(s.toString())
             }
 
         })
     }
 
     private fun setupObserver() {
+        categoryViewModel.searchText.observe(this, Observer {
+            it?.let {
+                adapter.filter.filter(it)
+            }
+        })
         categoryViewModel.categories.observe(viewLifecycleOwner, Observer {
             when (it.status) {
                 Status.SUCCESS -> {
