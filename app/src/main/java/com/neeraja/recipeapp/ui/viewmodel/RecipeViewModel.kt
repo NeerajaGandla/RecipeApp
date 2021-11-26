@@ -33,11 +33,12 @@ class RecipeViewModel @AssistedInject constructor(
             return assistedFactory.create(mealId) as T
         }
     }
+
     private val _recipe = MutableLiveData<Resource<RecipeResponse>>()
-    val recipe : LiveData<Resource<RecipeResponse>> get() = _recipe
+    val recipe: LiveData<Resource<RecipeResponse>> get() = _recipe
 
     private val _favorite = MutableLiveData<Int>()
-    val favorite : LiveData<Int> get() = _favorite
+    val favorite: LiveData<Int> get() = _favorite
 
     init {
         fetchRecipe()
@@ -75,16 +76,13 @@ class RecipeViewModel @AssistedInject constructor(
     }
 
     fun onFavoriteClicked(mealId: Int) {
-        viewModelScope.launch {
-            val job = launch(Dispatchers.IO) {
-                val isFavorite = dataManager.isFavorite(mealId)
-                val favoriteVal = when (isFavorite) {
-                    1 -> 0
-                    else -> 1
-                }
-                dataManager.setFavorite(mealId, favoriteVal)
+        viewModelScope.launch(Dispatchers.IO) {
+            val isFavorite = dataManager.isFavorite(mealId)
+            val favoriteVal = when (isFavorite) {
+                1 -> 0
+                else -> 1
             }
-            job.join()
+            dataManager.setFavorite(mealId, favoriteVal)
             isFavorite(mealId)
         }
     }

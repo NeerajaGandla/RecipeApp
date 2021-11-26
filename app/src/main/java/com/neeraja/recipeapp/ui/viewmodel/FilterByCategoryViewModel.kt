@@ -97,18 +97,15 @@ class FilterByCategoryViewModel @AssistedInject constructor(
     }
 
     fun onFavoriteClicked(meal: Meal) {
-        viewModelScope.launch {
-            val job = launch(Dispatchers.IO) {
-                val isFavorite = dataManager.isFavorite(meal.id)
-                val _meal = meal.copy(
-                    isFavorite = when (isFavorite) {
-                        1 -> 0
-                        else -> 1
-                    }
-                )
-                dataManager.setFavorite(_meal)
-            }
-            job.join()
+        viewModelScope.launch(Dispatchers.IO) {
+            val isFavorite = dataManager.isFavorite(meal.id)
+            val _meal = meal.copy(
+                isFavorite = when (isFavorite) {
+                    1 -> 0
+                    else -> 1
+                }
+            )
+            dataManager.setFavorite(_meal)
             if (isFavorites.equals("Y"))
                 fetchFavorites()
             else
